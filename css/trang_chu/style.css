@@ -1,0 +1,380 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* ************************************************************************************************************ */
+
+
+/* *************************************************SECTION MENU*********************************************************** */
+.top-menu{
+    width: 100%;
+    line-height: 100px;
+    z-index: 1;
+    position: fixed;
+    /* chống quét khối */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+    -webkit-user-select: none; /* Chrome, Safari, and Opera */
+    -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+    /*******************/
+}
+.top-menu.active{
+    background-color: black;
+    line-height: 50px;
+}
+.top-menu .container{
+    display: flex;
+    justify-content: space-between;
+}
+.top-menu .container .menu{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.top-menu .container .menu ul{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+} 
+.top-menu .container .logo a{
+    font-size: 30px;
+}
+.top-menu .container  a{
+    color: #fff;    
+}
+.top-menu .container  a.active{
+    color: #19d7f8;
+}   
+.top-menu .container  .menu-bar{
+    line-height: 100px;
+    color: white;
+    font-size: 30px;
+    display: none;
+    cursor: pointer;
+}
+.top-menu .container .menu .close{
+    color: rgb(100, 98, 98);
+    font-size: 30px;
+    display: none;
+    cursor: pointer;
+}
+.top-menu .container .login-register i{
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    display: none;
+    line-height: 100px;
+}
+.top-menu .container .login-register a{
+    padding: 7px 10px;
+    margin: 0px 3px;
+    background-color: rgb(82, 79, 79);
+    border: 2px solid #126eb9;
+    border-radius: 10px;
+}
+@media only screen and (max-width: 991px) {
+    .top-menu .container .menu ul{
+        min-width: 520px;
+    }
+    .top-menu .container .login-register i{
+        margin-left: 20px;
+        display: block;
+    }
+    .top-menu .container .login-register div {
+        display: none;
+    }
+}
+@media only screen and (max-width: 770px){   
+    .top-menu .container .menu ul{
+        flex-direction: column;
+        height: 300px;
+        line-height: 50px;
+    }
+    .top-menu .container .menu{
+        background: white;
+        width: 50%;
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        height: 100vh;
+        padding-top: 50px;
+        padding-left: 20px;
+        box-shadow: -3px 0px 10px rgb(104, 103, 103);
+        transform: translateX(110%);
+        transition: all 0.3s ease-in-out;
+    }
+    .top-menu .container .menu.active{
+        transform: translateX(0);
+    }
+    .top-menu .container .menu a{
+        color: rgb(100, 98, 98);
+        height: 100vh;
+    }
+    .top-menu .container .login-register i{
+        color: rgb(100, 98, 98);
+    }
+    .top-menu .container  a.active{
+        color: #1194ac;
+    }
+    .top-menu .container  .menu-bar {
+        display: block;
+    }
+    .top-menu .container .menu .close{
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        display: block;
+    }
+    .top-menu .container .login-register{
+        position: absolute;
+        top:0px;
+        left: 0px;
+    }
+}
+/* **************************************************************************************************************************** */
+
+/* ********************************************* SECTION-BANNER *************************************************************** */
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    background:url("anh.jpg");
+    background-size: cover;
+    clip-path: ellipse(72% 65% at 59% 34%);
+    position: relative;
+}
+.banner .slogan{
+    position: absolute;
+    bottom: 40%;
+    color: white;
+}
+.banner .slogan p{
+    color: #a5a4a4;
+}
+.banner .slogan a {
+    padding: 7px 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(82, 79, 79);
+    border: 2px solid #126eb9;
+} 
+.banner .swiper{
+    width: 300px;
+    height: 70px;
+    position: absolute;
+    bottom: 30%;
+    right: 10%;
+    background: transparent;
+}
+.banner .swiper img{
+    width: 100%;
+    height: 100%;
+}
+
+/* **************************************************************************************************************************** */
+
+/* **********************************************SECTION-POPULAR COLECTION******************************************************* */
+
+.popular_colection{
+    margin-top: 50px;
+}
+.popular_colection .title{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.popular_colection .title h4{
+    font-weight: 100;
+}
+.popular_colection .title h1{
+    font-weight: 400;
+}
+.popular_colection .title span{
+    color: #19d7f8;
+}
+.popular_colection img {
+    width: 100%;
+}
+/* **************************************************************************************************************************** */
+
+/* **********************************************SECTION-POPULAR COLECTION******************************************************* */
+
+.trendding_products{
+    margin-top: 50px;
+}
+.trendding_products .title{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.trendding_products .title h4{
+    font-weight: 100;
+}
+.trendding_products .title h1{
+    font-weight: 400;
+}
+.trendding_products .title span{
+    color: #19d7f8;
+}
+.trendding_products img{
+    width: 100%;
+}
+.trendding_products .product{
+    box-shadow: 0px 0px 3px black;
+    cursor: pointer;
+}
+.trendding_products .product div{
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.trendding_products .product div .name{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.trendding_products .see-more{
+    display: block;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid #202020;
+    background-color: transparent;
+    
+    color: #202020;
+}
+.trendding_products .see-more:hover{
+    background-color: #202020;
+    color: white;
+}
+/* **************************************************************************************************************************** */
+/* **********************************************SECTION-BANNER-SALE-OFF******************************************************* */
+.banner-sale-off{
+    margin-top: 100px;
+}
+.banner-sale-off .container-fluid .row{  
+    height: 380px;
+    background: linear-gradient( rgba(231, 240, 240, 0.9), rgba(255, 255, 255, 0.99) ), url("banner-sale-off-background.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+.banner-sale-off .container-fluid .img{
+    display: flex;
+    padding-right: 10%;
+    justify-content: right;
+    padding-top: 50px;
+}
+.banner-sale-off .container-fluid img{
+    height: 270px;
+}
+.banner-sale-off .container-fluid .infor{
+    padding-top: 90px;
+}
+.banner-sale-off .container-fluid .infor a{
+    display: block;
+    width: 100px;
+    height: 40px;
+    background-color: #19d7f8;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+}
+.banner-sale-off .container-fluid .infor a:hover{
+    text-decoration: underline;
+}
+.banner-sale-off .service {
+    padding-bottom: 30px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #F7F7F7;
+}
+.banner-sale-off .service .wrap{
+    display: flex;
+    margin-top: 30px;
+}
+.banner-sale-off .service .wrap .icon{
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    background-color: #E2E2E2;
+    text-align: center;
+    margin-right: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(109, 107, 107);
+}
+.banner-sale-off .service .wrap .icon i{
+    font-size: 18px;
+}
+
+/* **************************************************************************************************************************** */
+/* **********************************************SECTION-SALE OFF******************************************************* */
+.sale_off{
+    margin-top: 50px;
+}
+.sale_off .title{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.sale_off .title h4{
+    font-weight: 100;
+}
+.sale_off .title h1{
+    font-weight: 400;
+}
+.sale_off .title span{
+    color: #19d7f8;
+}
+.sale_off img{
+    width: 100%;
+}
+.sale_off .product{
+    box-shadow: 0px 0px 3px black;
+    cursor: pointer;
+}
+.sale_off .product div{
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.sale_off .product div .name{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.sale_off .see-more{
+    display: block;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid #202020;
+    background-color: transparent;
+    color: #202020;
+}
+.sale_off .see-more:hover{
+    background-color: #202020;
+    color: white;
+}
+/* **************************************************************************************************************************** */
+
+/* **********************************************SECTION-FOOTER******************************************************* */
+
+/* **************************************************************************************************************************** */
+
+/* **********************************************SECTION-MOVE TO TOP******************************************************* */
+
+
