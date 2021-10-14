@@ -9,6 +9,7 @@ li{
 }
 a{
     text-decoration: none;
+    color: black;
 }
 
 /* ************************************************************************************************************ */
@@ -172,9 +173,7 @@ a{
     top: 37%;
     left: 26%;
     display: none;
- }
- .product-menu .each-product .detail a{
-     color: #fff;
+    color: #fff;
  }
 .product-menu .each-product:hover .detail {
     display: block;

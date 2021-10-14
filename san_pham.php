@@ -132,154 +132,168 @@
                 <!-- ô san phẩm -->
                 <div class="row" >
                     <div class="col-6 col-md-3">
-                        <div class="each-product">
-                            <div class="img">
-                                <img src="img/san_pham/2.jpg" alt="">
+                        <a href="chi_tiet_sp.php">
+                            <div class="each-product">
+                                <div class="img">
+                                    <img src="img/san_pham/2.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>Yeeezy Boost 350 v2</p> <br>
+                                    <p><span>7840000</span>VNĐ</p>
+                                </div>
+                                <div class="detail">
+                                <p>CHI TIẾT</p>
+                                </div>
+                                <div class="hot active">
+                                    HOT
+                                </div>
                             </div>
-                            <div class="info">
-                                <p>Yeeezy Boost 350 v2</p> <br>
-                                <p><span>7840000</span>VNĐ</p>
-                            </div>
-                            <div class="detail">
-                               <a href="chi_tiet_sp.php">CHI TIẾT</a>
-                            </div>
-                            <div class="hot active">
-                                HOT
-                            </div>
-                        </div>
+                        </a> 
                     </div>
 
                     <div class="col-6 col-md-3">
-                        
-                        <div class="each-product">
-                            <div class="img">
-                                <img src="img/san_pham/2.jpg" alt="">
+                        <a href="chi_tiet_sp.php">
+                            <div class="each-product">
+                                <div class="img">
+                                    <img src="img/san_pham/2.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>Yeeezy Boost 350 v2</p> <br>
+                                    <p><span>7840000</span>VNĐ</p>
+                                </div>
+                                <div class="detail">
+                                <p>CHI TIẾT</p>
+                                </div>
+                                <div class="hot active">
+                                    HOT
+                                </div>
                             </div>
-                            <div class="info">
-                                <p>Yeeezy Boost 350 v2</p> <br>
-                                <p><span>7840000</span>VNĐ</p>
-                            </div>
-                            <div class="detail">
-                               <a href="chi_tiet_sp.php">CHI TIẾT</a>
-                            </div>
-                            <div class="hot active">
-                                HOT
-                            </div>
-                        </div>
+                        </a> 
                     </div>
 
                     <div class="col-6 col-md-3">
-                        
-                        <div class="each-product">
-                            <div class="img">
-                                <img src="img/san_pham/2.jpg" alt="">
+                        <a href="chi_tiet_sp.php">
+                            <div class="each-product">
+                                <div class="img">
+                                    <img src="img/san_pham/2.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>Yeeezy Boost 350 v2</p> <br>
+                                    <p><span>7840000</span>VNĐ</p>
+                                </div>
+                                <div class="detail">
+                                <p>CHI TIẾT</p>
+                                </div>
+                                <div class="hot active">
+                                    HOT
+                                </div>
                             </div>
-                            <div class="info">
-                                <p>Yeeezy Boost 350 v2</p> <br>
-                                <p><span>7840000</span>VNĐ</p>
-                            </div>
-                            <div class="detail">
-                               <a href="chi_tiet_sp.php">CHI TIẾT</a>
-                            </div>
-                            <div class="hot active">
-                                HOT
-                            </div>
-                        </div>
+                        </a> 
                     </div>
+                    
                     <div class="col-6 col-md-3">
-                        
-                        <div class="each-product">
-                            <div class="img">
-                                <img src="img/san_pham/2.jpg" alt="">
+                        <a href="chi_tiet_sp.php">
+                            <div class="each-product">
+                                <div class="img">
+                                    <img src="img/san_pham/2.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>Yeeezy Boost 350 v2</p> <br>
+                                    <p><span>7840000</span>VNĐ</p>
+                                </div>
+                                <div class="detail">
+                                <p>CHI TIẾT</p>
+                                </div>
+                                <div class="hot active">
+                                    HOT
+                                </div>
                             </div>
-                            <div class="info">
-                                <p>Yeeezy Boost 350 v2</p> <br>
-                                <p><span>7840000</span>VNĐ</p>
-                            </div>
-                            <div class="detail">
-                               <a href="chi_tiet_sp.php">CHI TIẾT</a>
-                            </div>
-                            <div class="hot active">
-                                HOT
-                            </div>
-                        </div>
+                        </a> 
                     </div>
+
                 </div>
                 <!-- ô san phẩm -->
                 <div class="row" >
                     <div class="col-6 col-md-3">
-                        <div class="each-product">
-                            <div class="img">
-                                <img src="img/san_pham/2.jpg" alt="">
+                        <a href="chi_tiet_sp.php">
+                            <div class="each-product">
+                                <div class="img">
+                                    <img src="img/san_pham/2.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>Yeeezy Boost 350 v2</p> <br>
+                                    <p><span>7840000</span>VNĐ</p>
+                                </div>
+                                <div class="detail">
+                                <p>CHI TIẾT</p>
+                                </div>
+                                <div class="hot active">
+                                    HOT
+                                </div>
                             </div>
-                            <div class="info">
-                                <p>Yeeezy Boost 350 v2</p> <br>
-                                <p><span>7840000</span>VNĐ</p>
-                            </div>
-                            <div class="detail">
-                               <a href="chi_tiet_sp.php">CHI TIẾT</a>
-                            </div>
-                            <div class="hot active">
-                                HOT
-                            </div>
-                        </div>
+                        </a> 
                     </div>
 
                     <div class="col-6 col-md-3">
-                        
-                        <div class="each-product">
-                            <div class="img">
-                                <img src="img/san_pham/2.jpg" alt="">
+                        <a href="chi_tiet_sp.php">
+                            <div class="each-product">
+                                <div class="img">
+                                    <img src="img/san_pham/2.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>Yeeezy Boost 350 v2</p> <br>
+                                    <p><span>7840000</span>VNĐ</p>
+                                </div>
+                                <div class="detail">
+                                <p>CHI TIẾT</p>
+                                </div>
+                                <div class="hot active">
+                                    HOT
+                                </div>
                             </div>
-                            <div class="info">
-                                <p>Yeeezy Boost 350 v2</p> <br>
-                                <p><span>7840000</span>VNĐ</p>
-                            </div>
-                            <div class="detail">
-                               <a href="chi_tiet_sp.php">CHI TIẾT</a>
-                            </div>
-                            <div class="hot active">
-                                HOT
-                            </div>
-                        </div>
+                        </a> 
                     </div>
 
                     <div class="col-6 col-md-3">
-                        
-                        <div class="each-product">
-                            <div class="img">
-                                <img src="img/san_pham/2.jpg" alt="">
+                        <a href="chi_tiet_sp.php">
+                            <div class="each-product">
+                                <div class="img">
+                                    <img src="img/san_pham/2.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>Yeeezy Boost 350 v2</p> <br>
+                                    <p><span>7840000</span>VNĐ</p>
+                                </div>
+                                <div class="detail">
+                                <p>CHI TIẾT</p>
+                                </div>
+                                <div class="hot active">
+                                    HOT
+                                </div>
                             </div>
-                            <div class="info">
-                                <p>Yeeezy Boost 350 v2</p> <br>
-                                <p><span>7840000</span>VNĐ</p>
-                            </div>
-                            <div class="detail">
-                               <a href="chi_tiet_sp.php">CHI TIẾT</a>
-                            </div>
-                            <div class="hot active">
-                                HOT
-                            </div>
-                        </div>
+                        </a> 
                     </div>
+                    
                     <div class="col-6 col-md-3">
-                        
-                        <div class="each-product">
-                            <div class="img">
-                                <img src="img/san_pham/2.jpg" alt="">
+                        <a href="chi_tiet_sp.php">
+                            <div class="each-product">
+                                <div class="img">
+                                    <img src="img/san_pham/2.jpg" alt="">
+                                </div>
+                                <div class="info">
+                                    <p>Yeeezy Boost 350 v2</p> <br>
+                                    <p><span>7840000</span>VNĐ</p>
+                                </div>
+                                <div class="detail">
+                                <p>CHI TIẾT</p>
+                                </div>
+                                <div class="hot active">
+                                    HOT
+                                </div>
                             </div>
-                            <div class="info">
-                                <p>Yeeezy Boost 350 v2</p> <br>
-                                <p><span>7840000</span>VNĐ</p>
-                            </div>
-                            <div class="detail">
-                               <a href="chi_tiet_sp.php">CHI TIẾT</a>
-                            </div>
-                            <div class="hot active">
-                                HOT
-                            </div>
-                        </div>
+                        </a> 
                     </div>
+                    
                 </div>
                 <!-- Phân trang sản phẩm -->
                 <div class="pagination">
