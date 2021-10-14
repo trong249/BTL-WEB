@@ -10,7 +10,7 @@
             font-size: 13px;
         }
         .top-menu .container a:hover{
-            text-shadow: 1px 2px 4px white;
+            text-shadow: 1px 2px 4px #fff;
         }
         .top-menu .container .gio-hang i{
             font-size: 20px;
