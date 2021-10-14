@@ -161,7 +161,7 @@ a{
     font-size: 15px;
     text-align: center;
     line-height: 25px;
-    height: 25px;
+    min-height: 25px;
     background-color: black;
     color: white;
     position: absolute;
@@ -261,6 +261,7 @@ a{
     .sale_mobile{
         display: block;
     }
+    
 }
 
 @media only screen and (max-width: 770px){
