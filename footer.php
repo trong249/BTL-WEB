@@ -62,6 +62,7 @@
     font-size: 40px;
     cursor: pointer;
     overflow: hidden;
+    z-index: 9;
 }
 .move-to-top i{
     transform: translateY(120%);
