@@ -9,6 +9,9 @@
             color: #fff;
             font-size: 13px;
         }
+        .top-menu .container a:hover{
+            text-shadow: 1px 2px 4px white;
+        }
         .top-menu .container .gio-hang i{
             font-size: 20px;
         }
@@ -52,6 +55,7 @@
                 box-shadow: -2px 0px 2px black;
                 transform: translateX(110%);
                 transition: all 0.3s ease-in-out;
+                z-index: 9;
             }
             .top-menu .container .menu.active{
             transform: translateX(0);

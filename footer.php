@@ -62,10 +62,10 @@
     font-size: 40px;
     cursor: pointer;
     overflow: hidden;
-    z-index: 9;
+    z-index: 5;
 }
 .move-to-top i{
-    transform: translateY(120%);
+    transform: translateY(130%);
     transition: all 0.3s ease-in-out;
 }
 .move-to-top i.active{

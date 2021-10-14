@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* ************************************************************************************************************ */
+.link{
+    margin-top: 40px;
+    margin-bottom:40px;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(119, 119, 119);
+    line-height: 40px;
+}
+/* ************************************************************************************************************ */
+.detail .img-product img{
+    width: 100%;
+}
+/* ************ */  
+.detail .info .name h1{
+    font-size: 30px;
+    font-weight: 300;
+}
+.detail .info .name div{
+    margin-top: 5px;
+    width: 50px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: rgb(104, 102, 102);
+}
+.detail .info .price-no-sale{
+    display: block;
+    text-decoration: line-through;
+    color: rgb(95, 94, 94);
+}
+.detail .info .latest-price{
+    display: block;
+    margin: 10px 0px;
+    font-size: 30px;
+    line-height: 50p;
+    color: rgb(51, 50, 50);
+}
+.detail .info .description{
+    text-align: justify;
+    color: rgb(88, 88, 88);
+    margin-bottom: 20px;
+}
+.detail .info .size{
+    display: block;
+    width: 40%;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 5px;
+}
+.detail .info .qty{
+    display: block;
+    width: 40%;
+    height: 40px;
+    outline: none;
+    border: 1px solid rgb(58, 58, 58);
+    border-radius: 5px;
+    padding-left: 5px;
+    margin-bottom: 20px;
+}
+.detail .info .add_into_cart{
+    width: 100%;
+    line-height: 36px;
+    padding: 0px 10px;
+    background-color: black;
+    color: #fff;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.detail .info .add_into_cart:hover{
+    opacity: 0.8;
+}
+/* ************ */  
+.detail .payment .title p{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.detail .payment .img img{
+    width: 100%;
+}
+
+/* ************************************************************************************************************ */
+.comment-area {
+    margin-top: 20px;
+}
+.comment-area .title p{
+    font-size: 20px;
+    color: rgb(65, 63, 63);
+}
+.comment-area .title div{
+    margin-top: 5px;
+    margin-bottom: 20px;
+    width: 50px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: rgb(104, 102, 102);
+}
+.comment-area ul{
+    margin-bottom: 20px;
+    overflow-y: auto;
+    padding-left: 14px;
+    max-height: 200px;
+}
+.comment-area ul li{
+    list-style:circle;
+    margin-bottom: 15px;
+}
+.comment-area ul li .each-cmt{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(104, 103, 103);
+}
+.comment-area ul li .each-cmt .content{
+    max-width: 80%;
+    text-align: justify;
+}
+.comment-area ul li .each-cmt .author{
+    color: rgb(122, 122, 122);
+}
+.comment-area  .add-comment textarea{
+    width: 100%;
+    padding: 10px 10px;
+    resize: none;
+    font-size: 15px;
+    border-radius: 5px;
+}
+.comment-area  .add-comment button{
+    width: 80px;
+    font-size: 17px;
+    background-color: black;
+    color: #fff;
+    border: transparent;
+    line-height: 30px;
+    cursor: pointer;
+}
+.comment-area .add-comment button:hover{
+    opacity: 0.8;
+}
+
+/* ************************************************************************************************************ */
+@media only screen and (max-width: 960px) {
+    .detail .info .size{
+        width: 100%;  
+    }
+    .detail .info .qty{
+        width: 100%;
+    }
+    .comment-area ul li .each-cmt .content{
+        max-width: 70%;
+    }
+}
+@media only screen and (max-width: 760px){
+    .comment-area ul li .each-cmt .content{
+        max-width: 65%;
+    }
+    .dot{
+        width: 50%;
+    }
+}

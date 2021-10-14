@@ -29,6 +29,11 @@ a{
     display: flex;
     justify-content: space-between;
     color: rgb(119, 119, 119);
+    line-height: 40px;
+}
+.display-filter .filter select{
+    height: 40px;
+    line-height: 40px;
 }
 /* ************************************************************************************************************ */
 
@@ -163,11 +168,13 @@ a{
     line-height: 25px;
     min-height: 25px;
     background-color: black;
-    color: white;
     position: absolute;
     top: 37%;
     left: 26%;
     display: none;
+ }
+ .product-menu .each-product .detail a{
+     color: #fff;
  }
 .product-menu .each-product:hover .detail {
     display: block;
@@ -297,5 +304,10 @@ a{
     }
     .sale_mobile .mySwiper2 .product{
         width: 100%;
+    }
+}
+@media (min-width: 768px){
+    .col-md-3 {
+    padding: 5px;
     }
 }
