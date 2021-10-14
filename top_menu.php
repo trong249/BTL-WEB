@@ -15,9 +15,13 @@
         .top-menu .container a.active{
             color: #126eb9;
         }
+        .top-menu .container a:hover {
+            color: blue;
+        }
         .top-menu .container{
             display: flex;
             justify-content: space-between;
+            height: 60.8px;
         }
         .top-menu .container .menu{
             width: 60%;
