@@ -77,7 +77,7 @@
     <section class="top-menu">  
         <div class="container">
             <div class="login-register">
-                <a href="">ĐĂNG NHẬP / ĐĂNG KÍ</a>
+                <a href="./dang_nhap_dang_ki.php">ĐĂNG NHẬP / ĐĂNG KÍ</a>
             </div>
             <div class="menu">
                 <ul>
