@@ -29,8 +29,8 @@
                 <div class="login-register">
                     <i class="fas fa-user"></i>
                     <div>
-                        <a href="" class="login">Đăng nhập</a>
-                        <a href="" class="register">Đăng ký</a>
+                        <a href="./dang_nhap_dang_ki.php" class="login">Đăng nhập</a>
+                        <a href="./dang_nhap_dang_ki.php" class="register">Đăng ký</a>
                     </div>
                 </div>
                 <i class="fas fa-times close" onclick="closeMenu()"></i>

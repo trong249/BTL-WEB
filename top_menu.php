@@ -18,6 +18,9 @@
         .top-menu .container a.active{
             color: #126eb9;
         }
+        .top-menu .container a:hover {
+            text-shadow: 3px 2px 4px white;
+        }
         .top-menu .container{
             display: flex;
             justify-content: space-between;
