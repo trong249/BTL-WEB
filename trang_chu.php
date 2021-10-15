@@ -20,7 +20,7 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="" class="active">TRANG CHỦ</a></li>
+                    <li><a href="./trang_chu.php" class="active">TRANG CHỦ</a></li>
                     <li><a href="san_pham.php">SẢN PHẨM</a></li>
                     <li><a href="gioi_thieu.php">GIỚI THIỆU</a></li>
                     <li><a href="tin_tuc.php">TIN TỨC</a></li>
