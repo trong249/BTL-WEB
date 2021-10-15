@@ -9,15 +9,22 @@
             color: #fff;
             font-size: 13px;
         }
+        .top-menu .container a:hover{
+            text-shadow: 1px 2px 4px #fff;
+        }
         .top-menu .container .gio-hang i{
             font-size: 20px;
         }
         .top-menu .container a.active{
             color: #126eb9;
         }
+        .top-menu .container a:hover {
+            text-shadow: 3px 2px 4px white;
+        }
         .top-menu .container{
             display: flex;
             justify-content: space-between;
+            height: 60.8px;
         }
         .top-menu .container .menu{
             width: 60%;
@@ -52,6 +59,7 @@
                 box-shadow: -2px 0px 2px black;
                 transform: translateX(110%);
                 transition: all 0.3s ease-in-out;
+                z-index: 9;
             }
             .top-menu .container .menu.active{
             transform: translateX(0);
@@ -77,7 +85,7 @@
     <section class="top-menu">  
         <div class="container">
             <div class="login-register">
-                <a href="./dang_nhap_dang_ki.php">ĐĂNG NHẬP / ĐĂNG KÍ</a>
+                <a href="">ĐĂNG NHẬP / ĐĂNG KÍ</a>
             </div>
             <div class="menu">
                 <ul>
