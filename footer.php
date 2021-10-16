@@ -1,8 +1,6 @@
 <style>
 
-#logo-footer {
-    max-height: 150px;
-}
+
 .logo-f {
     /* img-fluid in bootstrap 5 */
     max-width: 100%;
