@@ -18,7 +18,7 @@
                 <div id="sign-up">
                     <div class="container row">
                         <div class="col-12">
-                            <div class="mt-5 round-btn">
+                            <div class="mt-3 round-btn">
                                 <a href="./trang_chu.php" aria-label="Return to homepage"><button class="btn"><span class="bi bi-arrow-left text-black-50" style="font-size: x-large;"></span></button></a>
                             </div>
                         </div>
@@ -48,10 +48,10 @@
                                         <input type="password" name="confirm-password" id="confirm-password" class=" form-control input-field" placeholder="Xác nhận mật khẩu" required>
                                     </div>
                                     <div class="my-5">
-                                        <button class="btn btn-primary my-btn" type="submit">Đăng kí</button>
+                                        <button class="btn btn-primary my-btn container" type="submit">Đăng kí</button>
                                     </div>
                                 </form>
-                                <div class="center-text">
+                                <div class="center-text mb-3">
                                     <span>Đã có tài khoản? </span><a class="black-link" href="#" onclick="to_sign_in()">Đăng nhập ngay</a>
                                 </div>
                             </div>
@@ -67,7 +67,7 @@
                 <div id="sign-in">
                     <div class="container row">
                         <div class="col-12">
-                            <div class="mt-5 round-btn">
+                            <div class="mt-3 round-btn">
                                 <a href="./trang_chu.php" aria-label="Return to homepage"><button class="btn"><span class="bi bi-arrow-left text-black-50" style="font-size: x-large;"></span></button></a>
                             </div>
                         </div>
@@ -101,11 +101,11 @@
                                         <input class="form-check-input" type="checkbox" name="remember-me" value="remember" id="remember-me">
                                     </div>
                                     <div class="my-5">
-                                        <button class="btn btn-primary my-btn" type="submit">Đăng nhập</button>
-                                        <span><a href="#" class="black-link mx-3" onclick="to_forgor()">Quên mật khẩu?</a></span>
+                                        <button class="btn btn-primary my-btn container" type="submit">Đăng nhập</button>
+                                        <span style="display:block; width:100%; text-align: center;" class="mt-3"><a href="#" class="black-link mx-3" onclick="to_forgor()">Quên mật khẩu?</a></span>
                                     </div>
                                 </form>
-                                <div class="center-text">
+                                <div class="center-text mb-3">
                                     <span>Chưa có tài khoản? </span><a class="black-link" href="#" onclick="to_sign_up()">Tạo tài khoản</a>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@
                 <div id="forgor-password">
                     <div class="container row">
                         <div class="col-12">
-                            <div class="mt-5 round-btn">
+                            <div class="mt-3 round-btn">
                                 <button class="btn" aria-label="Trở lại trang đăng nhập" onclick="to_sign_in()"><span class="bi bi-arrow-left text-black-50" style="font-size: x-large;"></span></button>
                             </div>
                         </div>
@@ -133,7 +133,7 @@
                                         <input type="text" name="email" id="email" class=" form-control input-field" placeholder="Email" required> 
                                     </div>
                                     <div class="my-5">
-                                        <button class="btn btn-primary my-btn" type="submit">Xác nhận</button>
+                                        <button class="btn btn-primary my-btn container" type="submit">Xác nhận</button>
                                     </div>
                                 </form>
                             </div>
