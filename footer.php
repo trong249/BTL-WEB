@@ -1,5 +1,17 @@
 <style>
-    .footer{
+
+#logo-footer {
+    max-height: 150px;
+}
+.logo-f {
+    /* img-fluid in bootstrap 5 */
+    max-width: 100%;
+    height:auto;
+    /* ------------------------ */
+    object-fit:contain;
+    object-position: 0 100%;
+}
+.footer{
     width: 100%;
     margin-top: 80px;
     padding-bottom: 50px;
@@ -76,9 +88,12 @@
 <section class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-3" style="padding-top: 46px ;">
+                <div class="col-12 col-md-3" style="padding: 5px 10px;">
                     <p style="text-align: justify;">Nhiệm vụ của chúng tôi là mang đến những sản phẩm chất lượng với giá cả tốt nhất cho khách hàng. Được hỗ trợ khách hàng là niềm vinh dự của chúng tôi .</p>
                     <p>Xin cám ơn !</p>
+                    <div id="logo-footer container">
+                        <img class="img-fluid logo-f" src="./img/gioi_thieu/bg_footer_cut.png">
+                    </div>
                 </div>
                 <div class="col-12 col-md-3" style="text-align: center;">
                     <h2>Shop</h2>
@@ -109,7 +124,7 @@
                 </div>
             </div>
         </div>
-</section>
+    </section>
 
 <div class="move-to-top" onclick="moveToTop()">
     <i class="fas fa-arrow-circle-up" title="Move to Top"></i>
