@@ -216,17 +216,21 @@ a{
 /* ************************************************************************************************************ */
 
 /*************** footer **************/
+#logo-footer {
+    max-height: 150px;
+}
+
+.logo-f {
+    object-fit:contain;
+    object-position: 0 100%;
+}
+
 .footer{
     width: 100%;
     /* margin-top: 80px; */
     padding-bottom: 50px;
-    /* background-color: #F3F3F3; */
+    background-color: #F3F3F3;
     clear: left;
-
-    background-image: url(/img/gioi_thieu/bg_footer.png);
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
     
 }
 .footer .col-12{

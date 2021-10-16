@@ -7,6 +7,10 @@
     display:flex;
 }
 
+#forgor-password {
+    display:none;
+}
+
 html, body {
     height: 100vh;
 }
@@ -45,14 +49,14 @@ body {
 }
 
 .my-btn {
-    padding: 15px 30px;
+    padding: 15px 2rem;
     font-weight: 700;
 }
 
 .my-img {
     width: 100%;
     height:100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .center-text {
