@@ -73,7 +73,7 @@ ol, ul {
 }
 
 body {
-    background-color:whitesmoke;
+    background-color: white;
 }
 
 #main a:hover {
@@ -124,4 +124,39 @@ body {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
         max-width: 1140px;
     }
+}
+
+/* override bootstrap css of footer */
+/* damn, this is annoying */
+
+.footer p {
+    margin: 0 !important;
+}
+
+.footer .row {
+    --bs-gutter-x:0;
+}
+
+.footer * {
+    line-height: normal !important;
+}
+
+.footer h2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.footer .col-12, .footer .col-md-3 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.footer .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.footer input, .footer button {
+    font-size: 13.3333px;
 }

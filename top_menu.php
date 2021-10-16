@@ -24,7 +24,7 @@
         .top-menu .container{
             display: flex;
             justify-content: space-between;
-            height: 60.8px;
+            max-height: 60.8px;
         }
         .top-menu .container .menu{
             width: 60%;
