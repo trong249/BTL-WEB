@@ -109,37 +109,31 @@ a{
 }
 
 .content1 {
-    padding-top: 50%;
-    background-image: url("/img/gioi_thieu/logo.png");
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+    background-color: black;
 }
 .content1 .column {
-    float: right;
+    float: left;
     width: 50%;
 }
 .content1 .pic img {
-    position: absolute;
-    top: 0;
-    width: 50%;
-}
-.content1 .text {
-    position: absolute;
-    top: 0;
-    color: white;
+    width: 100%;
     padding: 30px;
 }
+.content1 .text {
+    color: white;
+    padding-top: 120px;
+    padding-left: 50px;
+    padding-bottom: 30px;
+}
 .content1 .text h1{
-    margin: 15px;
+    margin: 15px 15px 30px;
 }
 .content1 .text h4 {
-    margin: 30px 15px 10px 15px;
+    margin: 30px 15px 5px 15px;
 }
 .content1 .text p {
-    margin: 5px 15px;
-    /* padding: 10px 0; */
+    margin: 0px 15px;
+    padding-top: 15px;
     font-style: italic;
 }
 .content1::after{
@@ -149,26 +143,30 @@ a{
 }
 
 .content2 {
-    padding-top: 50%;
-    position: relative;
+    background-color: white;
 }
 .content2 .column {
     float: left;
     width: 50%;
 }
+.content2 .pic {
+    text-align: center;
+}
 .content2 .pic img{
-    position: absolute;
-    top: 5%;
-    /* width: 40%; */
-    height: 90%;
-    padding: 0 50px;
+    width: 80%;
+    padding: 20px;
 }
 .content2 .text {
-    /* width: 450px; */
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 30px;
+    padding-top: 120px;
+    padding-left: 20px;
+    padding-right: 85px;
+    padding-bottom: 30px;
+}
+.content2 .text h3 {
+    padding-bottom: 20px;
+}
+.content2 .text p {
+    font-style: italic;
 }
 .content2::after{
     content: "";
@@ -177,17 +175,50 @@ a{
 }
  
 .content3 {
-    padding-top: 50%;
     background-color: black;
+    
+}
+.content3 .column {
+    float: left;
+    width: 50%;
+
+}
+.content3 .pic img {
+    width: 100%;
+    padding: 30px;
+}
+.content3 .text {
+    color: white;
+    padding-top: 200px;
+    padding-left: 80px;
+    padding-bottom: 30px;
+}
+.content3 .text h3 {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.content3 .text p {
+    font-style: italic;
 }
 
+.content3::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.last img{
+    background-color: black;
+    object-position: cover;
+    width: 100%;
+}
 
 /* ************************************************************************************************************ */
 
 /*************** footer **************/
 .footer{
     width: 100%;
-    margin-top: 80px;
+    /* margin-top: 80px; */
     padding-bottom: 50px;
     /* background-color: #F3F3F3; */
     clear: left;
@@ -262,4 +293,50 @@ a{
 }
 .move-to-top i.active{
     transform: translateY(0);
+}
+
+
+@media only screen and (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1140px;
+    }
+}
+
+/* override bootstrap css of footer */
+/* damn, this is annoying */
+
+.footer p {
+    margin: 0 !important;
+}
+
+.footer .row {
+    --bs-gutter-x:0;
+}
+
+.footer * {
+    line-height: normal !important;
+}
+
+.footer h2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.footer ul, .footer li {
+    padding-left: 0;
+}
+
+.footer .col-12, .footer .col-md-3 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.footer .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.footer input, .footer button {
+    font-size: 13.3333px;
 }
