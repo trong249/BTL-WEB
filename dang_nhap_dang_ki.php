@@ -27,7 +27,7 @@
                                 <div class="header">
                                     <h1>Đăng kí</h1>
                                 </div>
-                                <form>
+                                <form action="xu_ly_tai_khoan.php" method="post">
                                     <div class="input-group my-3">
                                         <span class="bi bi-person-fill input-group-text bg-white border-white"></span>
                                         <label for="email" class="visually-hidden-focusable">Email</label>
@@ -81,7 +81,7 @@
                                 <div class="header">
                                     <h1>Đăng nhập</h1>
                                 </div>
-                                <form>
+                                <form action="xu_ly_tai_khoan.php" method="post">
                                     <div class="input-group my-3">
                                         <span class="bi bi-person-fill input-group-text bg-white border-white"></span>
                                         <label for="email" class="visually-hidden-focusable">Email</label>
@@ -125,7 +125,7 @@
                                 <div class="header">
                                     <h1>Quên mật khẩu</h1>
                                 </div>
-                                <form>
+                                <form action="xu_ly_tai_khoan.php" method="post">
                                     <p>Nhập email của bạn và làm theo hướng dẫn để đặt lại mật khẩu cho tài khoản của bạn</p>
                                     <div class="input-group my-3">
                                         <span class="bi bi-person-fill input-group-text bg-white border-white"></span>

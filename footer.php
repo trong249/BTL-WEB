@@ -13,7 +13,7 @@
     width: 100%;
     margin-top: 80px;
     padding-bottom: 50px;
-    background-color: #F3F3F3;
+    background-color: #f0f0f1;
 }
 .footer .col-12{
     margin-top: 50px;
