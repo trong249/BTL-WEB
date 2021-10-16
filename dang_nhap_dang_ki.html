@@ -43,9 +43,9 @@
                                     <div class="input-group my-3">
                                         <span class="bi bi-lock-fill input-group-text bg-white border-white"></span>
                                         <label for="password" class="visually-hidden-focusable">
-                                        Password
+                                        Confirm Password
                                         </label>
-                                        <input type="password" name="password" id="password" class=" form-control input-field" placeholder="Xác nhận mật khẩu" required>
+                                        <input type="password" name="confirm-password" id="confirm-password" class=" form-control input-field" placeholder="Xác nhận mật khẩu" required>
                                     </div>
                                     <div class="my-5">
                                         <button class="btn btn-primary my-btn" type="submit">Đăng kí</button>
@@ -102,6 +102,7 @@
                                     </div>
                                     <div class="my-5">
                                         <button class="btn btn-primary my-btn" type="submit">Đăng nhập</button>
+                                        <span><a href="#" class="black-link mx-3" onclick="to_forgor()">Quên mật khẩu?</a></span>
                                     </div>
                                 </form>
                                 <div class="center-text">
@@ -111,16 +112,56 @@
                         </div>
                     </div>
                 </div>
+
+                <div id="forgor-password">
+                    <div class="container row">
+                        <div class="col-12">
+                            <div class="mt-5 round-btn">
+                                <button class="btn" aria-label="Trở lại trang đăng nhập" onclick="to_sign_in()"><span class="bi bi-arrow-left text-black-50" style="font-size: x-large;"></span></button>
+                            </div>
+                        </div>
+                        <div class="col col-md-5 my-3">
+                            <div class="container-fluid">
+                                <div class="header">
+                                    <h1>Quên mật khẩu</h1>
+                                </div>
+                                <form>
+                                    <p>Nhập email của bạn và làm theo hướng dẫn để đặt lại mật khẩu cho tài khoản của bạn</p>
+                                    <div class="input-group my-3">
+                                        <span class="bi bi-person-fill input-group-text bg-white border-white"></span>
+                                        <label for="email" class="visually-hidden-focusable">Email</label>
+                                        <input type="text" name="email" id="email" class=" form-control input-field" placeholder="Email" required> 
+                                    </div>
+                                    <div class="my-5">
+                                        <button class="btn btn-primary my-btn" type="submit">Xác nhận</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="d-none d-md-flex col-md-7 my-3">
+                            <div class="container col-12">
+                                <img src="./css/dang_nhap_dang_ki/img/lqn26d6enxj71.png" alt="wow" class="img-fluid my-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <script>
             function to_sign_in() {
-                var to_si = document.getElementById("sign-in").style.display = "flex";
+                var si = document.getElementById("sign-in").style.display = "flex";
                 var su = document.getElementById("sign-up").style.display = "none";
+                var forgor = document.getElementById("forgor-password").style.display="none";
             }
             function to_sign_up() {
-                var to_su = document.getElementById("sign-up").style.display = "flex";
+                var su = document.getElementById("sign-up").style.display = "flex";
                 var si = document.getElementById("sign-in").style.display = "none";
+                var forgor = document.getElementById("forgor-password").style.display="none";
+            }
+            function to_forgor()  {
+                var su = document.getElementById("sign-up").style.display = "none";
+                var si = document.getElementById("sign-in").style.display = "none";
+                var forgor = document.getElementById("forgor-password").style.display="flex";
             }
         </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
