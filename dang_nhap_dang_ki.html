@@ -19,7 +19,7 @@
                     <div class="container row">
                         <div class="col-12">
                             <div class="mt-5 round-btn">
-                                <a href="./trang_chu.php"><button class="bi bi-arrow-left btn text-black-50" style="font-size: x-large;"></button></a>
+                                <a href="./trang_chu.php" aria-label="Return to homepage"><button class="btn"><span class="bi bi-arrow-left text-black-50" style="font-size: x-large;"></span></button></a>
                             </div>
                         </div>
                         <div class="col col-md-5 my-3">
@@ -68,7 +68,7 @@
                     <div class="container row">
                         <div class="col-12">
                             <div class="mt-5 round-btn">
-                                <a href="./trang_chu.php"><button class="bi bi-arrow-left btn text-black-50" style="font-size: x-large;"></button></a>
+                                <a href="./trang_chu.php" aria-label="Return to homepage"><button class="btn"><span class="bi bi-arrow-left text-black-50" style="font-size: x-large;"></span></button></a>
                             </div>
                         </div>
                         <div class="d-none d-md-flex col-md-7 my-3">

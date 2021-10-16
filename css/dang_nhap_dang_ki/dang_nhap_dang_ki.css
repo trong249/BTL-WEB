@@ -15,6 +15,8 @@ body {
     background-image: url(./img/image552159.jpg);
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
+    background-size:cover;
 }
 
 
@@ -72,12 +74,14 @@ body {
 .round-btn {
     padding: 5px;
     width:fit-content;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: whitesmoke;
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+    
 }
 
 .round-btn:hover {
-    background-color: rgba(245, 245, 245, 0.822);
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
 }
 
 @media only screen and (min-width:992px) {
