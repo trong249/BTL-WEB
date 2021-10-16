@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/8f65ebef09.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 
-    <title>Document</title>
+    <title>Giới Thiệu</title>
 </head>
 <body>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
