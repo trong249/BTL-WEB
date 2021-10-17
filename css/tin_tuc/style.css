@@ -4,6 +4,9 @@
     box-sizing: border-box;
     font-family: "Roboto Condensed", sans-serif;
 }
+ul {
+    padding: 0;
+}
 li{
     list-style: none;
 }
