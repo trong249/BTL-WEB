@@ -45,10 +45,10 @@
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="./img/gioi_thieu/slider5.png" class="d-block w-100" alt="sliderpic">
+                    <img src="./img/gioi_thieu/slider4.png" class="d-block w-100" alt="sliderpic">
                   </div>
                   <div class="carousel-item">
-                    <img src="./img/gioi_thieu/slider1.png" class="d-block w-100" alt="sliderpic">
+                    <img src="./img/gioi_thieu/slider7.png" class="d-block w-100" alt="sliderpic">
                   </div>
                   <div class="carousel-item">
                     <img src="./img/gioi_thieu/slider6.png" class="d-block w-100" alt="sliderpic">
@@ -74,15 +74,18 @@
                     cùng khách hàng trên mỗi chuyến đi, dõi theo từng cung bậc cảm xúc trên từng nẻo đường. Cung cấp cho bạn những mẫu giày phù hợp nhất.
                 </p>
             </div>
-            <div class="column pic">
+            <!-- <div class="column pic">
                 <img src="./img/gioi_thieu/logo4.png" alt="logo">
-            </div>
+            </div> -->
+        </div>
+        <div class="rest">
+            <img src="./img/gioi_thieu/slider5.png" alt="background">
         </div>
 
         <div class="content2">
-            <div class="column pic">
-                <img src="./img/gioi_thieu/pic1.jpg" alt="picture">
-            </div>
+            <!-- <div class="column pic">
+                <img src="./img/gioi_thieu/pic2.png" alt="picture">
+            </div> -->
     
             <div class="column text">
                 <h3>Về cửa hàng</h3>
@@ -101,6 +104,9 @@
                 </p>
             </div>
         </div>
+        <div class="rest">
+            <img src="./img/gioi_thieu/bg.png" alt="background">
+        </div>
 
         <div class="content3">
             <div class="column text">
@@ -118,11 +124,12 @@
             <div class="column pic">
                 <img src="./img/gioi_thieu/logo3.png" alt="logo">
             </div>
+            <div class="rest">
+                <img src="./img/gioi_thieu/end.png" alt="goodbye">
+            </div>
         </div>
         
-        <div class="last">
-            <img src="./img/gioi_thieu/end.png" alt="goodbye">
-        </div>
+        
 
 
     </section>
