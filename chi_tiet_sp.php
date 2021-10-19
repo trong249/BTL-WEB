@@ -67,7 +67,7 @@
                     </select>
                     
                     <input type="number" name="" id="" value="1" class="qty">
-                    <button class="add_into_cart">THÊM VÀO GIỎ HÀNG</button>
+                    <button class="add_into_cart" onclick="addToCart()">THÊM VÀO GIỎ HÀNG</button>
                     
                 </div>
             </div>

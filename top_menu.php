@@ -94,7 +94,7 @@
                     <li><a href="gioi_thieu.php">GIỚI THIỆU</a></li>
                     <li><a href="tin_tuc.php">TIN TỨC</a></li>
                     <li><a href="lien_he.php">LIÊN HỆ</a></li>
-                    <li class='gio-hang'><a href=""><i class="fas fa-cart-plus"></i></a></li>
+                    <li class='gio-hang'><a href="gio_hang.php"><i class="fas fa-cart-plus"></i></a></li>
                 </ul>
                 <i class="fas fa-times close" onclick="closeMenu()"></i>
             </div>

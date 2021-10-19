@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+/******************************************************************************************************************/
+.link{
+    margin-top: 40px;
+    margin-bottom:40px;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(119, 119, 119);
+    line-height: 40px;
+}
+
+/******************************************************************************************************************/
+thead{  
+    line-height: 70px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.list-product th, .list-product td{
+    text-align: left;
+    border-top: 1px solid black;
+}
+.list-product th.name{
+    width: 30%;
+}
+.list-product th.img{
+    width: 20%;
+}
+.list-product i{
+    font-size: 25px;
+}
+.list-product .continue-shopping{
+    display: block;
+    width: 40%;
+    line-height: 40px;
+    text-align: center;
+    background-color: rgb(80, 182, 223);
+    border: transparent;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+}
+.list-product .continue-shopping:hover{
+    background-color: rgb(61, 139, 170);
+}
+/******************************************************************************************************************/
+.order th{
+    border-top: 1px solid rgb(206, 204, 204);   
+}
+.order td{
+    border-top: 1px solid rgb(206, 204, 204);
+    padding:20px 0px;
+    vertical-align: center;
+}
+.order .go-to-order{
+    display: block;
+    line-height: 50px;
+    background-color: rgb(243, 42, 42);
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+@media only screen and (max-width: 990px){
+    .list-product .continue-shopping{
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 770px){
+    .list-product .continue-shopping{
+        width: 100%;
+    }
+    .order table{
+        margin-top: 100px;
+    }
+}

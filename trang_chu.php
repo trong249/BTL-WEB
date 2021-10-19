@@ -16,7 +16,7 @@
     <section class="top-menu">
         <div class="container">
             <div class="logo">
-                <a href="">Logo</a>
+                <a href="">isShin</a>
             </div>
             <div class="menu">
                 <ul>
