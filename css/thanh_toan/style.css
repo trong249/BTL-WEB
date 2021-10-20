@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+}
+ul {
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color:black;
+}
+/* ************************************************************************************************************ */
+
+ol, ul {
+    padding-left: 0;
+}
+
+body {
+    background-image: url(./img/maxresdefault.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* keep background at a fixed place */
+    background-attachment: fixed;
+}
+
+
+.order-row {
+    display:flex;
+    padding: 10px 0;
+    border-bottom: 2px solid black;
+    margin: 20px auto;
+}
+
+.order-row > div {
+    display:flex;
+    width: 50%;
+    border-bottom: black;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.thanks {
+    margin: 10px 0;
+}
+
+.btn {
+    width:100%;
+    margin: 20px 0;
+}
+
+.form-label {
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
+
+.text-bold {
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+}
+
+#product-name {
+    width:80%;
+}
+
+#product-amount {
+    width: 20%;
+}
+
+.fancy-box {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+    padding-bottom: 20px;
+    /* when using transition, you have to specify the css-attribute to apply transition, and time */
+    transition: box-shadow 1s;
+    background-color:white;
+}
+
+.fancy-box:hover {
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.5);
+}
+
+
+/* copy section: */
+.display-filter {
+    margin: 40px 0;
+}
+
+@media only screen and (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1140px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    #main {
+        font-size: 13px;
+    }
+}
+
+/* override bootstrap css of footer */
+/* damn, this is annoying */
+
+.footer p {
+    margin: 0 !important;
+}
+
+.footer .row {
+    --bs-gutter-x:0;
+}
+
+.footer * {
+    line-height: normal !important;
+}
+
+.footer h2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+.footer .col-12, .footer .col-md-3 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.footer .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.footer input, .footer button {
+    font-size: 13.3333px;
+}

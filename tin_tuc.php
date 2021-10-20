@@ -29,6 +29,13 @@
 <section id="main">
             <!-- han che dung container-fluid, tru khi phuc vu man hinh ultra wide -->
             <div class="container" id="main-content">
+            <section class="display-filter container">
+                    <div class="link">
+                        <a href="trang_chu.php" style="color:rgb(150, 148, 148);">TRANG CHỦ</a>
+                        <span>/</span>
+                        <a href="" style="color: black;">TIN TỨC</a>
+                    </div>
+                </section>
                 <div class="row row-cols-lg-2">
                   <div class="col col-12 col-lg-8">
                       <!-----------------------------carousel  ------------------------------------------->
