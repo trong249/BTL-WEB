@@ -11,4 +11,102 @@ a{
     text-decoration: none;
 }
 /* ************************************************************************************************************ */
+/************ Content ***********/
 
+.lienhe h6 {
+    margin-left: 14px;
+    color: red;
+    font-size: 21px;
+}
+
+.tus img {
+    width: 20px;
+}
+
+.tus tr td {
+    padding: 5px 10px;
+}
+
+.form tr td {
+    padding: 5px;
+}
+
+.form tr td textarea {
+    padding: 11px;
+}
+
+.form tr td button {
+    padding: 6px 101px;
+    background-color: red;
+    border: none;
+    color: white;
+    font-weight: 700;
+}
+
+.form tr td input {
+    width: 240px;
+    height: 46px;
+    padding: 15px;
+}
+
+/****** top-menu ******/
+.top-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+/* copy section: */
+.footer ul, .footer li {
+    padding-left:0px;
+}
+
+@media (min-width: 768px){
+    .col-md-3 {
+    padding: 5px;
+    }
+}
+
+.display-filter {
+    margin: 40px 0;
+}
+
+@media only screen and (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1140px;
+    }
+}
+
+.footer p {
+    margin: 0 !important;
+}
+
+.footer .row {
+    --bs-gutter-x:0;
+}
+
+.footer * {
+    line-height: normal !important;
+}
+
+.footer h2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+.footer .col-12, .footer .col-md-3 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.footer .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.footer input, .footer button {
+    font-size: 13.3333px;
+}
