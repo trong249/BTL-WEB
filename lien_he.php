@@ -20,7 +20,60 @@
     </script>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     
-    <!-- write here -->
+    <div class="container" style="margin-top: 150px;">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="lienhe">
+                    <h6>THÔNG TIN LIÊN HỆ</h6>
+
+                    <table class="tus">
+                        <tr>
+                            <td> <img src="/img/lien_he/dia_chi.png" alt=""> </td>
+                            <td>969 Ba Tháng Hai - Quận 10 - Hồ Chí Minh - Việt Nam</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/img/lien_he/phone.png" alt=""></td>
+                            <td>0123456789</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/img/lien_he/gmail.png" alt=""></td>
+                            <td>ishin_sneaker@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td><img src="/img/lien_he/link.png" alt=""></td>
+                            <td>ishin_sneaker.com</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form">
+                    <table>
+                        <tr>
+                            <td><input type="text" placeholder="Họ và tên"></td>
+                            <td><input type="text" placeholder="Email"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" placeholder="Số điện thoại"></td>
+                            <td><input type="text" placeholder="Địa chỉ"></td>
+                        </tr>
+                        <tr>
+
+                            <td colspan="2"> <textarea name="" placeholder="Ý kiến đóng góp" id="" cols="56" rows="4"></textarea> </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+
+                            <td> <button>GỬI</button> </td>
+                            <td></td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <!-- IMPORT FOOTER -->
