@@ -48,7 +48,7 @@
                     <img src="./img/gioi_thieu/slider4.png" class="d-block w-100" alt="sliderpic">
                   </div>
                   <div class="carousel-item">
-                    <img src="./img/gioi_thieu/slider7.png" class="d-block w-100" alt="sliderpic">
+                    <img src="./img/gioi_thieu/slider5.png" class="d-block w-100" alt="sliderpic">
                   </div>
                   <div class="carousel-item">
                     <img src="./img/gioi_thieu/slider6.png" class="d-block w-100" alt="sliderpic">
@@ -77,10 +77,11 @@
             <!-- <div class="column pic">
                 <img src="./img/gioi_thieu/logo4.png" alt="logo">
             </div> -->
+            <div class="rest">
+            <img src="./img/gioi_thieu/bg1.png" alt="background">
+            </div>
         </div>
-        <div class="rest">
-            <img src="./img/gioi_thieu/slider5.png" alt="background">
-        </div>
+        
 
         <div class="content2">
             <!-- <div class="column pic">
@@ -103,10 +104,11 @@
                     thoải mái mà không cần phải lo nghĩ quá nhiều về giá cả.
                 </p>
             </div>
-        </div>
-        <div class="rest">
+            <div class="rest">
             <img src="./img/gioi_thieu/bg.png" alt="background">
+            </div>
         </div>
+        
 
         <div class="content3">
             <div class="column text">

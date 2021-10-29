@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <script src="https://kit.fontawesome.com/8f65ebef09.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <!-- favicon -->
+    <link rel="icon" href="./img/gioi_thieu/tachnen.png" type="image/x-icon">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/quan_ly_đon/style.css">
+ 
+
+</head>
+<body>
+    <!-- -----------top-menu----------- -->
+    <section class="top-menu">  
+        <div class="container">
+            <div class="login-register">
+                <a href="">ĐĂNG NHẬP / ĐĂNG KÍ</a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="trang_chu.php">TRANG CHỦ</a></li>
+                    <li><a href="san_pham.php">SẢN PHẨM</a></li>
+                    <li><a href="gioi_thieu.php">GIỚI THIỆU</a></li>
+                    <li><a href="tin_tuc.php">TIN TỨC</a></li>
+                    <li><a href="lien_he.php">LIÊN HỆ</a></li>
+                    <li class='gio-hang'><a href=""><i class="fas fa-cart-plus"></i></a></li>
+                </ul>
+                <i class="fas fa-times close" onclick="closeMenu()"></i>
+            </div>
+            <i class="fas fa-bars menu-bar" onclick="openMenu()"></i> 
+        </div>
+    </section>
+    <!-- ------------------main------------------- -->
+    <section class="main">
+        <div class="display-filter container">
+            <div class="link">
+                <a href="trang_chu.php" style="color:rgb(150, 148, 148);">TRANG CHỦ</a>
+                <span>/</span>
+                <a href="" style="color: black;">QUẢN LÝ ĐƠN HÀNG</a>
+            </div>
+        </div>
+        <div class="text">
+            <h2>QUẢN LÝ ĐƠN HÀNG</h2>
+            <p>Dưới đây là danh sách các đơn hàng mà bạn đã đặt</p>
+        </div>
+
+        <div class="manage-table">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                   <tr>
+                      <th style="width: 20%">Mã Đơn Hàng</th>
+                      <th style="width: 20%">Ngày mua</th>
+                      <th style="width: 20%">Ghi chú</th>
+                      <th style="width: 20%">Tình trạng</th>
+                      <th style="width: 20%">Chi tiết</th>
+                   </tr>
+                </thead>
+                <tbody>
+                   <tr>
+                      <td>20IS300105</td>
+                      <td>23/09/2021</td>
+                      <td>-</td>
+                      <td>
+                        <button type="button" class="btn btn-danger btn-sm">Đã hủy</button>
+                        </td>
+                      <td>
+                        <button type="button" class="btn btn-outline-info btn-sm">Xem chi tiết</button>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>20IS300106</td>
+                      <td>23/09/2021</td>
+                      <td>-</td>
+                      <td>
+                        <button type="button" class="btn btn-warning btn-sm">Chưa thanh toán</button>
+                        </td>
+                      <td>
+                        <button type="button" class="btn btn-outline-info btn-sm">Xem chi tiết</button>
+                      </td>
+                   </tr>
+                   <tr>
+                      <td>20IS300107</td>
+                      <td>23/09/2021</td>
+                      <td>-</td>
+                      <td>
+                        <button type="button" class="btn btn-success btn-sm">Đã thành công</button>
+                        </td>
+                      <td>
+                        <button type="button" class="btn btn-outline-info btn-sm">Xem chi tiết</button>
+                      </td>
+                   </tr>
+                    
+                </tbody>
+             </table>
+        </div>
+        
+
+
+    </section>
+    <!-- ----------------footer--------------- -->
+    <section class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-3" style="padding: 5px 10px;">
+                    <p style="text-align: justify;">Nhiệm vụ của chúng tôi là mang đến những sản phẩm chất lượng với giá cả tốt nhất cho khách hàng. Được hỗ trợ khách hàng là niềm vinh dự của chúng tôi .</p>
+                    <p>Xin cám ơn !</p>
+                    <div id="logo-footer container">
+                        <img class="img-fluid logo-f" src="./img/gioi_thieu/bg_footer_cut.png">
+                    </div>
+                </div>
+                <div class="col-12 col-md-3" style="text-align: center;">
+                    <h2>Shop</h2>
+                    <br>
+                    <ul>
+                        <li>Trang chủ</li>
+                        <li>Cửa hàng</li>
+                        <li>Giới thiệu</li>
+                        <li>Liên hệ</li>
+                        <li><a href=""><i class="fab fa-facebook"></i></a>  <a href=""><i class="fab fa-youtube"></i></a> <a href=""><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3" style="text-align: center;">
+                    <h2>Hỗ trợ</h2>
+                    <br>
+                    <ul>
+                        <li>Ưu đãi</li>
+                        <li>Giao nhận</li>
+                        <li>Đổi trả</li>
+                        <li>Bảo mật</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-3 subcribe">
+                    <h2>Khuyến mãi</h2> <br>
+                    <p>Nhập vào email của bạn để đăng ký nhận tin khuyến mãi sớm nhất ...</p> <br>
+                    <input type="email" placeholder="you@gmail.com"> <br> <br>
+                    <button> Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="move-to-top" onclick="moveToTop()">
+    <i class="fas fa-arrow-circle-up" title="Move to Top"></i>
+    </div>
+
+
+    <!-- -------------------xử lí move to top------------------ -->
+    <script>
+        function moveToTop() {
+            window.scrollTo(0, 0);
+        }
+        window.onscroll = () => {
+        let moveToTop = document.querySelector('.move-to-top i');
+        if (window.pageYOffset > 300) {
+            moveToTop.classList.add('active')
+        }
+        else {
+            moveToTop.classList.remove('active')
+        }
+    };
+    </script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
