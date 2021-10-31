@@ -15,7 +15,7 @@
     <!-- IMPORT HEADER -->
     <?php require('top_menu.php') ?>
     <script>
-        document.querySelector('.top-menu ul li:nth-child(2) a').classList.add('active')
+        document.querySelector('.top-menu ul li:nth-child(6) a').classList.add('active')
     </script>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     
@@ -26,6 +26,9 @@
             <a href="trang_chu.php" style="color:rgb(150, 148, 148);">SẢN PHẨM</a>
             <span>/</span>
             <a href="gio_hang.php">GIỎ HÀNG</a>
+        </div>
+        <div style="text-decoration: underline;">
+            <a href="quan_ly_don.php">Lịch sử mua hàng</a>
         </div>
     </section>
 
@@ -83,7 +86,7 @@
                             <td style="text-align:right;"><b>7,840,000 VNĐ</b></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><a href="#" class="go-to-order">TIẾN HÀNH ĐẶT HÀNG</a></td>
+                            <td colspan="2"><a href="thanh_toan.php" class="go-to-order">TIẾN HÀNH ĐẶT HÀNG</a></td>
                         </tr>
                     </tbody>
                 </table>

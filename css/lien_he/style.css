@@ -49,13 +49,7 @@ a{
     padding: 15px;
 }
 
-/****** top-menu ******/
-.top-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-}
+
 
 /* copy section: */
 .footer ul, .footer li {

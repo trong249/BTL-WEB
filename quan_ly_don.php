@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    
     <script src="https://kit.fontawesome.com/8f65ebef09.js" crossorigin="anonymous"></script> 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <!-- font -->
@@ -26,10 +25,10 @@
     <!-- IMPORT HEADER -->
     <?php require('top_menu.php') ?>
     <script>
-        document.querySelector('.top-menu ul li:nth-child(3) a').classList.add('active')
+        document.querySelector('.top-menu ul li:nth-child(6) a').classList.add('active')
     </script>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
-<section class="main">
+<section class="main container">
         <div class="display-filter container">
             <div class="link">
                 <a href="trang_chu.php" style="color:rgb(150, 148, 148);">TRANG CHỦ</a>

@@ -18,7 +18,7 @@
     <!-- IMPORT HEADER -->
     <?php require('top_menu.php') ?>
     <script>
-        document.querySelector('.top-menu ul li:nth-child(3) a').classList.add('active')
+        document.querySelector('.top-menu ul li:nth-child(6) a').classList.add('active')
     </script>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     
