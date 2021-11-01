@@ -20,11 +20,11 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="trang_chu.php" class="active">TRANG CHỦ</a></li>
-                    <li><a href="san_pham.php">SẢN PHẨM</a></li>
-                    <li><a href="gioi_thieu.php">GIỚI THIỆU</a></li>
-                    <li><a href="tin_tuc.php">TIN TỨC</a></li>
-                    <li><a href="lien_he.php">LIÊN HỆ</a></li>
+                    <li><a href="./trang_chu.php" class="active">TRANG CHỦ</a></li>
+                    <li><a href="./san_pham.php">SẢN PHẨM</a></li>
+                    <li><a href="./gioi_thieu.php">GIỚI THIỆU</a></li>
+                    <li><a href="./tin_tuc.php">TIN TỨC</a></li>
+                    <li><a href="./lien_he.php">LIÊN HỆ</a></li>
                 </ul>
                 <div class="login-register">
                     <i class="fas fa-user"></i>

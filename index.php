@@ -1,3 +1,3 @@
 <?php 
-    require('shop/trang_chu.php');
+    header('location: ./shop/trang_chu.php');
 ?>

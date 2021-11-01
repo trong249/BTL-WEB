@@ -7,7 +7,7 @@
         <title>Đăng nhập / Đăng kí</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
-        <link href="./css/dang_nhap_dang_ki/dang_nhap_dang_ki.css" rel="stylesheet">
+        <link href="../css/dang_nhap_dang_ki/dang_nhap_dang_ki.css" rel="stylesheet">
     </head>
     <body>
         <!-- how to center a div on a page and make it scrollable with flex box: make a wrapper div, specify height -->
@@ -58,7 +58,7 @@
                         </div>
                         <div class="d-none d-md-flex col-md-7 my-3">
                             <div class="container col-12">
-                                <img src="./css/dang_nhap_dang_ki/img/online-shopping.jpg" alt="wow" class="my-img">
+                                <img src="../css/dang_nhap_dang_ki/img/online-shopping.jpg" alt="wow" class="my-img">
                             </div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                         </div>
                         <div class="d-none d-md-flex col-md-7 my-3">
                             <div class="container">
-                                <img src="./css/dang_nhap_dang_ki/img/1106_U1RVRElPIEtBVCAwODUtODE.jpg" alt="wow" class="my-img">
+                                <img src="../css/dang_nhap_dang_ki/img/1106_U1RVRElPIEtBVCAwODUtODE.jpg" alt="wow" class="my-img">
                             </div>
                         </div>
                         <div class="col col-md-5 my-3">
@@ -140,7 +140,7 @@
                         </div>
                         <div class="d-none d-md-flex col-md-7 my-3">
                             <div class="container col-12">
-                                <img src="./css/dang_nhap_dang_ki/img/lqn26d6enxj71.png" alt="wow" class="img-fluid my-img">
+                                <img src="../css/dang_nhap_dang_ki/img/lqn26d6enxj71.png" alt="wow" class="img-fluid my-img">
                             </div>
                         </div>
                     </div>
