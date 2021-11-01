@@ -13,10 +13,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <!-- favicon -->
-    <link rel="icon" href="./img/gioi_thieu/tachnen.png" type="image/x-icon">
+    <link rel="icon" href="../img/gioi_thieu/tachnen.png" type="image/x-icon">
     <!-- CSS -->
-    <link rel="stylesheet" href="css/gioi_thieu/style.css">
-    <link rel="stylesheet" href="css/gioi_thieu/responsive.css">
+    <link rel="stylesheet" href="../css/quan_ly_don/style.css">
 
     <title>Quản lý đơn hàng</title>
 </head>
@@ -28,8 +27,8 @@
         document.querySelector('.top-menu ul li:nth-child(6) a').classList.add('active')
     </script>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
-<section class="main container">
-        <div class="display-filter container">
+<section class="main container" style="margin-top:50px ;"> 
+        <div class="display-filter container" style="margin-bottom: 30px;">
             <div class="link">
                 <a href="trang_chu.php" style="color:rgb(150, 148, 148);">TRANG CHỦ</a>
                 <span>/</span>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap-grid.min.css" />
     <script src="https://kit.fontawesome.com/8f65ebef09.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/san_pham/style.css">
+    <link rel="stylesheet" href="../css/san_pham/style.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     
     <title>Document</title>
@@ -23,10 +23,10 @@
         <div class="container">
             <div class="swiper mySwiper1">
                 <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="img/san_pham/sale-banner-1.jpg" alt="" style="width: 100%; height:100%"></div>
-                        <div class="swiper-slide"><img src="img/san_pham/sale-banner-2.jpg" alt="" style="width: 100%; height:100%"></div>
-                        <div class="swiper-slide"><img src="img/san_pham/sale-banner-3.jpg" alt="" style="width: 100%; height:100%"></div>
-                        <div class="swiper-slide"><img src="img/san_pham/sale-banner-4.jpg" alt="" style="width: 100%; height:100%"></div>
+                        <div class="swiper-slide"><img src="../img/san_pham/sale-banner-1.jpg" alt="" style="width: 100%; height:100%"></div>
+                        <div class="swiper-slide"><img src="../img/san_pham/sale-banner-2.jpg" alt="" style="width: 100%; height:100%"></div>
+                        <div class="swiper-slide"><img src="../img/san_pham/sale-banner-3.jpg" alt="" style="width: 100%; height:100%"></div>
+                        <div class="swiper-slide"><img src="../img/san_pham/sale-banner-4.jpg" alt="" style="width: 100%; height:100%"></div>
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@
 
                     <div class="sale-product" >
                         <div class="img">
-                            <img src="img/san_pham/1.jpg" alt="">
+                            <img src="../img/san_pham/1.jpg" alt="">
                         </div>
                         <div class="infor">
                             <p style="text-align:start;">Biti's Hunter Street x Vietmax 2020 - BST HaNoi Cu</p>
@@ -96,7 +96,7 @@
                     </div>
                     <div class="sale-product" >
                         <div class="img">
-                            <img src="img/san_pham/1.jpg" alt="">
+                            <img src="../img/san_pham/1.jpg" alt="">
                         </div>
                         <div class="infor">
                             <p style="text-align:start;">Biti's Hunter Street x Vietmax 2020 - BST HaNoi Cu</p>
@@ -106,7 +106,7 @@
                     </div>
                     <div class="sale-product" >
                         <div class="img">
-                            <img src="img/san_pham/1.jpg" alt="">
+                            <img src="../img/san_pham/1.jpg" alt="">
                         </div>
                         <div class="infor">
                             <p style="text-align:start;">Biti's Hunter Street x Vietmax 2020 - BST HaNoi Cu</p>
@@ -116,7 +116,7 @@
                     </div>
                     <div class="sale-product" >
                         <div class="img">
-                            <img src="img/san_pham/1.jpg" alt="">
+                            <img src="../img/san_pham/1.jpg" alt="">
                         </div>
                         <div class="infor">
                             <p style="text-align:start;">Biti's Hunter Street x Vietmax 2020 - BST HaNoi Cu</p>
@@ -135,7 +135,7 @@
                         <a href="chi_tiet_sp.php">
                             <div class="each-product">
                                 <div class="img">
-                                    <img src="img/san_pham/2.jpg" alt="">
+                                    <img src="../img/san_pham/2.jpg" alt="">
                                 </div>
                                 <div class="info">
                                     <p>Yeeezy Boost 350 v2</p> <br>
@@ -155,7 +155,7 @@
                         <a href="chi_tiet_sp.php">
                             <div class="each-product">
                                 <div class="img">
-                                    <img src="img/san_pham/2.jpg" alt="">
+                                    <img src="../img/san_pham/2.jpg" alt="">
                                 </div>
                                 <div class="info">
                                     <p>Yeeezy Boost 350 v2</p> <br>
@@ -175,7 +175,7 @@
                         <a href="chi_tiet_sp.php">
                             <div class="each-product">
                                 <div class="img">
-                                    <img src="img/san_pham/2.jpg" alt="">
+                                    <img src="../img/san_pham/2.jpg" alt="">
                                 </div>
                                 <div class="info">
                                     <p>Yeeezy Boost 350 v2</p> <br>
@@ -195,7 +195,7 @@
                         <a href="chi_tiet_sp.php">
                             <div class="each-product">
                                 <div class="img">
-                                    <img src="img/san_pham/2.jpg" alt="">
+                                    <img src="../img/san_pham/2.jpg" alt="">
                                 </div>
                                 <div class="info">
                                     <p>Yeeezy Boost 350 v2</p> <br>
@@ -218,7 +218,7 @@
                         <a href="chi_tiet_sp.php">
                             <div class="each-product">
                                 <div class="img">
-                                    <img src="img/san_pham/2.jpg" alt="">
+                                    <img src="../img/san_pham/2.jpg" alt="">
                                 </div>
                                 <div class="info">
                                     <p>Yeeezy Boost 350 v2</p> <br>
@@ -238,7 +238,7 @@
                         <a href="chi_tiet_sp.php">
                             <div class="each-product">
                                 <div class="img">
-                                    <img src="img/san_pham/2.jpg" alt="">
+                                    <img src="../img/san_pham/2.jpg" alt="">
                                 </div>
                                 <div class="info">
                                     <p>Yeeezy Boost 350 v2</p> <br>
@@ -258,7 +258,7 @@
                         <a href="chi_tiet_sp.php">
                             <div class="each-product">
                                 <div class="img">
-                                    <img src="img/san_pham/2.jpg" alt="">
+                                    <img src="../img/san_pham/2.jpg" alt="">
                                 </div>
                                 <div class="info">
                                     <p>Yeeezy Boost 350 v2</p> <br>
@@ -278,7 +278,7 @@
                         <a href="chi_tiet_sp.php">
                             <div class="each-product">
                                 <div class="img">
-                                    <img src="img/san_pham/2.jpg" alt="">
+                                    <img src="../img/san_pham/2.jpg" alt="">
                                 </div>
                                 <div class="info">
                                     <p>Yeeezy Boost 350 v2</p> <br>
@@ -319,7 +319,7 @@
                 <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="product">
-                                <img src="img/san_pham/1.jpg" alt="">
+                                <img src="../img/san_pham/1.jpg" alt="">
                                 <div>
                                     <p class="name">Pegasus Chaz</p>
                                     <p class="price" style="text-decoration: line-through; font-size: 15px;">792,000 VNĐ</p>
@@ -329,7 +329,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="product">
-                                <img src="img/san_pham/1.jpg" alt="">
+                                <img src="../img/san_pham/1.jpg" alt="">
                                 <div>
                                     <p class="name">Pegasus Chaz</p>
                                     <p class="price" style="text-decoration: line-through; font-size: 15px;">792,000 VNĐ</p>
@@ -339,7 +339,7 @@
                         </div>
                         <div class="swiper-slide">
                            <div class="product">
-                                <img src="img/san_pham/1.jpg" alt="">
+                                <img src="../img/san_pham/1.jpg" alt="">
                                 <div>
                                     <p class="name">Pegasus Chaz</p>
                                     <p class="price" style="text-decoration: line-through; font-size: 15px;">792,000 VNĐ</p>
@@ -349,7 +349,7 @@
                         </div>
                         <div class="swiper-slide">
                             <div class="product">
-                                <img src="img/san_pham/1.jpg" alt="">
+                                <img src="../img/san_pham/1.jpg" alt="">
                                 <div>
                                     <p class="name">Pegasus Chaz</p>
                                     <p class="price" style="text-decoration: line-through; font-size: 15px;">792,000 VNĐ</p>
@@ -373,6 +373,6 @@
     <?php require('footer.php') ?>  
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/san_pham/main.js"></script>
+    <script src="../js/san_pham/main.js"></script>
 </body>
 </html>

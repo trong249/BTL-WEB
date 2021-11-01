@@ -25,10 +25,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
     <!-- favicon -->
-    <link rel="icon" href="./img/gioi_thieu/tachnen.png" type="image/x-icon">
+    <link rel="icon" href="../img/gioi_thieu/tachnen.png" type="image/x-icon">
     <!-- CSS -->
-    <link rel="stylesheet" href="css/gioi_thieu/style.css">
-    <link rel="stylesheet" href="css/gioi_thieu/responsive.css">
+    <link rel="stylesheet" href="../css/gioi_thieu/style.css">
+    <link rel="stylesheet" href="../css/gioi_thieu/responsive.css">
 
     <title>Giới Thiệu</title>
 </head>
@@ -45,13 +45,13 @@
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="./img/gioi_thieu/slider4.png" class="d-block w-100" alt="sliderpic">
+                    <img src="../img/gioi_thieu/slider4.png" class="d-block w-100" alt="sliderpic">
                   </div>
                   <div class="carousel-item">
-                    <img src="./img/gioi_thieu/slider5.png" class="d-block w-100" alt="sliderpic">
+                    <img src="../img/gioi_thieu/slider5.png" class="d-block w-100" alt="sliderpic">
                   </div>
                   <div class="carousel-item">
-                    <img src="./img/gioi_thieu/slider6.png" class="d-block w-100" alt="sliderpic">
+                    <img src="../img/gioi_thieu/slider6.png" class="d-block w-100" alt="sliderpic">
                   </div>
                 </div>
               </div>
@@ -75,17 +75,17 @@
                 </p>
             </div>
             <!-- <div class="column pic">
-                <img src="./img/gioi_thieu/logo4.png" alt="logo">
+                <img src="../img/gioi_thieu/logo4.png" alt="logo">
             </div> -->
             <div class="rest">
-            <img src="./img/gioi_thieu/bg1.png" alt="background">
+            <img src="../img/gioi_thieu/bg1.png" alt="background">
             </div>
         </div>
         
 
         <div class="content2">
             <!-- <div class="column pic">
-                <img src="./img/gioi_thieu/pic2.png" alt="picture">
+                <img src="../img/gioi_thieu/pic2.png" alt="picture">
             </div> -->
     
             <div class="column text">
@@ -105,7 +105,7 @@
                 </p>
             </div>
             <div class="rest">
-            <img src="./img/gioi_thieu/bg.png" alt="background">
+            <img src="../img/gioi_thieu/bg.png" alt="background">
             </div>
         </div>
         
@@ -124,10 +124,10 @@
                 <p>Choose ISHIN, choose your joy</p>
             </div>
             <div class="column pic">
-                <img src="./img/gioi_thieu/logo3.png" alt="logo">
+                <img src="../img/gioi_thieu/logo3.png" alt="logo">
             </div>
             <div class="rest">
-                <img src="./img/gioi_thieu/end.png" alt="goodbye">
+                <img src="../img/gioi_thieu/end.png" alt="goodbye">
             </div>
         </div>
         
@@ -140,7 +140,7 @@
     <?php require('footer.php') ?>  
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/gioi_thieu/main.js"></script>
+    <script src="../js/gioi_thieu/main.js"></script>
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

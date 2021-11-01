@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/gio_hang/style.css">
+    <link rel="stylesheet" href="../css/gio_hang/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap-grid.min.css" />
     <script src="https://kit.fontawesome.com/8f65ebef09.js" crossorigin="anonymous"></script>
 
@@ -51,7 +51,7 @@
                     <tbody>
                         <tr>
                             <td>YEEZY BOOST 350V2 ASH PEARL</td>
-                            <td><img src="img/san_pham/2.jpg" alt="" style="width: 80%;"></td>
+                            <td><img src="../img/san_pham/2.jpg" alt="" style="width: 80%;"></td>
                             <td>7,840,000 VNĐ</td>
                             <td style="text-align: center;">1</td>
                             <td><a href="#"><i class="fa fa-times-circle" aria-hidden="true" ></i></a></td>

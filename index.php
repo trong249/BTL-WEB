@@ -1,3 +1,3 @@
 <?php 
-    require('trang_chu.php');
+    require('shop/trang_chu.php');
 ?>

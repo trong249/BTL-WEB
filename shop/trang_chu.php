@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/trang_chu/style.css">
+    <link rel="stylesheet" href="../css/trang_chu/style.css">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap-grid.min.css" />
     <script src="https://kit.fontawesome.com/8f65ebef09.js" crossorigin="anonymous"></script>
@@ -20,7 +20,7 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="./trang_chu.php" class="active">TRANG CHỦ</a></li>
+                    <li><a href="trang_chu.php" class="active">TRANG CHỦ</a></li>
                     <li><a href="san_pham.php">SẢN PHẨM</a></li>
                     <li><a href="gioi_thieu.php">GIỚI THIỆU</a></li>
                     <li><a href="tin_tuc.php">TIN TỨC</a></li>
@@ -51,13 +51,13 @@
 
         <div class="swiper mySwiper1">
             <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="img/trang_chu/logo-adidas.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="img/trang_chu/logo-bitis.png" alt=""></div>
-                    <div class="swiper-slide"><img src="img/trang_chu/logo-blazer.png" alt=""></div>
-                    <div class="swiper-slide"><img src="img/trang_chu/logo-converse.png" alt=""></div>
-                    <div class="swiper-slide"><img src="img/trang_chu/logo-jordan.png" alt=""></div>
-                    <div class="swiper-slide"><img src="img/trang_chu/logo-mlb.jpg" alt=""></div>
-                    <div class="swiper-slide"><img src="img/trang_chu/logo-nike.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../img/trang_chu/logo-adidas.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="../img/trang_chu/logo-bitis.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../img/trang_chu/logo-blazer.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../img/trang_chu/logo-converse.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../img/trang_chu/logo-jordan.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../img/trang_chu/logo-mlb.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="../img/trang_chu/logo-nike.png" alt=""></div>
             </div>
         </div>
     </section>
@@ -73,18 +73,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-6">
-                    <img src="img/trang_chu/colection1.jpg" alt="">
+                    <img src="../img/trang_chu/colection1.jpg" alt="">
                 </div>
                 <div class="col-6">
                     <div class="row" style="margin-bottom: 20px;">
-                        <img src="img/trang_chu/colection2.jpg" alt="">
+                        <img src="../img/trang_chu/colection2.jpg" alt="">
                     </div>
                     <div class="row">
                         <div class="col-6">
-                            <img src="img/trang_chu/colection3.jpg" alt="">
+                            <img src="../img/trang_chu/colection3.jpg" alt="">
                         </div>
                         <div class="col-6">
-                            <img src="img/trang_chu/colection4.jpg" alt="">
+                            <img src="../img/trang_chu/colection4.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
             <div class="row" style="margin-bottom:30px ;">
                 <div class="col-6 col-md-3" style="margin-top: 20px;">
                     <div class="product">
-                        <img src="img/trang_chu/trendding-1.png" alt="">
+                        <img src="../img/trang_chu/trendding-1.png" alt="">
                         <div>
                             <p class="name">Pegasus Chaz</p>
                             <p class="price">792,000 VNĐ</p>
@@ -113,7 +113,7 @@
                 </div>
                 <div class="col-6 col-md-3" style="margin-top: 20px;">
                     <div class="product">
-                        <img src="img/trang_chu/trendding-2.png" alt="">
+                        <img src="../img/trang_chu/trendding-2.png" alt="">
                         <div>
                             <p class="name">Pegasus Chaz</p>
                             <p class="price">792,000 VNĐ</p>
@@ -122,7 +122,7 @@
                 </div>
                 <div class="col-6 col-md-3" style="margin-top: 20px;">
                     <div class="product">
-                        <img src="img/trang_chu/trendding-3.png" alt="">
+                        <img src="../img/trang_chu/trendding-3.png" alt="">
                         <div>
                             <p class="name">Pegasus Chaz</p>
                             <p class="price">792,000 VNĐ</p>
@@ -131,7 +131,7 @@
                 </div>
                 <div class="col-6 col-md-3" style="margin-top: 20px;">
                     <div class="product">
-                        <img src="img/trang_chu/trendding-4.png" alt="">
+                        <img src="../img/trang_chu/trendding-4.png" alt="">
                         <div>
                             <p class="name">Pegasus Chaz</p>
                             <p class="price">792,000 VNĐ</p>
@@ -148,7 +148,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-6 img"> 
-                    <img src="img/trang_chu/banner-sale-off.jpg" alt="">
+                    <img src="../img/trang_chu/banner-sale-off.jpg" alt="">
                 </div>
                 <div class="col-6 infor">
                     <h1 style="font-weight: 200;"> CTKM SALE UP TO</h1><br>
@@ -204,7 +204,7 @@
             <div class="row" style="margin-bottom:30px ;">
                 <div class="col-6 col-md-3" style="margin-top: 20px;">
                     <div class="product">
-                        <img src="img/trang_chu/trendding-1.png" alt="">
+                        <img src="../img/trang_chu/trendding-1.png" alt="">
                         <div>
                             <p class="name">Pegasus Chaz</p>
                             <p class="price" style="text-decoration: line-through; font-size: 15px;">792,000 VNĐ</p>
@@ -214,7 +214,7 @@
                 </div>
                 <div class="col-6 col-md-3" style="margin-top: 20px;">
                     <div class="product">
-                        <img src="img/trang_chu/trendding-2.png" alt="">
+                        <img src="../img/trang_chu/trendding-2.png" alt="">
                         <div>
                             <p class="name">Pegasus Chaz</p>
                             <p class="price" style="text-decoration: line-through; font-size: 15px;">792,000 VNĐ</p>
@@ -224,7 +224,7 @@
                 </div>
                 <div class="col-6 col-md-3" style="margin-top: 20px;">
                     <div class="product">
-                        <img src="img/trang_chu/trendding-3.png" alt="">
+                        <img src="../img/trang_chu/trendding-3.png" alt="">
                         <div>
                             <p class="name">Pegasus Chaz</p>
                             <p class="price" style="text-decoration: line-through; font-size: 15px;">792,000 VNĐ</p>
@@ -234,7 +234,7 @@
                 </div>
                 <div class="col-6 col-md-3" style="margin-top: 20px;">
                     <div class="product">
-                        <img src="img/trang_chu/trendding-4.png" alt="">
+                        <img src="../img/trang_chu/trendding-4.png" alt="">
                         <div>
                             <p class="name">Pegasus Chaz</p>
                             <p class="price" style="text-decoration: line-through; font-size: 15px;">792,000 VNĐ</p>
@@ -256,7 +256,7 @@
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     
-    <script src="js/trang_chu/main.js"></script>
+    <script src="../js/trang_chu/main.js"></script>
 
 </body>
 </html>
