@@ -30,6 +30,16 @@
                                 <form action="xu_ly_tai_khoan.php" method="post">
                                     <div class="input-group my-3">
                                         <span class="bi bi-person-fill input-group-text bg-white border-white"></span>
+                                        <label for="fullname" class="visually-hidden-focusable">Họ và tên</label>
+                                        <input type="text" name="fullname" id="fullname" class=" form-control input-field" placeholder="Họ và tên" required> 
+                                    </div>
+                                     <div class="input-group my-3">
+                                        <span class="bi bi-person-fill input-group-text bg-white border-white"></span>
+                                        <label for="username" class="visually-hidden-focusable">Username</label>
+                                        <input type="text" name="username" id="username" class=" form-control input-field" placeholder="Username" required> 
+                                    </div>
+                                    <div class="input-group my-3">
+                                        <span class="bi bi-envelope input-group-text bg-white border-white"></span>
                                         <label for="email" class="visually-hidden-focusable">Email</label>
                                         <input type="text" name="email" id="email" class=" form-control input-field" placeholder="Email" required> 
                                     </div>
@@ -46,6 +56,11 @@
                                         Confirm Password
                                         </label>
                                         <input type="password" name="confirm-password" id="confirm-password" class=" form-control input-field" placeholder="Xác nhận mật khẩu" required>
+                                    </div>
+                                    <div class="input-group my-3">
+                                        <span class="bi bi-geo-alt input-group-text bg-white border-white"></span>
+                                        <label for="address" class="visually-hidden-focusable">Address</label>
+                                        <input type="text" name="address" id="address" class=" form-control input-field" placeholder="Địa chỉ" required> 
                                     </div>
                                     <div class="my-5">
                                         <button class="btn btn-primary my-btn container" type="submit">Đăng kí</button>
