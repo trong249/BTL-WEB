@@ -67,7 +67,6 @@
                 <div>
                     <table>
                         <tr>
-                            <th>HỌ VÀ TÊN</th>
                             <th style="width: 15%;">USER NAME</th>
                             <th>EMAIL</th>
                             <th style="width: 30%;">ĐỊA CHỈ</th>
@@ -75,9 +74,8 @@
                             <th style="width: 7%;">OPTION</th>
                         </tr>
                         <tr>
-                            <td>Nguyen Van Trong</td>
                             <td>admin</td>
-                            <td>trong@gmail.com</td>
+                            <td>admin@gmail.com</td>
                             <td>Hồ Chí Minh</td>
                             <td>Admin</td>
                             <td> 
@@ -85,7 +83,6 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Nguyen Van A</td>
                             <td>Congacon</td>
                             <td>a@gmail.com</td>
                             <td >Hồ Chí Minh</td>

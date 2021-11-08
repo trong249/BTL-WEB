@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/chi_tiet_sp/style.css">
+    <link rel="stylesheet" href="../css/chi_tiet_sp/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap-grid.min.css" />
     <script src="https://kit.fontawesome.com/8f65ebef09.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
@@ -36,7 +36,7 @@
         <div class="row">
             <div class="col-md-6 col-lg-4">
                 <div class="img-product">
-                    <img src="img/san_pham/2.jpg" alt="">
+                    <img src="../img/san_pham/2.jpg" alt="">
                 </div>
             </div>
             <div class="col-md-6 col-lg-4" style="margin-bottom: 50px;">
@@ -54,7 +54,7 @@
                     </p> 
 
                     <div class="dot" style="margin-bottom: 20px;">
-                        <img src="img/dot.png" alt="" style="width: 70%;">
+                        <img src="../img/dot.png" alt="" style="width: 70%;">
                     </div>
 
                     <select name="" id="" class="size">
@@ -77,7 +77,7 @@
                     <p>PHƯƠNG THỨC THANH TOÁN</p>
                 </div>
                 <div class="img">
-                    <img src="img/thanh_toan/thanh-toan.jpg" alt="">
+                    <img src="../img/thanh_toan/thanh-toan.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -135,6 +135,6 @@
     <?php require('footer.php') ?>  
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/chi_tiet_sp/main.js"></script>
+    <script src="../js/chi_tiet_sp/main.js"></script>
 </body>
 </html>
