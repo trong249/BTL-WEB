@@ -1,3 +1,8 @@
+<?php
+    
+?>
+
+
 <!DOCTYPE html>
 <html lang="vi">
     <head>
@@ -27,12 +32,7 @@
                                 <div class="header">
                                     <h1>Đăng kí</h1>
                                 </div>
-                                <form action="xu_ly_tai_khoan.php" method="post">
-                                    <div class="input-group my-3">
-                                        <span class="bi bi-person-fill input-group-text bg-white border-white"></span>
-                                        <label for="fullname" class="visually-hidden-focusable">Họ và tên</label>
-                                        <input type="text" name="fullname" id="fullname" class=" form-control input-field" placeholder="Họ và tên" required> 
-                                    </div>
+                                <form action="xu_ly_tai_khoan.php" method="post" onsubmit="return false">
                                      <div class="input-group my-3">
                                         <span class="bi bi-person-fill input-group-text bg-white border-white"></span>
                                         <label for="username" class="visually-hidden-focusable">Username</label>
