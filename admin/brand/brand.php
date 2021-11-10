@@ -182,7 +182,7 @@
 
 
     // hàm hiển thi dư liệu các nhãn hiệu
-    function gender(){  
+    function render(){  
         let html='';
         for(let i=0;i<arr.length;i++){
             html+=`<tr id="#id_element_${arr[i].ID}">
@@ -195,7 +195,7 @@
         }
         document.querySelector('#add').insertAdjacentHTML("beforebegin",html);
     }
-    gender()
+    render()
     
     
 </script>

@@ -1,3 +1,39 @@
+<?php
+
+    $sql=mysqli_connect("localhost","root","","data_ishine");
+/****************************************************************************************/ 
+    // Lấy dữ liệu sản phẩm
+    $selectData = "SELECT * FROM hang_hoa";
+    $row=$sql->query($selectData);
+    $arr1=array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr1,$res);
+    }
+/****************************************************************************************/ 
+    // Lấy dữ liệu nhãn hiệu
+    $selectData = "SELECT * FROM brand";
+    $row=$sql->query($selectData);
+    $arr2=array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr2,$res);
+    }
+/****************************************************************************************/ 
+    $sql->close();
+?> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,69 +125,14 @@
                             <th>TỔNG GIÁ TRỊ</th>
                         </tr>
                                  
-                        <tr>
+                        <!-- <tr>
                             <td>Converse</td>
                             <td>2</td>
                             <td>2,000,000 <sup>đ</sup></td>
                             <td>1,990,000 <sup>đ</sup></td>
                             <td>3,990,000 <sup>đ</sup></td>
-                        </tr>
+                        </tr> -->
                                  
-                        <tr>
-                          <td>Blazer</td>
-                          <td>4</td>
-                          <td>2,010,000 <sup>đ</sup></td>
-                          <td>1,250,000 <sup>đ</sup></td>
-                          <td>6,090,000 <sup>đ</sup></td>
-                        </tr>
-                        
-                        <tr>
-                          <td>Jordan</td>
-                          <td>4</td>
-                          <td>2,080,000 <sup>đ</sup></td>
-                          <td>1,320,000 <sup>đ</sup></td>
-                           <td>6,670,000 <sup>đ</sup></td>
-                         </tr>
-                                 
-                        <tr>
-                          <td>Pegasus</td>
-                          <td>4</td>
-                          <td>2,120,000 <sup>đ</sup></td>
-                          <td>880,000 <sup>đ</sup></td>
-                          <td>5,680,000 <sup>đ</sup></td>
-                        </tr>
-                                 
-                        <tr>
-                          <td>Adidas</td>
-                          <td>10</td>
-                          <td>8,000,000 <sup>đ</sup></td>
-                          <td>990,000 <sup>đ</sup></td>
-                          <td>22,440,000 <sup>đ</sup></td>
-                        </tr>
-                                 
-                        <tr>
-                          <td>Nike</td>
-                          <td>5</td>
-                          <td>2,500,000 <sup>đ</sup></td>
-                          <td>1,100,000 <sup>đ</sup></td>
-                          <td>8,060,000 <sup>đ</sup></td>
-                        </tr>
-                                 
-                        <tr>
-                          <td>MLB</td>
-                          <td>2</td>
-                          <td>3,250,000 <sup>đ</sup></td>
-                          <td>1,499,999 <sup>đ</sup></td>
-                          <td>4,749,999 <sup>đ</sup></td>
-                        </tr>
-                                 
-                        <tr>
-                          <td>Bitis</td>
-                          <td>3</td>
-                          <td>1,490,000 <sup>đ</sup></td>
-                          <td>899,000 <sup>đ</sup></td>
-                          <td>3,288,000 <sup>đ</sup></td>
-                        </tr>
                                                 
                     </table>
                 </div>
@@ -160,17 +141,72 @@
 
     </div>
 <!-- --------------------------------------------------------------------------------------------------------------------------- -->
-<!-- Script for char -->
 
 <script>
+    let arr1=JSON.parse( JSON.stringify(<?php echo json_encode($arr1) ?>)); // sản phẩm
+    let arr2=JSON.parse( JSON.stringify(<?php echo json_encode($arr2) ?>)); // nhãn hiệu
+
+    let arrBrand=[];       //array chứa tên brand
+    let arrCount=[];       //array chưa số lương sản phẩm từng brand
+    let arrMin=[];         //array chứa giá nhỏ nhất của từng brand
+    let arrMax=[];         //array chứa giá lớn nhất của từng brand
+    let arrSum=[];         //array chứa tổng giá trị của từng brand
+    for(let i=0;i<arr2.length;i++){
+
+        arrCount[i]=0;
+        arrSum[i]=0;
+        arrMin[i]=9999999;
+        arrMax[i]=0;
+
+        arrBrand.push(arr2[i].ten_loai);
+
+        for(let j=0;j<arr1.length;j++){
+            if(arr1[j].brand==arr2[i].ID){
+                    arrCount[i]++;
+                    arrSum[i]=arrSum[i]+parseInt(arr1[j].don_gia);
+                    if( parseInt(arr1[j].don_gia) < arrMin[i] )
+                            arrMin[i]=arr1[j].don_gia;
+                    if( parseInt(arr1[j].don_gia) > arrMax[i] )
+                            arrMax[i]=arr1[j].don_gia;
+                }
+        }
+    }
+
+    for(let i=0;i<arrMin.length;i++){
+        if(arrMin[i]==9999999) arrMin[i]=0;
+    }
+
+    function render(){
+        let html='';
+        for(let i=0;i<arr2.length;i++){
+            html+=`<tr>
+                        <td>${arrBrand[i]}</td>
+                        <td>${arrCount[i]}</td>
+                        <td>${formatMoney(arrMax[i].toString())}<sup>đ</sup></td>
+                        <td>${formatMoney(arrMin[i].toString())}<sup>đ</sup></td>
+                        <td>${formatMoney(arrSum[i].toString())}<sup>đ</sup></td>
+                    </tr>`;
+        }
+        document.querySelector("table").insertAdjacentHTML("beforeend",html);
+    }
+    render()
+    
+    function formatMoney(str) {
+        return str.split('').reverse().reduce((prev, next, index) => {
+            return ((index % 3) ? next : (next + ',')) + prev
+        })
+    }
+
+
+// <!-- Script for char -->
 const ctx = document.querySelector('#mychart').getContext('2d');
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Converse', 'Blazer', 'Jordan', 'Pegasus', 'Adidas', 'Nike', 'MLB', 'Bitis'],
+        labels: arrBrand,
         datasets: [{
             label: 'BIỂU ĐỒ THỐNG KÊ LOẠI HÀNG (theo số lượng)',
-            data: [2,4,4,4,10,5,2,3],
+            data: arrCount,
             backgroundColor: [
                 'rgb(184, 115, 51)'
             ],
@@ -186,5 +222,10 @@ const myChart = new Chart(ctx, {
     }
 });
 </script>
+
+
+
+
+
 </body>
 </html>
