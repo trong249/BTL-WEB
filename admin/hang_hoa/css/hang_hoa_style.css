@@ -109,6 +109,11 @@ th{
     text-align: center;
     line-height: 30px;
     border-radius: 3px;
+    border: none;
+    cursor: pointer;
+}
+.chi_tiet:hover,.xoa:hover,.them:hover{
+    opacity: 0.9;
 }
 .xoa{
     background-color: #D9534F;

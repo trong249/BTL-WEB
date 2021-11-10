@@ -105,8 +105,9 @@ th{
     background-color: #EDEDED;
     border: 1px solid transparent;
     outline: none;
+    width: 90%;
 }
-.xoa,.sua,.them{
+.xoa,.them{
     display: inline-block;
     background-color: #D9534F;
     color: #fff;
@@ -115,10 +116,12 @@ th{
     text-align: center;
     line-height: 30px;
     border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+.xoa:hover,.them:hover{
+    opacity: 0.9;
 }
 .them{
     background-color: green;
-}
-.sua{
-    background-color: #337AB7;
 }

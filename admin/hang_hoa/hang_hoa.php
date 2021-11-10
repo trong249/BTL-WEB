@@ -1,3 +1,58 @@
+<?php
+
+    $sql=mysqli_connect("localhost","root","","data_ishine");
+/****************************************************************************************/  
+    $selectData = "SELECT id,ten_hh,hinh,don_gia,giam_gia FROM hang_hoa";
+    $row=$sql->query($selectData);
+    $arr =array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr,$res);
+    }
+/****************************************************************************************/ 
+    //  xóa item
+    if(isset($_REQUEST['delete'])){
+        $id=$_REQUEST['id'];
+        $delete="DELETE FROM hang_hoa WHERE id=$id";
+        $sql->query($delete);
+        foreach($arr as $i => $sp){
+            if ($sp['id']==$id){
+                $filename= "../../img/san_pham/".$sp['hinh'] ;
+                unlink($filename);
+                break;
+            }
+        } 
+    }
+
+     //Update thông tin
+    if( isset($_REQUEST['update']) ){
+        $id=$_REQUEST['ma_sp'];
+        $don_gia=$_REQUEST['don_gia'];
+        $giam_gia=$_REQUEST['giam_gia'];
+        $mo_ta=$_REQUEST['mo_ta'];
+
+        $update="UPDATE hang_hoa SET don_gia='$don_gia', giam_gia='$giam_gia', mo_ta='$mo_ta' 
+                 WHERE id=$id";
+        $sql->query($update);  
+    }
+
+/****************************************************************************************/ 
+    $sql->close();
+?>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,38 +124,16 @@
                   <table class="table table-hover">
                                 <thead>
                                   <tr>
-                                    <th>ID</th>
+                                    <th>Mã</th>
                                     <th>TÊN SẢN PHẨM</th>
-                                    <th>HÌNH ẢNH</th>
-                                    <th>ĐƠN GIÁ</th>
+                                    <th style="width: 90px;">HÌNH ẢNH</th>
+                                    <th >ĐƠN GIÁ</th>
                                     <th>GIẢM GIÁ</th>
                                     <th>OPTION</th>
                                   </tr>
                                 </thead>
                                 <tbody>
-                                 
-                                  <tr>
-                                    <td>61</td>
-                                    <td>Biti's Hunter Street x Vietmax 2020 - BST HaNoi Cu</td>
-                                    <td><img src="../../img/san_pham/2.jpg" alt="" style="width:60px;"></td>
-                                    <td>899,000 <sup>đ</sup></td>
-                                    <td>0%</td>
-                                    <td> 
-                                        <a href="./chi_tiet.php" class="chi_tiet">Chi tiết</a>
-                                        <a href="" class="xoa">Xóa</a>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>61</td>
-                                    <td>Biti's Hunter Street x Vietmax 2020 - BST HaNoi Cu</td>
-                                    <td><img src="../../img/san_pham/1.jpg" alt="" style="width:60px;"></td>
-                                    <td>899,000 <sup>đ</sup></td>
-                                    <td>0%</td>
-                                    <td> 
-                                        <a href="./chi_tiet.php" class="chi_tiet">Chi tiết</a>
-                                        <a href="" class="xoa">Xóa</a>
-                                    </td>
-                                  </tr>
+                                    <!-- Element go here -->
                                 </tbody>
                               </table>
                 </div>
@@ -108,7 +141,42 @@
         </div>
             
 <!-- --------------------------------------------------------------------------------------------------------------------------- -->
-<!-- Script for char -->
+<script>
+    let arr=JSON.parse( JSON.stringify(<?php echo json_encode($arr) ?>));
+
+    function deleteItem(id){
+        if(confirm("Bạn có chắc muốn xóa sản phẩm này ?")){
+            fetch(`hang_hoa.php?delete=1&id=${id}`)
+            document.getElementById(`id_${id}`).remove();
+        }
+    }
+
+    function render(){  
+        let html='';
+        for(let i=0;i<arr.length;i++){
+            html+=`<tr id="id_${arr[i].id}">
+                        <td>${arr[i].id}</td>
+                        <td>${arr[i].ten_hh}</td>
+                        <td style="height: 67.5px;"><img src="../../img/san_pham/${arr[i].hinh}" alt="" style="width:60px;"></td>
+                        <td>${formatMoney(arr[i].don_gia)}<sup>đ</sup></td>
+                        <td>${arr[i].giam_gia}%</td>
+                        <td> 
+                            <a href="./chi_tiet.php?id=${arr[i].id}" class="chi_tiet">Chi tiết</a>
+                            <button class="xoa" onclick="deleteItem(${arr[i].id})">Xóa</button>
+                        </td>
+                    </tr>`;
+        }
+        document.querySelector('tbody').insertAdjacentHTML("afterbegin",html);
+    }
+
+    function formatMoney(str) {
+        return str.split('').reverse().reduce((prev, next, index) => {
+            return ((index % 3) ? next : (next + ',')) + prev
+        })
+    }
+    
+render()
+</script>
 
 </body>
 </html>

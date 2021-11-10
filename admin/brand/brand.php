@@ -1,3 +1,34 @@
+<?php
+
+    $sql=mysqli_connect("localhost","root","","data_ishine");
+/****************************************************************************************/  
+    $selectData = "SELECT * FROM brand";
+    $row=$sql->query($selectData);
+    $arr =array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr,$res);
+    }
+/****************************************************************************************/ 
+    // thêm
+    if(isset($_REQUEST['ID'])){
+        $id=$_REQUEST['ID'];
+        $ten_loai=$_REQUEST['ten_loai'];
+
+        $data ="INSERT INTO brand  (ID, ten_loai)
+                VALUES('$id','$ten_loai')";
+        $sql->query($data);
+    }
+    /********************************************/ 
+    // xóa
+    if(isset($_REQUEST['delete'])){
+        $id=$_REQUEST['ID'];
+        $delete="DELETE FROM brand WHERE ID=$id";
+        $sql->query($delete);
+    }
+/****************************************************************************************/ 
+    $sql->close();
+?>  
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,83 +103,13 @@
                             <th>OPTION</th>
                         </tr>
                         
-                                    
-                        <tr>
-                            <td>1</td>
-                            <td><input type="text" value="Bitis"></td>
-                            <td> 
-                                <a href="loai-hang-update.php?ma_loai=24" class="sua">Sửa</a>
-                                <a href="loai-hang-delete.php?ma_loai=24" class="xoa">Xóa</a>
-                            </td>
-                        </tr>
-                                    
-                        <tr>
-                            <td>2</td>
-                            <td><input type="text" value="MLB"></td>
-                            <td> 
-                                <a href="loai-hang-update.php?ma_loai=24" class="sua">Sửa</a>
-                                <a href="loai-hang-delete.php?ma_loai=24" class="xoa">Xóa</a>
-                            </td>
-                        </tr>
-                                    
-                        <tr>
-                            <td>3</td>
-                            <td><input type="text" value="MLB"></td>
-                            <td> 
-                                <a href="loai-hang-update.php?ma_loai=24" class="sua">Sửa</a>
-                                <a href="loai-hang-delete.php?ma_loai=24" class="xoa">Xóa</a>
-                            </td>
-                        </tr>
-                                    
-                        <tr>
-                            <td>4</td>
-                            <td><input type="text" value="MLB"></td>
-                            <td> 
-                                <a href="loai-hang-update.php?ma_loai=24" class="sua">Sửa</a>
-                                <a href="loai-hang-delete.php?ma_loai=24" class="xoa">Xóa</a>
-                            </td>
-                        </tr>
-                                    
-                        <tr>
-                            <td>5</td>
-                            <td><input type="text" value="Pegasus"></td>
-                            <td> 
-                                <a href="loai-hang-update.php?ma_loai=24" class="sua">Sửa</a>
-                                <a href="loai-hang-delete.php?ma_loai=24" class="xoa">Xóa</a>
-                            </td>
-                        </tr>
-                                    
-                        <tr>
-                            <td>6</td>
-                            <td><input type="text" value="Pegasus"></td>
-                            <td> 
-                                <a href="loai-hang-update.php?ma_loai=24" class="sua">Sửa</a>
-                                <a href="loai-hang-delete.php?ma_loai=24" class="xoa">Xóa</a>
-                            </td>
-                        </tr>
-                                    
-                        <tr>
-                            <td>7</td>
-                            <td><input type="text" value="Blazer"></td>
-                            <td> 
-                                <a href="loai-hang-update.php?ma_loai=24" class="sua">Sửa</a>
-                                <a href="loai-hang-delete.php?ma_loai=24" class="xoa">Xóa</a>
-                            </td>
-                        </tr>
-                                    
-                        <tr>
-                            <td>8</td>
-                            <td><input type="text" value="Converse"></td>
-                            <td> 
-                                <a href="loai-hang-update.php?ma_loai=24" class="sua">Sửa</a>
-                                <a href="loai-hang-delete.php?ma_loai=24" class="xoa">Xóa</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td><input type="text" value=""></td>
+                        <!-- element go here -->
+                        
+                        <tr id='add'>
+                            <td><input type="text" id="random" readonly value=""></td>
+                            <td ><input type="text" value="" id="name"></td>
                             <td>
-                                <a href="" class="them">Thêm</a>
+                                <button class="them" onclick="add()">Thêm</button>
                             </td>
                         </tr>
 
@@ -158,8 +119,86 @@
             </div>
         </div>
             
-<!-- --------------------------------------------------------------------------------------------------------------------------- -->
-<!-- Script for char -->
+<!------------------------------------------------------------------------------------------------------------------------------->
+<script>
+    
+    let arr=JSON.parse( JSON.stringify(<?php echo json_encode($arr) ?>))   // lấy ra mảng các nhãn hiệu
+    
+    document.querySelector('#random').value= randomID();
+    // hàm tạo ra và kiểm tra so random hợp lệ
+    function randomID(){
+        let check=true;
+        let res=Math.floor(Math.random()*100);
+
+        for(let i=0;i<arr.length;i++){
+            if(res==arr[i].ID)
+            check=false;
+            break;
+        }
+        if(check&&res>=10) return res;
+        else return randomID();
+    }
+
+    
+    // hàm thêm 1 nhãn hiệu mới
+    function add(){
+        let html='';
+        let name=document.querySelector("#name").value;
+        for (let i=0;i<arr.length;i++){
+            if(arr[i].ten_loai.toLowerCase()===name.toLowerCase())
+            {
+                alert ('Nhãn hiệu này đã tồn tại trước đó')
+                return;
+            }
+        }
+
+        html+=` <tr id="#id_element_${document.querySelector('#random').value}">
+                    <td>${document.querySelector('#random').value}</td>
+                    <td><input type="text" value="${name}" readonly></td>
+                    <td> 
+                        <button class="xoa">Xóa</button>
+                    </td>
+                </tr> `;
+        document.querySelector('#add').insertAdjacentHTML("beforebegin",html);
+
+        fetch(`brand.php?ID=${document.querySelector('#random').value}&ten_loai=${name}`);
+        
+        document.querySelector("#name").value='';
+        document.querySelector('#random').value= randomID();
+    }
+
+
+
+
+    // hàm xóa 
+    function deleteID(id){
+        if(confirm('Bạn có chắc muốn xóa brand này không !')){
+            fetch(`brand.php?ID=${id}&delete=1`);
+            document.getElementById(`#id_element_${id}`).remove();
+        }
+    }
+
+
+
+
+    // hàm hiển thi dư liệu các nhãn hiệu
+    function gender(){  
+        let html='';
+        for(let i=0;i<arr.length;i++){
+            html+=`<tr id="#id_element_${arr[i].ID}">
+                            <td>${arr[i].ID}</td>
+                            <td><input type="text" value="${arr[i].ten_loai}" readonly></td>
+                            <td> 
+                                <button class="xoa" onclick="deleteID(${arr[i].ID})">Xóa</button>
+                            </td>
+                    </tr> `;
+        }
+        document.querySelector('#add').insertAdjacentHTML("beforebegin",html);
+    }
+    gender()
+    
+    
+</script>
 
 </body>
 </html>

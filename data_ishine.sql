@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 08, 2021 at 02:03 AM
+-- Generation Time: Nov 10, 2021 at 01:36 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -59,14 +59,14 @@ CREATE TABLE `brand` (
 --
 
 INSERT INTO `brand` (`ID`, `ten_loai`) VALUES
-(1, 'Converse'),
-(2, 'Blazer'),
-(3, 'Jordan'),
-(4, 'Pegasus'),
-(5, 'Adidas'),
-(6, 'Nike'),
-(7, 'MLB'),
-(8, 'Bitis');
+(16, 'Blazer'),
+(17, 'Nike'),
+(25, 'Bitis'),
+(35, 'Adidas'),
+(50, 'Converse'),
+(65, 'MLB'),
+(95, 'Pegasus'),
+(98, 'Jordan');
 
 -- --------------------------------------------------------
 
@@ -113,9 +113,17 @@ CREATE TABLE `hang_hoa` (
 --
 
 INSERT INTO `hang_hoa` (`id`, `brand`, `ten_hh`, `hinh`, `don_gia`, `giam_gia`, `mo_ta`) VALUES
-(1, 1, 'Converse Chuck Taylor', 'conversechucktaylor.png', 1990000, 20, 'Các sản phẩm của THE CLOSER thích hợp sử dụng trong mọi thời tiết và địa hình, đặc biệt là trong những ngày mưa. Phần đế được ép nhiệt nên cực bền sau thời gian sử dụng, kết hợp với da công nghiệp tạo ra kiểu dáng trẻ trung sang trọng đem lại sự hài lòng tuyệt đối cho quý khách hàng.'),
-(2, 2, 'Blazer 77 Suede', 'blazermid77suede.png', 1990000, 10, 'Các sản phẩm của THE CLOSER thích hợp sử dụng trong mọi thời tiết và địa hình, đặc biệt là trong những ngày mưa. Phần đế được ép nhiệt nên cực bền sau thời gian sử dụng, kết hợp với da công nghiệp tạo ra kiểu dáng trẻ trung sang trọng đem lại sự hài lòng tuyệt đối cho quý khách hàng.'),
-(3, 3, 'Jordan 1 Lowse', 'jordan1lowse.png', 1760000, 5, 'Các sản phẩm của THE CLOSER thích hợp sử dụng trong mọi thời tiết và địa hình, đặc biệt là trong những ngày mưa. Phần đế được ép nhiệt nên cực bền sau thời gian sử dụng, kết hợp với da công nghiệp tạo ra kiểu dáng trẻ trung sang trọng đem lại sự hài lòng tuyệt đối cho quý khách hàng.');
+(126, 25, 'Bitis Hunter Nameless Edition x Công Trí', 'namelessedition.jpg', 1490000, 0, 'Các sản phẩm của THE CLOSER thích hợp sử dụng trong mọi thời tiết và địa hình, đặc biệt là trong những ngày mưa. Phần đế được ép nhiệt nên cực bền sau thời gian sử dụng, kết hợp với da công nghiệp tạo ra kiểu dáng trẻ trung sang trọng đem lại sự hài lòng tuyệt đối cho quý khách hàng.'),
+(153, 25, 'Bitis Hunter Street x Vietmax 2020 - BST HaNoi Cu', 'vietmaxhanoi.jpg', 899000, 0, 'Các sản phẩm của THE CLOSER thích hợp sử dụng trong mọi thời tiết và địa hình, đặc biệt là trong những ngày mưa. Phần đế được ép nhiệt nên cực bền sau thời gian sử dụng, kết hợp với da công nghiệp tạo ra kiểu dáng trẻ trung sang trọng đem lại sự hài lòng tuyệt đối cho quý khách hàng.'),
+(628, 25, 'Bitis Hunter Street x Vietmax-V2 2020 - BST HaNoi ', 'bitisturqouise.jpg', 899000, 0, 'Các sản phẩm của ISHINE thích hợp sử dụng trong mọi thời tiết và địa hình, đặc biệt là trong những ngày mưa. Phần đế được ép nhiệt nên cực bền sau thời gian sử dụng, kết hợp với da công nghiệp tạo ra kiểu dáng trẻ trung sang trọng đem lại sự hài lòng tuyệt đối cho quý khách hàng.'),
+(417, 65, 'MLB Boston', 'MLBBOSTON.jpg', 1499999, 10, 'Các sản phẩm của ISHINE thích hợp sử dụng trong mọi thời tiết và địa hình, đặc biệt là trong những ngày mưa. Phần đế được ép nhiệt nên cực bền sau thời gian sử dụng, kết hợp với da công nghiệp tạo ra kiểu dáng trẻ trung sang trọng đem lại sự hài lòng tuyệt đối cho quý khách hàng.'),
+(934, 65, 'MLB Big Ball Chunky LA Dodgers', 'giay-mlb-big-ball-chunky-la-dodgers.jpg', 3250000, 5, 'Các sản phẩm của ISHINE thích hợp sử dụng trong mọi thời tiết và địa hình, đặc biệt là trong những ngày mưa. Phần đế được ép nhiệt nên cực bền sau thời gian sử dụng, kết hợp với da công nghiệp tạo ra kiểu dáng trẻ trung sang trọng đem lại sự hài lòng tuyệt đối cho quý khách hàng.'),
+(274, 17, 'Nike Air Force', 'nikeairforce.png', 1100000, 0, 'Các sản phẩm của ISHINE thích hợp sử dụng trong mọi thời tiết và địa hình, đặc biệt là trong những ngày mưa. Phần đế được ép nhiệt nên cực bền sau thời gian sử dụng, kết hợp với da công nghiệp tạo ra kiểu dáng trẻ trung sang trọng đem lại sự hài lòng tuyệt đối cho quý khách hàng.'),
+(214, 17, 'Nike Air Max 1', 'nikeairmax1.png', 1210000, 0, 'Các sản phẩm của ISHINE thích hợp sử dụng trong mọi thời tiết và địa hình, đặc biệt là trong những ngày mưa. Phần đế được ép nhiệt nên cực bền sau thời gian sử dụng, kết hợp với da công nghiệp tạo ra kiểu dáng trẻ trung sang trọng đem lại sự hài lòng tuyệt đối cho quý khách hàng.'),
+(593, 17, 'Nike Air Vapomax', 'nikeairvapormax.png', 1750000, 5, 'Các sản phẩm của ISHINE thích hợp sử dụng trong mọi thời tiết và địa hình, đặc biệt là trong những ngày mưa. Phần đế được ép nhiệt nên cực bền sau thời gian sử dụng, kết hợp với da công nghiệp tạo ra kiểu dáng trẻ trung sang trọng đem lại sự hài lòng tuyệt đối cho quý khách hàng.'),
+(650, 35, 'Adidas Continental 80', 'adidascontinental80.png', 1200000, 0, 'Các sản phẩm của ISHINE thích hợp sử dụng trong mọi thời tiết và địa hình, đặc biệt là trong những ngày mưa. Phần đế được ép nhiệt nên cực bền sau thời gian sử dụng, kết hợp với da công nghiệp tạo ra kiểu dáng trẻ trung sang trọng đem lại sự hài lòng tuyệt đối cho quý khách hàng.'),
+(166, 35, 'Adidas Cyber Punk', 'adidascyberpunk.png', 1300000, 0, 'Các sản phẩm của ISHINE thích hợp sử dụng trong mọi thời tiết và địa hình, đặc biệt là trong những ngày mưa. Phần đế được ép nhiệt nên cực bền sau thời gian sử dụng, kết hợp với da công nghiệp tạo ra kiểu dáng trẻ trung sang trọng đem lại sự hài lòng tuyệt đối cho quý khách hàng.'),
+(638, 35, 'Adidas NMD R1', 'adidasnmd_r1.png', 1250000, 0, 'Các sản phẩm của ISHINE thích hợp sử dụng trong mọi thời tiết và địa hình, đặc biệt là trong những ngày mưa. Phần đế được ép nhiệt nên cực bền sau thời gian sử dụng, kết hợp với da công nghiệp tạo ra kiểu dáng trẻ trung sang trọng đem lại sự hài lòng tuyệt đối cho quý khách hàng.');
 
 -- --------------------------------------------------------
 
@@ -179,7 +187,7 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

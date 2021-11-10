@@ -86,3 +86,7 @@ table{
     padding-right: 40px;
     min-height: 100vh;
 }
+.btn-danger{
+    border: none;
+    outline: none;
+}

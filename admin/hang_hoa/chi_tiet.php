@@ -1,3 +1,47 @@
+<?php
+
+    $sql=mysqli_connect("localhost","root","","data_ishine");
+/****************************************************************************************/ 
+    // Lấy dữ liệu sản phẩm
+    $id_item=$_REQUEST['id'];
+    $selectData = "SELECT * FROM hang_hoa WHERE id=$id_item";
+    $row=$sql->query($selectData);
+    $arr1=array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr1,$res);
+    }
+    /******************************************/ 
+    //Update thông tin
+    // if( isset($_REQUEST['update']) ){
+    //     // $id_update=$_REQUEST['ma_sp'];
+    //     // $don_gia=$_REQUEST['don_gia'];
+    //     // $giam_gia=$_REQUEST['giam_gia'];
+    //     // $mo_ta=$_REQUEST['mo_ta'];
+
+    //     // $update="UPDATE hang_hoa SET don_gia='$don_gia', giam_gia='$giam_gia', mo_ta='$mo_ta' 
+    //     //          WHERE id=$id_update";
+    //     // $sql->query($update);
+         
+    //     echo phpinfo();
+    // }
+/****************************************************************************************/ 
+    // Lấy dữ liệu nhãn hiệu
+    $selectData = "SELECT * FROM brand";
+    $row=$sql->query($selectData);
+    $arr2=array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr2,$res);
+    }
+/****************************************************************************************/ 
+    $sql->close();
+?> 
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,60 +108,85 @@
             </div>
             <div class="content">
                 <p style="margin-bottom: 30px;">Dưới đây là thông tin chi tiết sản phẩm</p>
-                <div>
-                  <form action="" method="post" enctype="multipart/form-data">
-                            <div class="form-group">
-                            <label for="">Mã hàng hóa:</label> <br>
-                            <input type="text" class="form-control" id="ma_hh" name="ma_hh" placeholder="Nhập tên hàng hóa ..." value="34" readonly="">
-                            </div>
-
-                            <div class="form-group"> 
-                            <label for="">Tên hàng hóa:</label><br>
-                            <input type="text" class="form-control" id="ten_hh" name="ten_hh" placeholder="Nhập tên hàng hóa ..." value="Adidas UltraBoost DNA City">
-                            </div>
-
-                            <div class="form-group">
-                            <label for="">Đơn giá</label> <br>
-                            <input type="text" class="form-control" id="don_gia" name="don_gia"  placeholder="Nhập đơn giá ..." value="2100000">
-                            </div>
-
-                            <div class="form-group">
-                            <label for="">Giảm giá (%)</label> <br>
-                            <input type="text" class="form-control" id="giam_gia" name="giam_gia" placeholder="Nhập giảm giá" value="10">
-                            </div>
-
-                            <div class="form-group">
-                            <label for="">Hình ảnh</label> <br>
-                            <input type="file" class="form-control-file border" name="hinh"> <br>
-                            <img src="../../img/san_pham/1.jpg" alt="" style="width:80px"><br>
-                            </div>
-
-                            <div class="form-group">
-                            <label for="">Mô tả:</label> <br>
-                            <textarea class="form-control" rows="5" id="mo_ta" name="mo_ta" placeholder="Mô tả hàng hóa ..." style="resize: none;">Các sản phẩm của THE CLOSER thích hợp sử dụng trong mọi thời tiết và địa hình, đặc biệt là trong những ngày mưa. Phần đế được ép nhiệt nên cực bền sau thời gian sử dụng, kết hợp với da công nghiệp tạo ra kiểu dáng trẻ trung sang trọng đem lại sự hài lòng tuyệt đối cho quý khách hàng.</textarea>
-                            </div>
-
-                            <div class="form-group">
-                            <label for="">Mã loại?</label> <br>
-                            <select name="ma_loai" class="form-control">
-                                            <option value="27">Bitis</option>
-                                            <option value="26">MLB</option>
-                                            <option value="25">Nike</option>
-                                            <option selected="" value="24">Adidas</option>
-                                            <option value="23">Pegasus</option>
-                                            <option value="22">Jordan</option>
-                                            <option value="21">Blazer</option>
-                                            <option value="20">Converse</option>
-                            </select>
-                            </div>
-                            <button type="submit" name="btn_update" class="btn btn-danger">Cập nhật</button>
-                    </form>
+                <div id='box'>
+                    <!-- Element go here -->
                 </div>
             </div>
         </div>
             
 <!-- --------------------------------------------------------------------------------------------------------------------------- -->
-<!-- Script for char -->
+<script>
+    let arr1=JSON.parse( JSON.stringify(<?php echo json_encode($arr1) ?>)); // sản phẩm
+
+    let arr2=JSON.parse( JSON.stringify(<?php echo json_encode($arr2) ?>)); // nhãn hiệu
+    
+    function getBrand(id){
+        for(let i=0;i<arr2.length;i++){
+            if(arr2[i].ID===id){
+                return arr2[i].ten_loai;
+                break;
+            }
+        }
+        return;
+    }
+
+    function updateItem(){
+        let don_gia=document.getElementById('don_gia').value;
+        let giam_gia=document.getElementById('giam_gia').value;
+        let mo_ta=document.getElementById('mo_ta').value;
+
+        if( confirm("Xác nhận cập nhật thông tin cho sản phẩm!") ){
+            fetch(`hang_hoa.php?update=1&ma_sp=${arr1[0].id}&don_gia=${don_gia}&giam_gia=${giam_gia}&mo_ta=${mo_ta}`)
+            /*Khó hiểu tại sao k thể fetch(`chi_tiet.php?update=1&ma_sp=${arr1[0].id}&don_gia=${don_gia}&giam_gia=${giam_gia}&mo_ta=${mo_ta}`)  dcm*/ 
+            alert('Cập nhật thành công');
+        }
+        
+    }
+    
+    function render(){
+        let html=`<form action="" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                            <label for="">Mã hàng hóa:</label> <br>
+                            <input type="text" class="form-control" id="ma_hh" value="${arr1[0].id}" readonly>
+                            </div>
+
+                            <div class="form-group"> 
+                            <label for="">Tên hàng hóa:</label><br>
+                            <input type="text" class="form-control" id="ten_hh" name="ten_hh" value="${arr1[0].ten_hh}" readonly>
+                            </div>
+
+                            <div class="form-group">
+                            <label for="">Đơn giá</label> <br>
+                            <input type="text" class="form-control" id="don_gia" name="don_gia"  placeholder="Nhập đơn giá ..." value="${arr1[0].don_gia}">
+                            </div>
+
+                            <div class="form-group">
+                            <label for="">Giảm giá (%)</label> <br>
+                            <input type="text" class="form-control" id="giam_gia" name="giam_gia" placeholder="Nhập giảm giá" value="${arr1[0].giam_gia}">
+                            </div>
+
+                            <div class="form-group">
+                            <label for="">Hình ảnh</label> <br>
+                            <img src="../../img/san_pham/${arr1[0].hinh}" alt="" style="width:150px"><br>
+                            </div>
+
+                            <div class="form-group">
+                            <label for="">Mô tả:</label> <br>
+                            <textarea class="form-control" rows="5" id="mo_ta" name="mo_ta" placeholder="Mô tả hàng hóa ..." style="resize: none;">${arr1[0].mo_ta}</textarea>
+                            </div>
+
+                            <div class="form-group">
+                            <label for="">Nhãn hiệu</label> <br>
+                            <input type="text" class="form-control" id="brand" name="ten_hh" value="${getBrand(arr1[0].brand)}" readonly>
+                            </div>
+                    </form>
+                    <button onclick="updateItem()" class="btn btn-danger">Cập nhật</button>`;
+                    
+        document.getElementById('box').insertAdjacentHTML("afterbegin",html);
+    }
+
+    render()
+</script>
 
 </body>
 </html>
