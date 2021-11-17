@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2021 at 02:03 AM
+-- Generation Time: Nov 17, 2021 at 08:10 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `binh_luan` (
-  `ID_hang_hoa` int(11) NOT NULL,
-  `Ten_hang_hoa` varchar(50) NOT NULL,
+  `rand` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `user` varchar(50) NOT NULL,
   `date` varchar(50) NOT NULL,
   `noi_dung` varchar(20) NOT NULL
@@ -39,9 +39,12 @@ CREATE TABLE `binh_luan` (
 -- Dumping data for table `binh_luan`
 --
 
-INSERT INTO `binh_luan` (`ID_hang_hoa`, `Ten_hang_hoa`, `user`, `date`, `noi_dung`) VALUES
-(18, '	YEEZY BOOST 350V2 ASH PEARL', 'admin', '04-11-2021', 'Giày đẹp lắm shop <3'),
-(18, '	YEEZY BOOST 350V2 ASH PEARL', 'trong24', '04-11-2021', 'Good shoe!');
+INSERT INTO `binh_luan` (`rand`, `id`, `user`, `date`, `noi_dung`) VALUES
+(441, 126, 'admin', '17-11-2021', 'Giày đẹp!'),
+(412, 417, 'trong', '10-1-2021', 'Giày ngon rẻ!'),
+(804, 417, 'admin', '17-10-2021', 'hảo hảo'),
+(416, 153, 'admin', '17-11-2021', 'tuyệt vời quá'),
+(643, 153, 'admin', '17-11-2021', 'đã cmt xong :D');
 
 -- --------------------------------------------------------
 

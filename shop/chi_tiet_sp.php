@@ -9,7 +9,6 @@
         array_push($arr1,$res);
     }
 /****************************************************************************************/ 
-/****************************************************************************************/ 
     // id gửi từ trang san_phẩm sang
     $sp;
     if(isset($_REQUEST['id']))
@@ -21,6 +20,28 @@
             $sp=json_encode($arr1[$i]);
             break;
         }
+    }
+/****************************************************************************************/ 
+    // Lay binh luan
+    $selectData = "SELECT * FROM binh_luan";
+    $row=$sql->query($selectData);
+    $arr_binh_luan =array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr_binh_luan,$res);
+    }
+    $binh_luan=json_encode($arr_binh_luan);
+/****************************************************************************************/ 
+    // them binh luan vao database
+    if(isset($_REQUEST['cmt'])){
+        $rand=$_REQUEST['rand'];
+        $id=$_REQUEST['id'];
+        $user=$_REQUEST['user'];
+        $date=$_REQUEST['date'];
+        $noi_dung=$_REQUEST['noi_dung'];
+
+        $data ="INSERT INTO binh_luan  (rand, id, user, date, noi_dung)
+                VALUES('$rand','$id','$user','$date','$noi_dung')";
+        $sql->query($data);
     }
     $sql->close();
 ?> 
@@ -128,7 +149,7 @@
         </div>
 
         <ul>
-            <li>
+            <!-- <li>
                 <div class="each-cmt">
                     <div class="content">
                         <p>Good jod !</p>
@@ -137,26 +158,16 @@
                         <p> <span>trong249</span>, <span>10/14/2021</span></p>
                     </div>
                 </div>
-            </li>
-            <li>
-                <div class="each-cmt">
-                    <div class="content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta harum magnam temporibus ipsa quaerat veniam corrupti quis cumque praesentium vel culpa labore adipisci nulla, commodi, illo consequatur suscipit deleniti sequi?</p>
-                    </div>
-                    <div class="author">
-                        <p> <span>trong249</span>, <span>10/14/2021</span></p>
-                    </div>
-                </div>
-            </li>
+            </li> -->
         </ul>
 
-        <div class="alert">
+        <div class="alert" hidden>
             <p style="color: red;">Đăng nhập để bình luận về sản phẩm này !</p>
         </div>
 
         <div class="add-comment">
             <textarea name="" id="" cols="150" rows="2" placeholder="Nhận xét..."></textarea><br>
-            <button>Gửi</button>
+            <button onclick="sendComment()">Gửi</button>
         </div>
 
 
@@ -172,11 +183,34 @@
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <script>
         let san_pham=JSON.parse(JSON.stringify(<?php echo $sp ?>))
+        let arr_binh_luan=JSON.parse(JSON.stringify(<?php echo $binh_luan ?>));
         
         function formatMoney(str) {
             return str.split('').reverse().reduce((prev, next, index) => {
                 return ((index % 3) ? next : (next + ',')) + prev
             })
+        }
+
+        function formatDate(){
+            let date= new Date();
+            let year=date.getFullYear();
+            let month=date.getMonth();
+            let day=date.getDate();
+
+            return `${day}-${month+1}-${year}`;
+        }
+
+        function rand(){
+            let check=true;
+            let res=Math.floor(Math.random()*1000);
+
+            for(let i=0;i<arr_binh_luan;i++){
+                if(res==arr_binh_luan[i].rand)
+                check=false;
+                break;
+            }
+            if(check&&res>=100) return res;
+            else return rand();
         }
 
         function handlePrice(don_gia,giam_gia){
@@ -189,6 +223,23 @@
                 return `<span class="price-no-sale">${formatMoney(don_gia)} <span>VNĐ</span></span>
                         <span class="latest-price">${formatMoney(Math.ceil(dg-dg*gg/100).toString())} <span>VND</span></span>`
             }
+        }
+
+        function sendComment(){
+            let text=document.querySelector(".add-comment textarea").value;
+            let html=`<li>
+                        <div class="each-cmt">
+                            <div class="content">
+                                <p>${text}</p>
+                            </div>
+                            <div class="author">
+                                <p> <span>admin</span>, <span>${formatDate()}</span></p>
+                            </div>
+                        </div>
+                    </li>`;
+            document.querySelector(".comment-area ul").insertAdjacentHTML("beforeend",html);
+            fetch(`chi_tiet_sp.php?cmt=1&user=admin&rand=${rand()}&id=${san_pham.id}&date=${formatDate()}&noi_dung=${text}`)
+                
         }
 
         function renderProdcut(){
@@ -231,7 +282,30 @@
 
         }
 
+
+
+        function renderComment(){
+            let html='';
+            for(let i=0;i<arr_binh_luan.length;i++){
+                if( parseInt(arr_binh_luan[i].id)==parseInt(san_pham.id) ){
+                    html+=`<li>
+                                <div class="each-cmt">
+                                    <div class="content">
+                                        <p>${arr_binh_luan[i].noi_dung}</p>
+                                    </div>
+                                    <div class="author">
+                                        <p> <span>${arr_binh_luan[i].user}</span>, <span>${arr_binh_luan[i].date}</span></p>
+                                    </div>
+                                </div>
+                            </li>`;
+                }
+            }
+            document.querySelector(".comment-area ul").innerHTML=html;
+        }
+        console.log(rand());
+
         renderProdcut();
+        renderComment();
     </script>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->  
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

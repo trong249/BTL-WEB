@@ -121,4 +121,6 @@ th{
     text-align: center;
     line-height: 25px;
     border-radius: 3px;
+    border: 1px solid transparent;
+    cursor: pointer;
 }
