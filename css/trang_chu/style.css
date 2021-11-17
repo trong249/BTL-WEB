@@ -229,6 +229,7 @@ a{
 }
 .trendding_products img{
     width: 100%;
+    max-height: 255px;
 }
 .trendding_products .product{
     box-shadow: 0px 0px 3px black;
@@ -238,10 +239,11 @@ a{
     padding-left: 25px;
     padding-top: 10px;
     padding-bottom: 20px;
+    
 }
 .trendding_products .product div .name{
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 14px;
+    margin-bottom: 5px;
 }
 .trendding_products .see-more{
     display: block;
@@ -252,7 +254,6 @@ a{
     line-height: 40px;
     border: 1px solid #202020;
     background-color: transparent;
-    
     color: #202020;
 }
 .trendding_products .see-more:hover{
@@ -351,7 +352,7 @@ a{
     padding-bottom: 20px;
 }
 .sale_off .product div .name{
-    font-size: 20px;
+    font-size: 15px;
     margin-bottom: 10px;
 }
 .sale_off .see-more{

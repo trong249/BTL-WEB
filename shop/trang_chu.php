@@ -1,3 +1,19 @@
+<?php
+    $sql=mysqli_connect("localhost","root","","data_ishine");
+/****************************************************************************************/ 
+    // Lấy dữ liệu sản phẩm
+    $selectData = "SELECT * FROM hang_hoa";
+    $row=$sql->query($selectData);
+    $arr1=array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr1,$res);
+    }
+/****************************************************************************************/ 
+/****************************************************************************************/ 
+    $sql->close();
+?> 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,44 +118,19 @@
         </div>
         <div class="container">
             <div class="row" style="margin-bottom:30px ;">
-                <div class="col-6 col-md-3" style="margin-top: 20px;">
-                    <div class="product">
-                        <img src="../img/trang_chu/trendding-1.png" alt="">
-                        <div>
-                            <p class="name">Pegasus Chaz</p>
-                            <p class="price">792,000 VNĐ</p>
+                <!-- <div class="col-6 col-md-3" style="margin-top: 20px;">
+                    <a href="">
+                        <div class="product">
+                            <img src="../img/trang_chu/trendding-1.png" alt="">
+                            <div>
+                                <p class="name">Pegasus Chaz</p>
+                                <p class="price">792,000 VNĐ</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3" style="margin-top: 20px;">
-                    <div class="product">
-                        <img src="../img/trang_chu/trendding-2.png" alt="">
-                        <div>
-                            <p class="name">Pegasus Chaz</p>
-                            <p class="price">792,000 VNĐ</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3" style="margin-top: 20px;">
-                    <div class="product">
-                        <img src="../img/trang_chu/trendding-3.png" alt="">
-                        <div>
-                            <p class="name">Pegasus Chaz</p>
-                            <p class="price">792,000 VNĐ</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3" style="margin-top: 20px;">
-                    <div class="product">
-                        <img src="../img/trang_chu/trendding-4.png" alt="">
-                        <div>
-                            <p class="name">Pegasus Chaz</p>
-                            <p class="price">792,000 VNĐ</p>
-                        </div>
-                    </div>
-                </div>
+                    </a>
+                </div> -->
             </div>
-            <a href="" class="see-more">Tất cả</a>
+            <a href="./san_pham.php" class="see-more">Tất cả</a>
         </div>
     </section>
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
@@ -155,7 +146,7 @@
                     <h2 style="font-weight: 200;"><span style="color: #58aaec;">50%</span> toàn bộ sản</h2>
                     <h2 style="font-weight: 200;">phẩm tại shop !</h2> <br>
                     <p style="color:rgb(165, 165, 165);">Sự kiện diễn ra đến hết tháng 5/2021</p> <br>
-                    <a href="">Xem ngay</a>
+                    <a href="./san_pham.php">Xem ngay</a>
                 </div>
             </div>    
         </div>
@@ -202,7 +193,8 @@
         </div>
         <div class="container">
             <div class="row" style="margin-bottom:30px ;">
-                <div class="col-6 col-md-3" style="margin-top: 20px;">
+
+                <!-- <div class="col-6 col-md-3" style="margin-top: 20px;">
                     <div class="product">
                         <img src="../img/trang_chu/trendding-1.png" alt="">
                         <div>
@@ -211,39 +203,9 @@
                             <p class="sale">500,000 VNĐ</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-6 col-md-3" style="margin-top: 20px;">
-                    <div class="product">
-                        <img src="../img/trang_chu/trendding-2.png" alt="">
-                        <div>
-                            <p class="name">Pegasus Chaz</p>
-                            <p class="price" style="text-decoration: line-through; font-size: 15px;">792,000 VNĐ</p>
-                            <p class="sale">500,000 VNĐ</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3" style="margin-top: 20px;">
-                    <div class="product">
-                        <img src="../img/trang_chu/trendding-3.png" alt="">
-                        <div>
-                            <p class="name">Pegasus Chaz</p>
-                            <p class="price" style="text-decoration: line-through; font-size: 15px;">792,000 VNĐ</p>
-                            <p class="sale">500,000 VNĐ</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3" style="margin-top: 20px;">
-                    <div class="product">
-                        <img src="../img/trang_chu/trendding-4.png" alt="">
-                        <div>
-                            <p class="name">Pegasus Chaz</p>
-                            <p class="price" style="text-decoration: line-through; font-size: 15px;">792,000 VNĐ</p>
-                            <p class="sale">500,000 VNĐ</p>
-                        </div>
-                    </div>
-                </div>
+                </div> -->
             </div>
-            <a href="" class="see-more">Tất cả</a>
+            <a href="./san_pham.php" class="see-more">Tất cả</a>
         </div>
     </section>
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
@@ -252,11 +214,69 @@
         require('footer.php')
     ?>
 <!-- --------------------------------------------------------------------------------------------------------------------------------------------- -->
+<script>
+    let arr1=JSON.parse( JSON.stringify(<?php echo json_encode($arr1) ?>)); // sản phẩm
+    let arr=arr1;
+
+    function renderTrending(){
+        let trendings=arr1.sort((a,b)=> parseInt(b.don_gia)-parseInt(a.don_gia)); 
+        let html1=``;
+        let n=4;
+
+        for(let i=0;i<n;i++){
+            html1+=`<div class="col-6 col-md-3" style="margin-top: 20px;">
+                        <a href="chi_tiet_sp.php?id=${trendings[i].id}" style="color:black;">
+                            <div class="product">
+                                <img src="../img/san_pham/${trendings[i].hinh}" alt="">
+                                <div>
+                                    <p class="name">${trendings[i].ten_hh}</p>
+                                    <p class="price">${formatMoney(trendings[i].don_gia)} VNĐ</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>`;
+        }
+
+        document.querySelector(".trendding_products .container .row").innerHTML=html1;
+    }
+
+    function formatMoney(str) {
+        return str.split('').reverse().reduce((prev, next, index) => {
+            return ((index % 3) ? next : (next + ',')) + prev
+        })
+    }
+
+    function renderDiscount(){
+        let discounts=arr1.sort((a,b)=> parseInt(b.giam_gia)-parseInt(a.giam_gia)); 
+        let html1=``;
+        let n=4;
+
+        for(let i=0;i<n;i++){
+            let lastprice= Math.ceil(parseInt(discounts[i].don_gia)-parseInt(discounts[i].don_gia)*parseInt(discounts[i].giam_gia)/100);
+            html1+=`<div class="col-6 col-md-3" style="margin-top: 20px;">
+                        <a href="chi_tiet_sp.php?id=${discounts[i].id}" style="color:black;">
+                        <div class="product">
+                            <img src="../img/san_pham/${discounts[i].hinh}" alt="">
+                            <div>
+                                <p class="name">${discounts[i].ten_hh}</p>
+                                <p class="price" style="text-decoration: line-through; font-size: 15px;">${formatMoney(discounts[i].don_gia)} VNĐ</p>
+                                <p class="sale">${formatMoney(lastprice.toString())} VNĐ</p>
+                            </div>
+                        </div>
+                        </a>
+                    </div>`;
+        }
+        document.querySelector(".sale_off .container .row").innerHTML=html1;
+    }
+    renderTrending();
+    renderDiscount();
+</script>   
+
+
+ <!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     
-    <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    
-    <script src="../js/trang_chu/main.js"></script>
+<script src="../js/trang_chu/main.js"></script>
 
 </body>
 </html>

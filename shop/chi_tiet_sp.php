@@ -1,3 +1,39 @@
+<?php
+    $sql=mysqli_connect("localhost","root","","data_ishine");
+/****************************************************************************************/ 
+    // Lấy dữ liệu sản phẩm
+    $selectData = "SELECT * FROM hang_hoa";
+    $row=$sql->query($selectData);
+    $arr1=array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr1,$res);
+    }
+/****************************************************************************************/ 
+/****************************************************************************************/ 
+    // id gửi từ trang san_phẩm sang
+    $sp;
+    if(isset($_REQUEST['id']))
+    {
+        $ma_sp=$_REQUEST['id'];
+    }
+    for($i=0;$i<count($arr1);$i++){
+        if($ma_sp==$arr1[$i]['id']){
+            $sp=json_encode($arr1[$i]);
+            break;
+        }
+    }
+    $sql->close();
+?> 
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +70,7 @@
     
     <section class="detail container">
         <div class="row">
-            <div class="col-md-6 col-lg-4">
+            <!-- <div class="col-md-6 col-lg-4">
                 <div class="img-product">
                     <img src="../img/san_pham/2.jpg" alt="">
                 </div>
@@ -70,7 +106,7 @@
                     <button class="add_into_cart" onclick="addToCart()">THÊM VÀO GIỎ HÀNG</button>
                     
                 </div>
-            </div>
+            </div> -->
 
             <div class="col-md-12 col-lg-4 payment"> 
                 <div class="title">
@@ -134,6 +170,70 @@
     <!-- IMPORT FOOTER -->
     <?php require('footer.php') ?>  
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <script>
+        let san_pham=JSON.parse(JSON.stringify(<?php echo $sp ?>))
+        
+        function formatMoney(str) {
+            return str.split('').reverse().reduce((prev, next, index) => {
+                return ((index % 3) ? next : (next + ',')) + prev
+            })
+        }
+
+        function handlePrice(don_gia,giam_gia){
+            let dg=parseInt(don_gia);
+            let gg=parseInt(giam_gia);
+            if(gg==0){
+                return `<span class="latest-price">${formatMoney(don_gia)} <span>VND</span></span>`;
+            }
+            else {
+                return `<span class="price-no-sale">${formatMoney(don_gia)} <span>VNĐ</span></span>
+                        <span class="latest-price">${formatMoney(Math.ceil(dg-dg*gg/100).toString())} <span>VND</span></span>`
+            }
+        }
+
+        function renderProdcut(){
+            let html=`<div class="col-md-6 col-lg-4">
+                        <div class="img-product">
+                            <img src="../img/san_pham/${san_pham.hinh}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4" style="margin-bottom: 50px;">
+                        <div class="info">
+                            <div class="name">
+                                <h1>${san_pham.ten_hh}</h1>
+                                <div></div>
+                            </div> <br>
+
+                            ${handlePrice(san_pham.don_gia,san_pham.giam_gia)}
+                            
+                            <p class="description">${san_pham.mo_ta}</p> 
+
+                            <div class="dot" style="margin-bottom: 20px;">
+                                <img src="../img/dot.png" alt="" style="width: 70%;">
+                            </div>
+
+                            <select name="" id="" class="size">
+                                <option value="37">Size 37</option>
+                                <option value="38">Size 38</option>
+                                <option value="39">Size 39</option>
+                                <option value="40">Size 40</option>
+                                <option value="41">Size 41</option>
+                                <option value="42">Size 42</option>
+                            </select>
+                            
+                            <input type="number" name="" id="" value="1" class="qty">
+                            <button class="add_into_cart" onclick="addToCart()">THÊM VÀO GIỎ HÀNG</button>
+                            
+                        </div>
+                    </div>`;
+            
+            document.querySelector(".detail .row").insertAdjacentHTML("afterbegin",html);
+
+        }
+
+        renderProdcut();
+    </script>
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->  
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="../js/chi_tiet_sp/main.js"></script>
 </body>
