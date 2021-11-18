@@ -1,4 +1,15 @@
+<?php
+session_start();
+$login = false;
+$vaitro = 0;
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    $login = true;
+    $vaitro = $_SESSION["vai_tro"];
+}
 
+?>
     <style>
         .top-menu{
             width: 100%;
@@ -85,7 +96,19 @@
     <section class="top-menu">  
         <div class="container">
             <div class="login-register">
-                <a href="./dang_nhap_dang_ki.php">ĐĂNG NHẬP / ĐĂNG KÍ</a>
+                
+            <?php 
+            if (!$login) {
+                echo "<span><a href=\"./dang_nhap_dang_ki.php?page=sign_up\" class=\"login\">Đăng nhập</a></span><span style=\"color:white; padding: 0 2px;\">/</span><span><a href=\"./dang_nhap_dang_ki.php?page=sign_in\" class=\"register\">Đăng ký</a></span>";
+            } else {
+                if ($vaitro == 0) {
+                    echo "<span><a href=\"./mypage.php\" class=\"register\">Trang cá nhân</a></span><span style=\"color:white; padding: 0 2px;\">/</span><span><a href=\"./logout.php\" class=\"register\">Đăng xuất</a></span>";
+                } else {
+                    echo "<span><a href=\"../admin/index.php\" class=\"register\">Dashboard</a></span><span style=\"color:white; padding: 0 2px;\">/</span><span><a href=\"./logout.php\" class=\"register\">Đăng xuất</a></span>";
+                }
+            }
+            ?>
+                        
             </div>
             <div class="menu">
                 <ul>

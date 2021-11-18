@@ -1,4 +1,14 @@
 <?php
+    session_start();
+
+    $login = false;
+ 
+    // Check if the user is logged in, if not then redirect him to login page
+    if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+        $login = true;
+        $vaitro = $_SESSION["vai_tro"];
+    }
+
     $sql=mysqli_connect("localhost","root","","data_ishine");
 /****************************************************************************************/ 
     // Lấy dữ liệu sản phẩm
@@ -45,8 +55,20 @@
                 <div class="login-register">
                     <i class="fas fa-user"></i>
                     <div>
-                        <a href="./dang_nhap_dang_ki.php" class="login">Đăng nhập</a>
-                        <a href="./dang_nhap_dang_ki.php" class="register">Đăng ký</a>
+                        <?php 
+                        if (!$login) {
+                            echo "<a href=\"./dang_nhap_dang_ki.php?page=sign_in\" class=\"login\">Đăng nhập</a>
+                            <a href=\"./dang_nhap_dang_ki.php?page=sign_up\" class=\"register\">Đăng ký</a>";
+                        } else {
+                            if ($vaitro == 0) {
+                                echo "<a href=\"./mypage.php\" class=\"register\">Trang cá nhân</a>
+                                <a href=\"./logout.php\" class=\"register\">Đăng xuất</a>";
+                            } else {
+                                echo "<a href=\"../admin/index.php\" class=\"register\">Dashboard</a>
+                                <a href=\"./logout.php\" class=\"register\">Đăng xuất</a>";
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
                 <i class="fas fa-times close" onclick="closeMenu()"></i>

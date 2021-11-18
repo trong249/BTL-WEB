@@ -1,3 +1,7 @@
+<?php
+    require_once "../check_admin.php";
+?>
+
 <?php 
 
 $sql=mysqli_connect("localhost","root","","data_ishine");

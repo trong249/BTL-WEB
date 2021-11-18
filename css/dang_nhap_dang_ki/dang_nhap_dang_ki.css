@@ -15,6 +15,12 @@ html, body {
     height: 100vh;
 }
 
+.invalid {
+    color: red;
+    font-size: small;
+    text-align: end;
+}
+
 body {
     background-image: url(./img/image552159.jpg);
     background-repeat: no-repeat;
@@ -40,7 +46,7 @@ body {
 }
 
 .header {
-    margin: 6vh 2vw;
+    margin: 2vh 2vw;
 }
 
 .input-group {
@@ -77,6 +83,7 @@ body {
 
 .round-btn {
     padding: 5px;
+    width:-moz-fit-content;
     width:fit-content;
     border-radius: 8px;
     background-color: whitesmoke;

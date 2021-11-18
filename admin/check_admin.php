@@ -13,10 +13,11 @@
     }
 
     if($vaitro==1 && $login){
-        header('location:./trang_chu/trang_chu.php');
+        
     }
     else{
         echo "Bạn không thể truy cập trang này !";
         exit;
     }
+
 ?>
