@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+require_once "./check_rememberme.php";
+
 $login = false;
 $vaitro = 0;
  
@@ -38,7 +41,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
             max-height: 60.8px;
         }
         .top-menu .container .menu{
-            width: 60%;
+            width: 80%;
         }
         .top-menu .container .menu ul{
             display: flex;
@@ -59,6 +62,28 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
             line-height: 60px;
             font-size: 30px;
         }
+
+        .logo-t {
+            /* img-fluid in bootstrap 5 */
+            max-width: 100%;
+            height:auto;
+            /* ------------------------ */
+            object-fit:contain;
+            object-position: 0 100%;
+            height: auto;
+            width: 100px;
+        }
+
+        .logo {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-register *{
+            font-size: medium !important;
+        }
+
         @media only screen and (max-width: 770px) {
             .top-menu .container .menu{
                 position: fixed;
@@ -95,20 +120,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 <!-- -------------------------------------------------------------------------------------------------------- -->    
     <section class="top-menu">  
         <div class="container">
-            <div class="login-register">
-                
-            <?php 
-            if (!$login) {
-                echo "<span><a href=\"./dang_nhap_dang_ki.php?page=sign_up\" class=\"login\">Đăng nhập</a></span><span style=\"color:white; padding: 0 2px;\">/</span><span><a href=\"./dang_nhap_dang_ki.php?page=sign_in\" class=\"register\">Đăng ký</a></span>";
-            } else {
-                if ($vaitro == 0) {
-                    echo "<span><a href=\"./mypage.php\" class=\"register\">Trang cá nhân</a></span><span style=\"color:white; padding: 0 2px;\">/</span><span><a href=\"./logout.php\" class=\"register\">Đăng xuất</a></span>";
-                } else {
-                    echo "<span><a href=\"../admin/index.php\" class=\"register\">Dashboard</a></span><span style=\"color:white; padding: 0 2px;\">/</span><span><a href=\"./logout.php\" class=\"register\">Đăng xuất</a></span>";
-                }
-            }
-            ?>
-                        
+            <div class="logo">
+                <a href="#" class="container"><img class="logo-t" src="../img/main_logo.png" alt="Logo" style="text-align:center; line-height:100%"></a>
             </div>
             <div class="menu">
                 <ul>
@@ -118,6 +131,22 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                     <li><a href="tin_tuc.php">TIN TỨC</a></li>
                     <li><a href="lien_he.php">LIÊN HỆ</a></li>
                     <li class='gio-hang'><a href="gio_hang.php"><i class="fas fa-cart-plus"></i></a></li>
+                    <li class="login-register">
+                    <?php 
+                        if (!$login) {
+                            echo "<span><a href=\"./dang_nhap_dang_ki.php?page=sign_in\" class=\"login\">Đăng nhập</a></span></li>
+                            <li class=\"login-register\"><span><a href=\"./dang_nhap_dang_ki.php?page=sign_up\" class=\"register\">Đăng kí</a></span>";
+                        } else {
+                            if ($vaitro == 0) {
+                                echo "<span><a href=\"../user/trang_ca_nhan.php\" class=\"register\">Cá nhân</a></span></li>
+                                <li class=\"login-register\"><a href=\"./logout.php\" class=\"register\">Đăng xuất</a></span>";
+                            } else {
+                                echo "<span><a href=\"../admin/index.php\" class=\"register\">Admin</a></span></li>
+                                <li class=\"login-register\"><a href=\"./logout.php\" class=\"register\">Đăng xuất</a></span>";
+                            }
+                        }
+                    ?>
+                    </li>
                 </ul>
                 <i class="fas fa-times close" onclick="closeMenu()"></i>
             </div>

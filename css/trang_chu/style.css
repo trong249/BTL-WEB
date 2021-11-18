@@ -45,9 +45,9 @@ a{
     width: 70%;
     justify-content: space-between;
 } 
-.top-menu .container .logo a{
+/* .top-menu .container .logo a{
     font-size: 30px;
-}
+} */
 .top-menu .container  a{
     color: #fff;    
 }
@@ -377,5 +377,23 @@ a{
 /* **************************************************************************************************************************** */
 
 /* **********************************************SECTION-MOVE TO TOP******************************************************* */
+
+/* logo */
+.logo-t {
+    /* img-fluid in bootstrap 5 */
+    max-width: 100%;
+    height:auto;
+    /* ------------------------ */
+    object-fit:contain;
+    object-position: 0 100%;
+    height: auto;
+    width: 100px;
+}
+
+.logo {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
 
 

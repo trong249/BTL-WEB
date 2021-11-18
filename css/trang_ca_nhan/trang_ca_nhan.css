@@ -1,0 +1,74 @@
+body {
+    background-image: url(../../css/trang_ca_nhan/img/photo-1460411794035-42aac080490a.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.offcanvas-end {
+    width: 30vw;
+}
+
+#myform {
+    display:block;
+    max-width: 720px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.title {
+    text-align: center;
+}
+
+textarea {
+    resize:none;
+}
+
+.navbar {
+    padding-top:0;
+    padding-bottom:0;
+}
+
+.navbar-brand {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.nav-item {
+    transition: background-color 1s;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.nav-item:hover {
+    background-color:rgb(191, 246, 250)
+}
+
+form * {
+    padding: 0.2rem 0;
+}
+
+
+
+.logo-f {
+    /* img-fluid in bootstrap 5 */
+    max-width: 100%;
+    height:auto;
+    /* ------------------------ */
+    object-fit:contain;
+    object-position: 0 100%;
+    height: auto;
+    width: 100px;
+}
+
+.invalid {
+    color:red;
+    text-align: right;
+}

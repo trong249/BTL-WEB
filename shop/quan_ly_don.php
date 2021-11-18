@@ -16,6 +16,7 @@
     <link rel="icon" href="../img/gioi_thieu/tachnen.png" type="image/x-icon">
     <!-- CSS -->
     <link rel="stylesheet" href="../css/quan_ly_don/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
 
     <title>Quản lý đơn hàng</title>
 </head>

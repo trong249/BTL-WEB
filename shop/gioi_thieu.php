@@ -29,6 +29,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/gioi_thieu/style.css">
     <link rel="stylesheet" href="../css/gioi_thieu/responsive.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
 
     <title>Giới Thiệu</title>
 </head>

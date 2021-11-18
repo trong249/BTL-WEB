@@ -16,7 +16,9 @@
         
     }
     else{
-        echo "Bạn không thể truy cập trang này !";
+        echo "Bạn không thể truy cập trang này! Quay lại trang chủ sau 10s";
+        sleep(10);
+        header("Location: logout.php");
         exit;
     }
 

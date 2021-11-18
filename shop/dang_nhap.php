@@ -99,10 +99,18 @@
                             
                     // Store data in session variables
                     $_SESSION["loggedin"] = true;
-                    $_SESSION["id"] = $row["ID"];
+                    $_SESSION["id"] = $row["userID"];
                     $_SESSION["username"] = $row["username"];   
-                    $_SESSION["vai_tro"] =  $row["vai_tro"];                      
+                    $_SESSION["vai_tro"] =  $row["vai_tro"];    
                     
+                    if (isset($_POST["remember-me"])) {
+                        $remember = clean_input($_POST["remember-me"]);
+                        setcookie("user_login", $_SESSION["username"], time() + 24*60*60*365, "/");
+                    } else {
+                        setcookie("user_login", "");
+                    }
+
+                   
                     // Redirect user to welcome page
                     header("location: trang_chu.php");
                     exit();

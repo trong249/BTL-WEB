@@ -1,0 +1,13 @@
+Khi đăng đăng nhập, có thể truy cập vào thông tin của user đó 
+thông qua $_SESSION["id"] để lấy id, $_SESSION["username"], 
+$_SESSION["loggedin"] cho trạng thái login và $_SESSION["vai_tro"] 
+với giá trị 1 là admin, giá trị 0 là user thường. 
+Xem chi tiết trong file /shop/dang_nhap.php
+
+Các tài khoản hiện có: (vì tui dùng hash mật khẩu nên sẽ ko thể coi được mật khẩu trong phpmyadmin)
+
+[tên tài khoản] - [mật khẩu]
+
+admin 			- myadmin	 		vai_tro = 1;
+trong24 		- trong24			vai_tro = 0;
+superIdol 		- superidol			vai_tro = 0;

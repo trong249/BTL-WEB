@@ -37,7 +37,7 @@
             else if (!preg_match('/^[a-zA-Z0-9_]+$/', $user_name)) {
                 $error_username = 2;
             } else {
-                $find_cmd = "SELECT ID FROM users WHERE username=?";
+                $find_cmd = "SELECT userID FROM users WHERE username=?";
                 $prepare_stmt = mysqli_prepare($conn, $find_cmd);
 
                 mysqli_stmt_bind_param($prepare_stmt, 's', $user_name);
@@ -63,7 +63,7 @@
             else if (!filter_var($user_email, FILTER_VALIDATE_EMAIL)) {
                 $error_email = 2;
             } else {
-                $find_email_cmd = "SELECT ID FROM users WHERE email=?";
+                $find_email_cmd = "SELECT userID FROM users WHERE email=?";
                 $prepare_stmt = mysqli_prepare($conn, $find_email_cmd);
 
                 mysqli_stmt_bind_param($prepare_stmt, 's', $user_email);
@@ -98,18 +98,19 @@
             
             if (($error_email + $error_password + $error_username + $error_confirm_password) == 0) {
                 //neu khong co loi nao, thi insert vao data base thoi!
-                $insert_cmd = "INSERT INTO users (username, email, mat_khau, dia_chi, vai_tro) VALUE (?,?,?,?,?);";
+                $insert_cmd = "INSERT INTO users (username, email, mat_khau, dia_chi, vai_tro, reset_code) VALUE (?,?,?,?,?,?);";
                 $prepare_stmt = mysqli_prepare($conn, $insert_cmd);
 
                 $temp_dia_chi = "Hồ Chí Minh";
                 $vai_tro = 0;
+                $reset_code = 0;
 
-                mysqli_stmt_bind_param($prepare_stmt, 'ssssi', $user_name, $user_email, $param_password, $temp_dia_chi, $vai_tro);
+                mysqli_stmt_bind_param($prepare_stmt, 'ssssii', $user_name, $user_email, $param_password, $temp_dia_chi, $vai_tro, $reset_code);
 
                 $param_password = password_hash($user_password, PASSWORD_DEFAULT); // Creates a password hash
 
                 if (!mysqli_stmt_execute($prepare_stmt)) {
-                    echo "Something went wrong, I can feel it";
+                    echo "Something went wrong, I can feel it" . mysqli_stmt_error($prepare_stmt);
                 } else {
                     header("Location: trang_chu.php");
                     exit();

@@ -1,6 +1,8 @@
 <?php
     session_start();
 
+    require_once "./check_rememberme.php";
+
     $login = false;
  
     // Check if the user is logged in, if not then redirect him to login page
@@ -35,6 +37,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap-grid.min.css" />
     <script src="https://kit.fontawesome.com/8f65ebef09.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
 
     <title>Document</title>
 </head>
@@ -42,7 +45,7 @@
     <section class="top-menu">
         <div class="container">
             <div class="logo">
-                <a href="">isShin</a>
+                <a href="#" class="container"><img class="logo-t" src="../img/main_logo.png" alt="Logo" style="text-align:center; line-height:100%"></a>
             </div>
             <div class="menu">
                 <ul>
@@ -61,10 +64,10 @@
                             <a href=\"./dang_nhap_dang_ki.php?page=sign_up\" class=\"register\">Đăng ký</a>";
                         } else {
                             if ($vaitro == 0) {
-                                echo "<a href=\"./mypage.php\" class=\"register\">Trang cá nhân</a>
+                                echo "<a href=\"../user/trang_ca_nhan.php\" class=\"register\">Cá nhân</a>
                                 <a href=\"./logout.php\" class=\"register\">Đăng xuất</a>";
                             } else {
-                                echo "<a href=\"../admin/index.php\" class=\"register\">Dashboard</a>
+                                echo "<a href=\"../admin/index.php\" class=\"register\">Admin</a>
                                 <a href=\"./logout.php\" class=\"register\">Đăng xuất</a>";
                             }
                         }
