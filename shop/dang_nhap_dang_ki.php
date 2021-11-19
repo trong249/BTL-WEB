@@ -226,6 +226,7 @@ function consolelog($message) {
                                         <label for="forgor_email" class="visually-hidden-focusable">Email</label>
                                         <input type="text" name="forgor_email" id="forgor_email" class=" form-control input-field" placeholder="Email" required> 
                                     </div>
+                                    <div class="invalid"><?php echo $error_email[$e]?></div>
                                     <div class="my-5">
                                         <button class="btn btn-primary my-btn container" type="submit" name="submit_btn" value="forgor">Xác nhận</button>
                                     </div>
@@ -261,7 +262,14 @@ function consolelog($message) {
                     console.log(\"calling here from sign_in\");
                     to_sign_in();
                     </script>";
-                }
+            }
+
+            if(isset($_GET["page"]) && $_GET["page"] == "forgor") {
+                echo "<script>
+                    console.log(\"calling here from forgor\");
+                    to_forgor();
+                    </script>";
+            }
         }
 
         ?>
@@ -565,6 +573,45 @@ function consolelog($message) {
                         }
                     }
                 )
+                //forgot-------------------------------------------------------------
+                $("#forgor_email").focusin(function() {
+                    $(this).parent().parent().find(".invalid").eq(0).empty();
+                })
+                
+                $("#forgor_email").focusout(function() {
+                    var id = "#forgor_email";
+                    var invalid_location = 0;
+                    reportErrorEmail(id, invalid_location);
+                })
+
+                $("form").eq(2).submit(function(e) {
+                    console.log("Prevent form submit success!");
+                    e.preventDefault();
+                    var error = $(this).find(".is-invalid").length;
+                    if (error == 0) {
+                        var fg_email = $("#forgor_email").val();
+                        console.log(fg_email);
+                        $.post("./forgor.php",
+                        {
+                            forgor_email: fg_email
+                        },
+                        function(returnData, status) {
+                            console.log(returnData);
+                            result = JSON.parse(returnData)
+                            console.log(result);
+                            if (result["error_email"] != "") {
+                                $("form").eq(2).find(".invalid").eq(0).empty().html(result["error_email"]);
+                            } else {
+                                var alertbox = $("<div></div>").text(result["valid_email"]).addClass("alert alert-success");
+                                console.log(alertbox);
+                                console.log($(".container-fluid").eq(2));
+                                var link_to_next_page = "<button class=\"btn btn-primary my-btn container\"><a class=\"text-white\"href=\"./check_reset_code.php?code=" + result["hashed_code"] +"\">Tới trang reset code</a></button>";
+                                $(".container-fluid").eq(2).append(alertbox, link_to_next_page).find("form").remove();
+                            }
+                        });
+                    }
+                })
+    
             });
             console.log($("#sign_in_email").parent().parent().children(".invalid").eq(1));
         </script>

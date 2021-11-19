@@ -36,15 +36,12 @@ textarea {
     padding-bottom:0;
 }
 
-.navbar-brand {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-}
 
 .nav-item {
     transition: background-color 1s;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    border-radius: 10px;
 }
 
 .nav-item:hover {
