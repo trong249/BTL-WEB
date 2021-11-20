@@ -43,6 +43,29 @@
                 VALUES('$rand','$id','$user','$date','$noi_dung')";
         $sql->query($data);
     }
+/****************************************************************************************/ 
+    //  lấy các random id trong bảng giỏ hàng
+    $selectData = "SELECT rand FROM gio_hang";
+    $row=$sql->query($selectData);
+    $arr_gio_hang =array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr_gio_hang,$res);
+    }
+    $gio_hang=json_encode($arr_gio_hang);
+    // thêm vao giỏ hàng
+    if(isset($_REQUEST['add'])){
+        $rand1=$_REQUEST['rand1'];
+        $username=$_REQUEST['username'];
+        $id_sp=$_REQUEST['id_sp'];
+        $size=$_REQUEST['size'];
+        $so_luong=$_REQUEST['so_luong'];
+
+        $data ="INSERT INTO gio_hang  (rand, user, id_sp, size, so_luong)
+                VALUES('$rand1','$username','$id_sp','$size','$so_luong')";
+        $sql->query($data);
+    }    
+
+
     $sql->close();
 /*********************************************************************************************************/
 ?> 
@@ -198,6 +221,7 @@
     <script>
         let san_pham=JSON.parse(JSON.stringify(<?php echo $sp ?>))
         let arr_binh_luan=JSON.parse(JSON.stringify(<?php echo $binh_luan ?>));
+        let arr_gio_hang_id=JSON.parse(JSON.stringify(<?php echo $gio_hang ?>));
         
         function formatMoney(str) {
             return str.split('').reverse().reduce((prev, next, index) => {
@@ -214,7 +238,7 @@
             return `${day}-${month+1}-${year}`;
         }
 
-        function rand(){
+        function rand_cmt(){
             let check=true;
             let res=Math.floor(Math.random()*1000);
 
@@ -224,7 +248,20 @@
                 break;
             }
             if(check&&res>=100) return res;
-            else return rand();
+            else return rand_cmt();
+        }
+
+        function rand_gio_hang(){
+            let check=true;
+            let res=Math.floor(Math.random()*10000);
+
+            for(let i=0;i<arr_gio_hang_id;i++){
+                if(res==parseInt(arr_gio_hang_id[i].rand))
+                check=false;
+                break;
+            }
+            if(check&&res>=1000) return res;
+            else return rand_gio_hang();
         }
 
         function handlePrice(don_gia,giam_gia){
@@ -236,6 +273,21 @@
             else {
                 return `<span class="price-no-sale">${formatMoney(don_gia)} <span>VNĐ</span></span>
                         <span class="latest-price">${formatMoney(Math.ceil(dg-dg*gg/100).toString())} <span>VND</span></span>`
+            }
+        }
+
+        function addToCart(){
+            let id_sp=san_pham.id;
+            let user="<?php echo $username?>";
+            let size=parseInt(document.querySelector(".size").value);
+            let so_luong=parseInt(document.querySelector(".qty").value);
+            if(user!=-1){
+                    fetch(`chi_tiet_sp.php?add=1&rand1=${rand_gio_hang()}&username=${user}&id_sp=${id_sp}&size=${size}&so_luong=${so_luong}`);
+                    alert("Đã thêm vào giỏ hàng của bạn!")
+            }
+            else {
+                alert("Bạn phải đăng nhập trước đã!")
+                return;
             }
         }
 
@@ -257,7 +309,7 @@
                             </div>
                         </li>`;
                 document.querySelector(".comment-area ul").insertAdjacentHTML("beforeend",html);
-                fetch(`chi_tiet_sp.php?cmt=1&user=${author}&rand=${rand()}&id=${san_pham.id}&date=${formatDate()}&noi_dung=${text}`);
+                fetch(`chi_tiet_sp.php?cmt=1&user=${author}&rand=${rand_cmt()}&id=${san_pham.id}&date=${formatDate()}&noi_dung=${text}`);
                 document.querySelector(".add-comment textarea").value='';
             } 
         }
@@ -302,8 +354,6 @@
 
         }
 
-
-
         function renderComment(){
             let html='';
             for(let i=0;i<arr_binh_luan.length;i++){
@@ -322,7 +372,7 @@
             }
             document.querySelector(".comment-area ul").innerHTML=html;
         }
-
+         
         renderProdcut();
         renderComment();
 

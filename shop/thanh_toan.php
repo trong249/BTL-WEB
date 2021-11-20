@@ -1,3 +1,43 @@
+<?php
+    $sql=mysqli_connect("localhost","root","","data_ishine");
+
+    if(isset($_REQUEST['username'])){
+        $username=$_REQUEST['username'];
+    }
+    
+/****************************************************************************************/ 
+    // danh sach thông tin sản phẩm
+    $selectData = "SELECT * FROM hang_hoa";
+    $row=$sql->query($selectData);
+    $arr=array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr,$res);
+    }
+    $san_pham=json_encode($arr);    
+/****************************************************************************************/ 
+    //  lấy  bảng giỏ hàng
+    $selectData = "SELECT * FROM gio_hang";
+    $row=$sql->query($selectData);
+    $arr_gio_hang =array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr_gio_hang,$res);
+    }
+    $gio_hang=json_encode($arr_gio_hang);
+/*********************************************************************************************************/
+/*********************************************************************************************************/
+    $sql->close();
+
+?> 
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="vi">
     <head>
@@ -40,6 +80,8 @@
                             <input type="text" class="form-control" name="name" id="name" required>
                             <label for="email" class="form-label">Email</label>
                             <input type="text" class="form-control" name="email" id="email" required>
+                            <label for="address" class="form-label">Số điên thoại</label>
+                            <input type="text" class="form-control" name="phone" id="phone" required>
                             <label for="address" class="form-label">Địa chỉ</label>
                             <input type="text" class="form-control" name="address" id="address" required>
                             <label for="note" class="form-label">Ghi chú</label>
@@ -47,8 +89,9 @@
                         </div>
                     </div>
                     <div id="don-hang" class="col col-12 col-lg-6">
-                        <div class="container fancy-box pt-3">
-                            <h4 class="text-uppercase mb-3">Đơn hàng của bạn</h4>
+                        <div class="container fancy-box pt-3 wrap">
+
+                            <!-- <h4 class="text-uppercase mb-3">Đơn hàng của bạn</h4>
                             <div class="container border border-danger border-3" style="padding: 5px;">
                                 <div class="order-row">
                                     <div class="justify-content-start text-bold">SẢN PHẨM</div>
@@ -87,7 +130,8 @@
                                     Quý khách vui lòng kiểm tra lại thông tin giao hàng và thông tin đơn hàng để tiến hành đặt hàng. Cảm ơn quý khách đã ủng hộ Ishin shop. Chúc quý khách ngày mới tốt lành!
                                 </div>
                                 <button type="submit" class="btn btn-primary" aria-label="Đặt hàng">Đặt hàng</button>
-                            </div>
+                            </div> -->
+
                         </div>
                     </div>
                 </form>
@@ -97,6 +141,92 @@
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <!-- IMPORT FOOTER -->
     <?php require('footer.php') ?>  
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <script>
+        let san_pham=JSON.parse(JSON.stringify(<?php echo $san_pham ?>))
+        let gio_hang=JSON.parse(JSON.stringify(<?php echo $gio_hang ?>));
+        let username="<?php echo $username ?>";
+        
+
+
+        function formatMoney(str) {
+            return str.split('').reverse().reduce((prev, next, index) => {
+                return ((index % 3) ? next : (next + ',')) + prev
+            })
+        }
+
+        function getName(id){
+            let res;
+            for(let i=0;i<san_pham.length;i++){
+                if(san_pham[i].id==id) {
+                    res=san_pham[i].ten_hh;
+                }
+            }
+            return res;
+        }
+
+        function getPrice(id){
+            let res;
+            for(let i=0;i<san_pham.length;i++){
+                if(san_pham[i].id==id) {
+                    if( san_pham[i].giam_gia!=0 )
+                        res=parseInt(san_pham[i].don_gia)-parseInt(san_pham[i].don_gia)*parseInt(san_pham[i].giam_gia)/100;
+                    else 
+                        return res=parseInt(san_pham[i].don_gia);
+                }
+            }
+            return res;
+        }
+
+        function render(){
+            let arr=gio_hang.filter(e=>e.user==username);
+            let sum=0;
+            let html=`<h4 class="text-uppercase mb-3">Đơn hàng của bạn</h4>
+                      <div class="container border border-danger border-3" style="padding: 5px;">
+                                <div class="order-row">
+                                    <div class="justify-content-start text-bold">SẢN PHẨM</div>
+                                    <div class="justify-content-end text-bold">TỔNG</div>
+                                </div>`;
+            for(let i=0;i<arr.length;i++){
+                let price=getPrice(arr[i].id_sp)*parseInt(arr[i].so_luong);
+                html+=`<div class="order-row">
+                            <div class="justify-content-start">
+                                <span id="product-name">${getName(arr[i].id_sp)}</span>
+                                <span id="product-amount">x ${arr[i].so_luong}</span>
+                            </div>
+                            <div class="justify-content-end">
+                                 <span id="product-price-init">${formatMoney(price.toString())} VNĐ</span>
+                            </div>
+                        </div>`;
+                sum+=price;
+            }
+
+            html+=`<div class="order-row">
+                                    <div class="justify-content-start text-bold">
+                                        Giao hàng
+                                    </div>
+                                    <div class="justify-content-end">
+                                    Giao hàng miễn phí dưới 5km
+                                    </div>
+                                </div>
+                                <div class="order-row">
+                                    <div class="justify-content-start text-bold">TỔNG</div>
+                                    <div class="justify-content-end">
+                                        <span id="product-price-final">${formatMoney(sum.toString())} VNĐ</span>
+                                    </div>
+                                </div>
+                                <div class="text-italic thanks" style="border-bottom:1px solid grey;">
+                                    Quý khách vui lòng kiểm tra lại thông tin giao hàng và thông tin đơn hàng để tiến hành đặt hàng. Cảm ơn quý khách đã ủng hộ Ishin shop. Chúc quý khách ngày mới tốt lành!
+                                </div>
+                                <button type="submit" class="btn btn-primary" aria-label="Đặt hàng">Đặt hàng</button>
+                            </div>`;
+            document.querySelector(".wrap").innerHTML=html;
+        }
+
+        render();
+
+
+    </script>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="../js/tin_tuc/main.js"></script>

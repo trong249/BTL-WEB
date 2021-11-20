@@ -1,3 +1,50 @@
+<?php
+    $sql=mysqli_connect("localhost","root","","data_ishine");
+/****************************************************************************************/ 
+    // danh sach thông tin sản phẩm
+    $selectData = "SELECT * FROM hang_hoa";
+    $row=$sql->query($selectData);
+    $arr=array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr,$res);
+    }
+    $san_pham=json_encode($arr);    
+/****************************************************************************************/ 
+    //  lấy  bảng giỏ hàng
+    $selectData = "SELECT * FROM gio_hang";
+    $row=$sql->query($selectData);
+    $arr_gio_hang =array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr_gio_hang,$res);
+    }
+    $gio_hang=json_encode($arr_gio_hang);
+/*********************************************************************************************************/
+    if(isset($_REQUEST['delete'])){
+        $rand=$_REQUEST['rand'];
+        $delete="DELETE FROM gio_hang WHERE rand=$rand";
+        $sql->query($delete);
+    }
+/*********************************************************************************************************/
+    $sql->close();
+
+?> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +87,7 @@
 
             <div class="col-12 col-md-7 list-product">
                 <table class="table ">
-                    <thead>
+                    <!-- <thead>
                         <tr>
                             <th class="name">SẢN PHẨM</th>
                             <th class='img'>HÌNH ẢNH</th>
@@ -48,8 +95,8 @@
                             <th style="width: 20%;text-align: center;">SL</th>
                             <th></th>
                         </tr>
-                    </thead>
-                    <tbody>
+                    </thead> -->
+                    <!-- <tbody > 
                         <tr>
                             <td>YEEZY BOOST 350V2 ASH PEARL</td>
                             <td><img src="../img/san_pham/2.jpg" alt="" style="width: 80%;"></td>
@@ -57,7 +104,7 @@
                             <td style="text-align: center;">1</td>
                             <td><a href="#"><i class="fa fa-times-circle" aria-hidden="true" ></i></a></td>
                         </tr>                          
-                    </tbody>
+                    </tbody> -->
                 </table>
 
                 <a href="san_pham.php" class="continue-shopping">Tiếp tục xem sản phẩm</a>  
@@ -65,7 +112,7 @@
             <!---------------------------------------------------------------------------------->
             <div class="col-12 col-md-5 order">
                 <table class="table">
-                    <thead>
+                    <!-- <thead>
                         <tr>
                             <th colspan="2" style="text-align: left;">ĐƠN HÀNG CỦA BẠN ĐÃ SẴN SÀNG </th>
                             
@@ -89,19 +136,148 @@
                         <tr>
                             <td colspan="2"><a href="thanh_toan.php" class="go-to-order">TIẾN HÀNH ĐẶT HÀNG</a></td>
                         </tr>
-                    </tbody>
+                    </tbody> -->
                 </table>
+                
             </div>
 
         </div>
     </section>
-
-    <!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
-
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <!-- IMPORT FOOTER -->
     <?php require('footer.php') ?>  
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
+<?php
+        require_once "./check_rememberme.php";
+        $username;
+        if(isset($_SESSION['username'])){
+            $username=$_SESSION['username'];
+        }
+        else{
+            $username=-1;
+        }
+?>
+<script>
+        let san_pham=JSON.parse(JSON.stringify(<?php echo $san_pham ?>))
+        let gio_hang=JSON.parse(JSON.stringify(<?php echo $gio_hang ?>));
+        let username="<?php echo $username ?>";
+
+        function formatMoney(str) {
+            return str.split('').reverse().reduce((prev, next, index) => {
+                return ((index % 3) ? next : (next + ',')) + prev
+            })
+        }
+
+        function deleteItem(rand){
+            if(confirm("Xóa sản phẩm này khỏi giỏ hàng ?")){
+                fetch(`gio_hang.php?delete=1&rand=${rand}`);
+                document.location.reload(true)
+            }
+        }
+
+        function getName(id){
+            let res;
+            for(let i=0;i<san_pham.length;i++){
+                if(san_pham[i].id==id) {
+                    res=san_pham[i].ten_hh;
+                }
+            }
+            return res;
+        }
+        function getImg(id){
+            let res;
+            for(let i=0;i<san_pham.length;i++){
+                if(san_pham[i].id==id) {
+                    res=san_pham[i].hinh;
+                }
+            }
+            return res;
+        }
+        function getPrice(id){
+            let res;
+            for(let i=0;i<san_pham.length;i++){
+                if(san_pham[i].id==id) {
+                    if( san_pham[i].giam_gia!=0 )
+                        res=parseInt(san_pham[i].don_gia)-parseInt(san_pham[i].don_gia)*parseInt(san_pham[i].giam_gia)/100;
+                    else 
+                        return res=parseInt(san_pham[i].don_gia);
+                }
+            }
+            return res;
+        }
+
+        function render1(){
+            let html=`  <thead>
+                            <tr>
+                                <th class="name">SẢN PHẨM</th>
+                                <th class='img'>HÌNH ẢNH</th>
+                                <th style="width: 20%;">GIÁ</th>
+                                <th style="width: 20%;text-align: center;">SL</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody style="max-height: 300px;overflow-y: scoll;">`;
+            if(username!=-1){
+                let arr=gio_hang.filter(e=>e.user==username)
+                for(let i=0;i<arr.length;i++){
+                    html+=` <tr id="id${arr[i].rand}">
+                                <td>${getName(arr[i].id_sp)}</td>
+                                <td><img src="../img/san_pham/${getImg(arr[i].id_sp)}" alt="" style="width: 80%;"></td>
+                                <td>${formatMoney(getPrice(arr[i].id_sp).toString())} VND</td>
+                                <td style="text-align: center;">${arr[i].so_luong}</td>
+                                <td><buttn onclick="deleteItem('${arr[i].rand}')"><i class="fa fa-times-circle" aria-hidden="true" ></i></buttn></td>
+                            </tr>`
+                }
+                html+=`</tbody>`
+                document.querySelector(".list-product table").innerHTML=html;
+            }
+        }
+
+        function render2(){
+            let price=0;
+            let html;
+            if(username!=-1){
+                let arr=gio_hang.filter(e=>e.user==username)
+                for(let i=0;i<arr.length;i++){
+                    price+= parseInt(arr[i].so_luong)*getPrice(arr[i].id_sp)
+                }
+                html=`<thead>
+                        <tr>
+                            <th colspan="2" style="text-align: left;">ĐƠN HÀNG CỦA BẠN ĐÃ SẴN SÀNG </th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tổng hóa đơn</td>
+                            <td style="text-align:right;">${formatMoney(price.toString())} VND</td>
+                        </tr>
+                        <tr>
+                            <td>Giao hàng</td>
+                            <td style="text-align:right;">Giao hàng miễn phí <br>
+                            trong ngày<br>
+                            tại nội thành Hồ Chí Minh </td>
+                        </tr>
+                        <tr>
+                            <td>Tổng sau thuế</td>
+                            <td style="text-align:right;"><b>${formatMoney(price.toString())} VND</b></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><a href="thanh_toan.php?username=${username}" class="go-to-order">TIẾN HÀNH ĐẶT HÀNG</a></td>
+                        </tr>
+                    </tbody>`;
+            }
+            else {
+                html=`<p style="color: red;">Bạn chưa đăng nhập!</p>`
+            }
+            document.querySelector(".order table").innerHTML=html;
+            
+        }
+
+
+        render1();
+        render2();
+</script>   
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
-    <script src="js/chi_tiet_sp/main.js"></script>
 </body>
 </html>

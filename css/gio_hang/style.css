@@ -51,6 +51,7 @@ table{
     border: transparent;
     border-radius: 5px;
     color: rgb(255, 255, 255);
+    
 }
 .list-product .continue-shopping:hover{
     background-color: rgb(61, 139, 170);
