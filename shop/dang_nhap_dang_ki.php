@@ -601,12 +601,20 @@ function consolelog($message) {
                             console.log(result);
                             if (result["error_email"] != "") {
                                 $("form").eq(2).find(".invalid").eq(0).empty().html(result["error_email"]);
+                                var input_field = $("#forgor_email");
+                                if (!input_field.hasClass("is-invalid")) {
+                                    input_field.addClass("is-invalid");
+                                }
+                                if (input_field.hasClass("is-valid")) {
+                                    input_field.removeClass("is-valid");
+                                }
                             } else {
                                 var alertbox = $("<div></div>").text(result["valid_email"]).addClass("alert alert-success");
                                 console.log(alertbox);
                                 console.log($(".container-fluid").eq(2));
-                                var link_to_next_page = "<button class=\"btn btn-primary my-btn container\"><a class=\"text-white\"href=\"./check_reset_code.php?code=" + result["hashed_code"] +"\">Tới trang reset code</a></button>";
+                                var link_to_next_page = "<a class=\"text-white\"href=\"./check_reset_code.php?code=" + result["hashed_code"] +"\"><button class=\"btn btn-primary my-btn container\">Tới trang reset code</button></a>";
                                 $(".container-fluid").eq(2).append(alertbox, link_to_next_page).find("form").remove();
+                               
                             }
                         });
                     }
