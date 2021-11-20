@@ -95,6 +95,7 @@
                 </div>
                 <div>
                     <a href="../../index.php">Back to shop!</a>
+                    <a href="../../user/doi_mat_khau.php" style=" margin-left:10px">Change password!</a>
                 </div>
             </div>
             <div class="content">
