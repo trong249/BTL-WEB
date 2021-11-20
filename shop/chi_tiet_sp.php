@@ -44,6 +44,7 @@
         $sql->query($data);
     }
     $sql->close();
+/*********************************************************************************************************/
 ?> 
 
 
@@ -89,7 +90,19 @@
     </section>
 
     <!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
-    
+    <!-- Check đăng nhập và lấy usename -->
+    <?php
+        require_once "./check_rememberme.php";
+        $username;
+        if(isset($_SESSION['username'])){
+            $username=$_SESSION['username'];
+        }
+        else{
+            $username=-1;
+        }
+    ?>
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
+
     <section class="detail container">
         <div class="row">
             <!-- <div class="col-md-6 col-lg-4">
@@ -162,13 +175,13 @@
             </li> -->
         </ul>
 
-        <div class="alert" hidden>
+        <div class="alert" <?php if($username!=-1) echo "hidden"  ?> >
             <p style="color: red;">Đăng nhập để bình luận về sản phẩm này !</p>
         </div>
 
         <div class="add-comment">
             <textarea name="" id="" cols="150" rows="2" placeholder="Nhận xét..."></textarea><br>
-            <button onclick="sendComment()">Gửi</button>
+            <button onclick="sendComment(<?php  echo "'$username'" ?> )" >Gửi</button>
         </div>
 
 
@@ -176,7 +189,7 @@
 
     </section>
 
-    <!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
 
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <!-- IMPORT FOOTER -->
@@ -226,21 +239,27 @@
             }
         }
 
-        function sendComment(){
-            let text=document.querySelector(".add-comment textarea").value;
-            let html=`<li>
-                        <div class="each-cmt">
-                            <div class="content">
-                                <p>${text}</p>
+        function sendComment(author){
+            if(author==-1) {
+                alert("Bạn phải đăng nhập để có thể gửi nhận xét này!");
+                return;
+            }
+            else{
+                let text=document.querySelector(".add-comment textarea").value;
+                let html=`<li>
+                            <div class="each-cmt">
+                                <div class="content">
+                                    <p>${text}</p>
+                                </div>
+                                <div class="author">
+                                    <p> <span>${author}</span>, <span>${formatDate()}</span></p>
+                                </div>
                             </div>
-                            <div class="author">
-                                <p> <span>admin</span>, <span>${formatDate()}</span></p>
-                            </div>
-                        </div>
-                    </li>`;
-            document.querySelector(".comment-area ul").insertAdjacentHTML("beforeend",html);
-            fetch(`chi_tiet_sp.php?cmt=1&user=admin&rand=${rand()}&id=${san_pham.id}&date=${formatDate()}&noi_dung=${text}`)
-                
+                        </li>`;
+                document.querySelector(".comment-area ul").insertAdjacentHTML("beforeend",html);
+                fetch(`chi_tiet_sp.php?cmt=1&user=${author}&rand=${rand()}&id=${san_pham.id}&date=${formatDate()}&noi_dung=${text}`);
+                document.querySelector(".add-comment textarea").value='';
+            } 
         }
 
         function renderProdcut(){
@@ -303,10 +322,10 @@
             }
             document.querySelector(".comment-area ul").innerHTML=html;
         }
-        console.log(rand());
 
         renderProdcut();
         renderComment();
+
     </script>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->  
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
