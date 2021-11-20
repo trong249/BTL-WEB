@@ -12,16 +12,12 @@
 
     require "../vendor/autoload.php";
 
-
-    // Initialize the session
-    
-    session_start();
-
     
     $user_email = "";
 
     $valid_email = "";
     $error_email = "";
+    $hashed_code = "";
 
     function clean_input($input) {
         $input = trim($input);
@@ -112,7 +108,7 @@
                     $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
                     $mail->CharSet = 'UTF-8';
                     //Recipients
-                    $mail->setFrom('cat.tran03@hcmut.edu.vn', 'iShin Shop');
+                    $mail->setFrom('satoukazuma.clone@gmail.com', 'iShin Shop');
                     $mail->addAddress("$user_email");     //Add a recipient
                     
                 

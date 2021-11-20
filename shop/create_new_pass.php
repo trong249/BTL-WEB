@@ -82,9 +82,16 @@ function consolelog($message) {
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    //comment dong if nay neu muon xem nhanh trang web. dong if nay dam bao trang check_reset_code phai co $_GET["code"] va $_GET["m"]
+       if (!isset($_GET["code"]) || !isset($_GET["m"])) {
+        echo "Something went wrong, I can feel it";
+        header("refresh:3;url=\"trang_chu.php\"");
+        exit;
+    }
+    //---------------------------------------------
     $code = $_GET["code"];
     $md5 = $_GET["m"];
-
+ 
     if (md5($code) == $md5) {
 
     

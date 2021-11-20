@@ -28,7 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-
+    //comment dong if nay neu muon xem nhanh trang web. dong if nay dam bao trang check_reset_code phai co $_GET["code"]
+    if (!isset($_GET["code"])) {
+        echo "Something went wrong, I can feel it";
+        header("refresh:3;url=\"trang_chu.php\"");
+        exit;
+    }
+    //---------------------------------------------
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         <?php
             $n = 0;
             $error_username = array("",
-                                "Xin hãy nhập Username của bạn", 
+                                "Xin hãy nhập mã code", 
                                 "Độ dài code chỉ tối đa 6 kí tự",
                                 "Code không hợp lệ");
 
@@ -89,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                                     echo "<input type=\"hidden\" id=\"code\" name=\"code\" value=". $_GET["code"] .">";
                                     ?>
                                     <div class="my-5">
-                                        <button class="btn btn-primary my-btn container" type="submit" name="submit_btn" value="sign_up">Đăng kí</button>
+                                        <button class="btn btn-primary my-btn container" type="submit" name="submit_btn" value="sign_up">Xác nhận</button>
                                     </div>
                                 </form>
                             </div>
