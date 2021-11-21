@@ -1,3 +1,6 @@
+<?php
+    $link = new mysqli('localhost','root','','data_ishine');
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,7 +20,7 @@
         <!-- favicon -->
         
         <!-- CSS -->
-        <link rel="stylesheet" href="../css/chi_tiet_don_hang/style.css">
+        <link rel="stylesheet" href="../css/chi_tiet_don_hang/style1.css">
 
     <title>Chi tiết đơn hàng</title>
 </head>
@@ -34,12 +37,88 @@
 		  <div class="header"> 
                 <!-- /. XỬ LÝ CODE PHP  -->
             <div class="page-header">
-                <h1>CHI TIẾT ĐƠN HÀNG SỐ x</h1><br>
-                <h3>MÃ KHÁCH HÀNG: abc</h3>
-                <p>Danh sách sản phẩm: </p>
+
+                <?php
+                    if (isset($_GET['id'])){
+                        $id = $_GET['id'];
+                        $query1 = "SELECT user FROM don_hang WHERE ma_don='$id'";
+                        $result1 = mysqli_query($link, $query1);
+                        if (mysqli_num_rows($result1) > 0) {
+                        $row = mysqli_fetch_assoc($result1);
+                        $user = $row['user'];
+                        echo "<h1>CHI TIẾT ĐƠN HÀNG SỐ $id</h1>";
+                        echo "<h3>MÃ KHÁCH HÀNG: $user</h3>";
+                        echo "<p>Danh sách sản phẩm: </p>";
+                        }
+                    }
+                    else {
+                        echo "<h1>CHI TIẾT ĐƠN HÀNG SỐ -</h1>";
+                        echo "<h3>MÃ KHÁCH HÀNG: -</h3>";
+                        echo "<p>Danh sách sản phẩm: </p>";
+                    }
+                ?>
+
 
                 <!-- /. CONTENT  -->
                 <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>TÊN HÀNG HÓA</th>
+                            <th>SỐ LƯỢNG</th>
+                            <th>ĐƠN GIÁ/SP</th>
+                            <th>THÀNH TIỀN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <?php
+                        if (isset($_GET['id'])){
+                            $id = $_GET['id'];
+                            $query = "SELECT ten_hang_hoa, so_luong, don_gia, giam_gia FROM hoa_don_chi_tiet WHERE ma_don='$id'";
+                            $result = mysqli_query($link, $query);
+                            $tong = 0;
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)){
+                                    $ten_hang_hoa = $row['ten_hang_hoa'];
+                                    $so_luong = $row['so_luong'];
+                                    $don_gia = $row['don_gia'];
+                                    $giam_gia = $row['giam_gia'];
+                                    $thanh_tien = (intval($don_gia) - intval($don_gia) * intval($giam_gia) / 100) * intval($so_luong);
+                                    $tong = $tong + $thanh_tien;
+                                    echo "<tr>";
+                                    echo "<td>$ten_hang_hoa</td>"; 
+                                    echo "<td>$so_luong</td>";
+                                    echo "<td>$don_gia</td>";
+                                    echo "<td>$thanh_tien</td>";
+                                    echo "</tr>";
+                                }
+                                echo "<tr>";
+                                echo "<td colspan=\"3\" style = \"text-align:center;\"><b>TỔNG TIỀN</b></td>";
+                                echo "<td>$tong</td>";
+                                echo "</tr>";
+                            }
+                        }
+                        else {
+                            echo "<tr>";
+                            echo "<td>-</td>"; 
+                            echo "<td>-</td>";
+                            echo "<td>-</td>";
+                            echo "<td>-</td>";
+                            echo "</tr>";
+
+                            echo "<tr>";
+                            echo "<td colspan=\"3\" style = \"text-align:center;\"><b>TỔNG TIỀN</b></td>";
+                            echo "<td>-</td>";
+                            echo "</tr>";
+                        }
+                            
+                        ?>
+                <!-- <h1>CHI TIẾT ĐƠN HÀNG SỐ x</h1><br>
+                <h3>MÃ KHÁCH HÀNG: 123</h3>
+                <p>Danh sách sản phẩm: </p> -->
+
+                <!-- /. CONTENT  -->
+                <!-- <table class="table table-hover">
                     <thead>
                         <tr>
                             <th>TÊN HÀNG HÓA</th>
@@ -59,7 +138,7 @@
                         <tr>
                             <td colspan="3" style = "text-align:center;"><b>TỔNG TIỀN</b></td>
                             <td> 2.100.000 VNĐ</b></td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
@@ -69,22 +148,12 @@
          <!-- /. PAGE WRAPPER  -->
         </div>
      <!-- /. WRAPPER  -->
-    <!-- JS Scripts-->
-    <!-- jQuery Js -->
-    <script src="../../../css/admin/js/jquery-1.10.2.js"></script>
-      <!-- Bootstrap Js -->
-    <script src="../../../css/admin/js/bootstrap.min.js"></script>
-    <!-- Metis Menu Js -->
-    <script src="../../../css/admin/js/jquery.metisMenu.js"></script>
-      <!-- Custom Js -->
-    <script src="../../../css/admin/js/custom-scripts.js"></script>
-
+    
     <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <!-- IMPORT FOOTER -->
     <?php require('footer.php') ?>  
     <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/gioi_thieu/main.js"></script>
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

@@ -1,3 +1,6 @@
+<?php
+    $link = new mysqli('localhost','root','','data_ishine');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,46 +50,31 @@
                    <tr>
                       <th style="width: 20%">Mã Đơn Hàng</th>
                       <th style="width: 20%">Ngày mua</th>
-                      <th style="width: 20%">Ghi chú</th>
                       <th style="width: 20%">Tình trạng</th>
                       <th style="width: 20%">Chi tiết</th>
+                      <th style="width: 20%">Ghi chú</th>
                    </tr>
                 </thead>
                 <tbody>
-                   <tr>
-                      <td>20IS300105</td>
-                      <td>23/09/2021</td>
-                      <td>-</td>
-                      <td>
-                        <button type="button" class="btn btn-danger btn-sm">Đã hủy</button>
-                        </td>
-                      <td>
-                        <button type="button" class="btn btn-outline-info btn-sm">Xem chi tiết</button>
-                      </td>
-                   </tr>
-                   <tr>
-                      <td>20IS300106</td>
-                      <td>23/09/2021</td>
-                      <td>-</td>
-                      <td>
-                        <button type="button" class="btn btn-warning btn-sm">Chưa thanh toán</button>
-                        </td>
-                      <td>
-                        <button type="button" class="btn btn-outline-info btn-sm">Xem chi tiết</button>
-                      </td>
-                   </tr>
-                   <tr>
-                      <td>20IS300107</td>
-                      <td>23/09/2021</td>
-                      <td>-</td>
-                      <td>
-                        <button type="button" class="btn btn-success btn-sm">Đã thành công</button>
-                        </td>
-                      <td>
-                        <button type="button" class="btn btn-outline-info btn-sm">Xem chi tiết</button>
-                      </td>
-                   </tr>
-                    
+                  <?php
+                    $query = "SELECT ma_don,date,tinh_trang  FROM don_hang";
+                    $result = mysqli_query($link, $query);
+                    if (mysqli_num_rows($result) > 0){
+                        while ($row = mysqli_fetch_assoc($result)){
+                            $id = $row['ma_don'];
+                            $date = $row['date'];
+                            $tinh_trang = $row['tinh_trang'];
+                            echo "<tr>";
+                            echo "<td>$id</td>";
+                            echo "<td>$date</td>";
+                            echo "<td><button type=\"button\" class=\"btn btn-warning btn-sm\">$tinh_trang</button></td>";
+                            echo "<td><a href=\"chi_tiet_don_hang.php?id=$id\" class=\"btn btn-outline-info btn-sm\" role=\"button\">Chi tiết</a></td>";
+                            echo "<td>-</td>";
+                            echo "</tr>";
+                        }
+                    }
+                  ?>
+                   
                 </tbody>
              </table>
         </div>
@@ -99,7 +87,7 @@
     <?php require('footer.php') ?>  
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/gioi_thieu/main.js"></script>
+    
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

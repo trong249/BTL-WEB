@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", sans-serif;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+.text p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+
+.top-menu{
+    width: 100%;
+    line-height: 60px;
+    background-color: #363636;
+    /* position: fixed; */
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+.top-menu .container a{
+    color: #fff;
+    font-size: 13px;
+}
+.top-menu .container .gio-hang i{
+    font-size: 20px;
+}
+.top-menu .container a.active{
+    color: #126eb9;
+}
+.top-menu .container{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+.top-menu .container .menu{
+    width: 60%;
+}
+.top-menu .container .menu ul{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.top-menu .container .close{
+    display: none;
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.top-menu .container .menu-bar{
+    display: none;
+    color: #fff;
+    line-height: 60px;
+    font-size: 30px;
+}
+@media only screen and (max-width: 770px) {
+    .top-menu .container .menu{
+        position: fixed;
+        z-index: 2;
+        right: 0px;
+        height: 100vh;
+        width: 50%;
+        background-color:#363636 ;
+        box-shadow: -2px 0px 2px black;
+        transform: translateX(110%);
+        transition: all 0.3s ease-in-out;
+    }
+    .top-menu .container .menu.active{
+    transform: translateX(0);
+    }
+    .top-menu .container .menu ul {
+        flex-direction: column;
+        padding-top: 70px;
+        margin-left: 30px;
+    }
+    .top-menu .container .menu-bar{
+        display: block;
+    }
+    .top-menu .container .close{
+        display: block;
+    }
+    .top-menu .container .gio-hang{
+        position: absolute;
+        top: 10px;
+    }
+}
+
+/************************************************************************************/
+.page-wrapper {
+    margin: 20px;
+}
+
+.header {
+    margin-top: 20px;
+    width: 100%;
+    padding: 50px; 
+}
+/* .page-header {
+    margin-top: 50px;
+    width: 100%;
+    padding: 30px;
+} */
+/* ************************************************************************************************************ */
+
+/*************** footer **************/
+#logo-footer {
+    max-height: 150px;
+}
+
+.logo-f {
+    object-fit:contain;
+    object-position: 0 100%;
+}
+
+.footer{
+    width: 100%;
+    /* margin-top: 80px; */
+    padding-bottom: 50px;
+    background-color: #F0F0F1;
+    clear: left;
+    
+}
+.footer .col-12{
+    margin-top: 50px;
+}
+.footer p,  .footer li {
+    color: rgb(134, 134, 134);
+    font-size: 14px;
+}
+.footer li{
+    margin-bottom: 20px;
+}
+.footer li a{
+    margin-right:10px ;
+    color: rgb(134, 134, 134);
+}
+.footer li a:hover{
+    color: rgb(31, 31, 31);
+}
+.footer .subcribe input{
+    padding-left: 10px;
+    line-height: 20px;
+    height: 30px;
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid transparent;
+}
+.footer .subcribe button {
+    width: 50%;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: white;
+}
+.footer .subcribe button:hover{
+    background-color: black;
+    color: white;
+}
+@media only screen and (max-width: 960px){
+    .footer .col-12{
+        text-align:left;
+    }
+}
+@media only screen and (max-width: 770px){
+    .footer .col-12{
+        text-align: center;
+    }
+}
+
+/* ********************************************** */
+.move-to-top{
+    position: fixed;
+    bottom: 50px;
+    right: 5%;
+    font-size: 40px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.move-to-top i{
+    transform: translateY(120%);
+    transition: all 0.3s ease-in-out;
+}
+.move-to-top i.active{
+    transform: translateY(0);
+}
+
+
+@media only screen and (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1140px;
+    }
+}
+
+/* override bootstrap css of footer */
+/* damn, this is annoying */
+
+.footer p {
+    margin: 0 !important;
+}
+
+.footer .row {
+    --bs-gutter-x:0;
+}
+
+.footer * {
+    line-height: normal !important;
+}
+
+.footer h2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.footer ul, .footer li {
+    padding-left: 0;
+}
+
+.footer .col-12, .footer .col-md-3 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.footer .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.footer input, .footer button {
+    font-size: 13.3333px;
+}
