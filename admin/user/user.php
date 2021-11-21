@@ -1,6 +1,38 @@
 <?php
     require_once "../check_admin.php";
 ?>
+<?php
+
+    $sql=mysqli_connect("localhost","root","","data_ishine");
+/****************************************************************************************/  
+    $selectData = "SELECT * FROM users";
+    $row=$sql->query($selectData);
+    $arr =array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr,$res);
+    }
+/****************************************************************************************/
+    function getRoleText($role){
+        if($role==0) return "User";
+        else return "Admin";
+    }
+    function hiddenOrNot($role){
+        if($role==1) return "hidden";
+        else return "";
+    }
+/****************************************************************************************/ 
+    $sql->close();
+?>  
+
+
+
+
+
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -78,13 +110,31 @@
                             <th style="width: 8%;">VAI TRÒ</th>
                             <th style="width: 7%;">OPTION</th>
                         </tr>
-                        <tr>
+                        <?php
+                            foreach($arr as $i=>$user){
+                                $username=$user['username'];
+                                $email=$user['email'];
+                                $address=$user['dia_chi'];
+                                $role=getRoleText($user['vai_tro']);
+                                $hidden=hiddenOrNot($user['vai_tro']);
+                                echo "<tr>
+                                        <td>$username</td>
+                                        <td>$email</td>
+                                        <td>$address</td>
+                                        <td>$role</td>
+                                        <td $hidden> 
+                                            <a href=\"delete.php?user=$username\" class=\"xoa\">Xóa</a>
+                                      </td>";
+                            }
+                        ?>
+
+                        <!-- <tr>
                             <td>admin</td>
                             <td>admin@gmail.com</td>
                             <td>Hồ Chí Minh</td>
                             <td>Admin</td>
-                            <td> 
-                                <!-- <a href="">Xóa</a> -->
+                            <td hidden> 
+                                 <a href="" class="xoa">Xóa</a>
                             </td>
                         </tr>
                         <tr>
@@ -95,7 +145,7 @@
                             <td > 
                                 <a href="" class="xoa">Xóa</a>
                             </td>
-                        </tr>
+                        </tr> -->
                     </table>
                 </div>
             </div>
