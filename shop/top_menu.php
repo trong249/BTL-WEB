@@ -81,7 +81,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         }
 
         .login-register *{
-            font-size: medium !important;
+            text-transform: uppercase;
         }
 
         @media only screen and (max-width: 770px) {
@@ -121,7 +121,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     <section class="top-menu">  
         <div class="container">
             <div class="logo">
-                <a href="#" class="container"><img class="logo-t" src="../img/main_logo.png" alt="Logo" style="text-align:center; line-height:100%"></a>
+                <a href="trang_chu.php" class="container"><img class="logo-t" src="../img/main_logo.png" alt="Logo" style="text-align:center; line-height:100%"></a>
             </div>
             <div class="menu">
                 <ul>
