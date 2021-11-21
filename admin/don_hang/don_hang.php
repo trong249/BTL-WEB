@@ -1,6 +1,55 @@
 <?php
     require_once "../check_admin.php";
-?>
+
+    $sql=mysqli_connect("localhost","root","","data_ishine");
+/****************************************************************************************/  
+      //  lấy  bảng  đơn hàng
+    $selectData = "SELECT * FROM don_hang";
+    $row=$sql->query($selectData);
+    $arr=array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr,$res);
+    }
+/****************************************************************************************/ 
+    function getStatusId($i){
+        if($i==0){
+            return "status_0";
+        }
+        if($i==1){
+            return "status_1";
+        }
+        if($i==2){
+            return "status_2";
+        }
+        if($i==3){
+            return "status_3";
+        }
+        if($i==4){
+            return "status_4";
+        }
+    }
+    function getStatusText($i){
+        if($i==0){
+            return "Đã hủy đơn";
+        }
+        if($i==1){
+            return "Chưa xác nhận";
+        }
+        if($i==2){
+            return "Đã xác nhận";
+        }
+        if($i==3){
+            return "Đang giao hàng";
+        }
+        if($i==4){
+            return "Hoàn thành";
+        }
+    }
+/****************************************************************************************/ 
+    $sql->close();
+?>  
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -78,41 +127,32 @@
                             <th>Tình trạng</th>
                             <th>Option</th>
                         </tr>
-                        <tr>
+                        <?php
+                            
+                          foreach($arr as $i=>$don){
+                              $ma_don=$don['ma_don'];
+                              $user=$don['user'];
+                              $date=$don['date'];
+                              $statusId=getStatusId($don['tinh_trang']);
+                              $statusText=getStatusText($don['tinh_trang']);
+                              
+                              echo "<tr>
+                                        <td>$ma_don</td>
+                                        <td>$user</td>
+                                        <td>$date</td>
+                                        <td><span id=\"$statusId\" class=\"status\">$statusText</span></td>
+                                        <td><a href=\"./chi_tiet.php?ma_don=$ma_don\" class=\"chi_tiet\">Chi tiết</a></td>
+                                    </tr> ";
+                          }      
+                            
+                        ?>
+                        <!-- <tr>
                             <td>123</td>
                             <td>trong249</td>
                             <td>14-10-2021</td>
                             <td><span id="status_1" class="status">Chưa xác nhận</span></td>
                             <td><a href="./chi_tiet.php" class="chi_tiet">Chi tiết</a></td>
-                        </tr>
-                        <tr>
-                            <td>456</td>
-                            <td>trong</td>
-                            <td>14-10-2021</td>
-                            <td><span id="status_2" class="status">Đã xác nhận</span></td>
-                            <td><a href="./chi_tiet.php" class="chi_tiet">Chi tiết</a></td>
-                        </tr>
-                        <tr>
-                            <td>456</td>
-                            <td>trong</td>
-                            <td>14-10-2021</td>
-                            <td><span id="status_3" class="status">Đang giao hàng</span></td>
-                            <td><a href="./chi_tiet.php" class="chi_tiet">Chi tiết</a></td>
-                        </tr>
-                        <tr>
-                            <td>456</td>
-                            <td>trong</td>
-                            <td>14-10-2021</td>
-                            <td><span id="status_4" class="status">Hoàn thành</span></td>
-                            <td><a href="./chi_tiet.php" class="chi_tiet">Chi tiết</a></td>
-                        </tr>
-                        <tr>
-                            <td>456</td>
-                            <td>trong</td>
-                            <td>14-10-2021</td>
-                            <td><span id="status_0" class="status">Đã hủy đơn</span></td>
-                            <td><a href="./chi_tiet.php" class="chi_tiet">Chi tiết</a></td>
-                        </tr>
+                        </tr> -->
                         
                     </table>
                 </div>
@@ -120,7 +160,5 @@
         </div>
             
 <!-- --------------------------------------------------------------------------------------------------------------------------- -->
-<!-- Script for char -->
-
 </body>
 </html>

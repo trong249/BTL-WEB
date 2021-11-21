@@ -68,7 +68,7 @@
                         <a href="" style="color: black;">THANH TOÁN</a>
                     </div>
                 </div>
-                <form action="xu_ly_dat_hang.php" method="post" class="container row">
+                <form action="xu_ly_dat_hang.php" method="post" class="container row" onsubmit="alert('Đơn hàng của bạn chấp nhận và sẽ được chúng tôi xử lý nhanh chóng')">
                     <div id="thong-tin-thanh-toan" class="d-flex col col-12 col-lg-6 flex-column">
                         <div class="container fancy-box">
                             <h4 class="text-uppercase my-3">Thông tin thanh toán</h4>

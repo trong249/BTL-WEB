@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2021 at 02:17 AM
+-- Generation Time: Nov 21, 2021 at 01:17 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -42,7 +42,6 @@ CREATE TABLE `binh_luan` (
 INSERT INTO `binh_luan` (`rand`, `id`, `user`, `date`, `noi_dung`) VALUES
 (441, 126, 'admin', '17-11-2021', 'Giày đẹp!'),
 (412, 417, 'trong', '10-1-2021', 'Giày ngon rẻ!'),
-(804, 417, 'admin', '17-10-2021', 'hảo hảo'),
 (416, 153, 'admin', '17-11-2021', 'tuyệt vời quá'),
 (643, 153, 'admin', '17-11-2021', 'đã cmt xong :D'),
 (873, 628, 'trong249', '20-11-2021', 'au de');
@@ -86,15 +85,19 @@ CREATE TABLE `don_hang` (
   `ho_va_ten` varchar(50) NOT NULL,
   `So_dien_thoai` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `Dia_chi` varchar(50) NOT NULL
+  `Dia_chi` varchar(50) NOT NULL,
+  `note` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `don_hang`
 --
 
-INSERT INTO `don_hang` (`ma_don`, `user`, `date`, `tinh_trang`, `ho_va_ten`, `So_dien_thoai`, `email`, `Dia_chi`) VALUES
-(123, 'trong24', '2021-11-11', 2, 'Nguyen Van Trong', '0123456789', 'trong@gmail.com', 'KTX khu A, Linh Trung, Thủ Đức');
+INSERT INTO `don_hang` (`ma_don`, `user`, `date`, `tinh_trang`, `ho_va_ten`, `So_dien_thoai`, `email`, `Dia_chi`, `note`) VALUES
+(509, 'trong249', '2021-11-21', 2, 'nguyễn văn trọng', '0123456789', 'trong@gmail.com', 'Ho Chi Minh', 'Giao hang can than nha !'),
+(424, 'admin', '2021-11-21', 4, 'Admin ', '0123456789', 'admin@gmail.com', 'Ho Chi Minh', 'ngon ngon'),
+(198, 'admin', '2021-11-21', 1, 'con ga con', '0123456789', 'gacon@gmail.com', 'Ho Chi Minh', 'Qua it tien '),
+(289, 'superIdol', '2021-11-21', 4, 'Super IDol', '0123456789', 'idol@gmail.com', 'Ho Chi Minh', 'haha');
 
 -- --------------------------------------------------------
 
@@ -115,9 +118,7 @@ CREATE TABLE `gio_hang` (
 --
 
 INSERT INTO `gio_hang` (`rand`, `user`, `id_sp`, `size`, `so_luong`) VALUES
-(1750, 'trong24', 153, 40, 1),
-(4663, 'trong249', 274, 37, 1),
-(9195, 'trong249', 811, 38, 2);
+(1750, 'trong24', 153, 40, 1);
 
 -- --------------------------------------------------------
 
@@ -183,18 +184,25 @@ INSERT INTO `hang_hoa` (`id`, `brand`, `ten_hh`, `hinh`, `don_gia`, `giam_gia`, 
 CREATE TABLE `hoa_don_chi_tiet` (
   `ma_don` int(11) NOT NULL,
   `ID_san_pham` int(11) NOT NULL,
-  `ten_hang_hoa` varchar(50) NOT NULL,
-  `so_luong` int(11) NOT NULL,
-  `don_gia` int(11) NOT NULL,
-  `giam_gia` int(11) NOT NULL
+  `size` int(11) NOT NULL,
+  `so_luong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `hoa_don_chi_tiet`
 --
 
-INSERT INTO `hoa_don_chi_tiet` (`ma_don`, `ID_san_pham`, `ten_hang_hoa`, `so_luong`, `don_gia`, `giam_gia`) VALUES
-(123, 19, 'YEEZY BOOST 350V2 ASH PEARL', 1, 1500000, 10);
+INSERT INTO `hoa_don_chi_tiet` (`ma_don`, `ID_san_pham`, `size`, `so_luong`) VALUES
+(509, 126, 37, 1),
+(509, 426, 40, 2),
+(424, 417, 37, 1),
+(424, 650, 37, 1),
+(198, 593, 37, 1),
+(198, 650, 37, 1),
+(198, 562, 37, 1),
+(198, 166, 37, 3),
+(289, 417, 37, 1),
+(289, 593, 37, 2);
 
 -- --------------------------------------------------------
 
