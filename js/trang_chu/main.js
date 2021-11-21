@@ -30,11 +30,13 @@ window.onscroll = () => {
 
     if (menu.classList.contains('active')==true ) {
         document.querySelector('.top-menu .container .menu-bar').style.lineHeight = '50px';
-        document.querySelector('.top-menu .container .login-register i').style.lineHeight = '50px';
+        // document.querySelectorAll('.top-menu .container .login-register i').style.lineHeight = '50px';
+        document.querySelectorAll('.top-menu .container .login-register')[0].style.height = '50px';
     }
     else {
         document.querySelector('.top-menu .container .menu-bar').style.lineHeight = '100px';
-        document.querySelector('.top-menu .container .login-register i').style.lineHeight = '100px';
+        // document.querySelectorAll('.top-menu .container .login-register i').style.lineHeight = '100px';
+        document.querySelectorAll('.top-menu .container .login-register')[0].style.height = '100px';
     }
     //  set Menu BackGround
     

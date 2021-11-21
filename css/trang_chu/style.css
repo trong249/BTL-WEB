@@ -74,7 +74,7 @@ a{
     display: none;
     line-height: 100px;
 }
-.top-menu .container .login-register a{
+.top-menu .container .login-register div > a{
     padding: 7px 10px;
     margin: 0px 3px;
     background-color: rgb(82, 79, 79);
@@ -86,7 +86,7 @@ a{
         min-width: 520px;
     }
     .top-menu .container .login-register i{
-        margin-left: 20px;
+        margin-left: 10px;
         display: block;
     }
     .top-menu .container .login-register div {
@@ -117,7 +117,6 @@ a{
     }
     .top-menu .container .menu a{
         color: rgb(100, 98, 98);
-        height: 100vh;
     }
     .top-menu .container .login-register i{
         color: rgb(100, 98, 98);
@@ -138,6 +137,8 @@ a{
         position: absolute;
         top:0px;
         left: 0px;
+        display:flex;
+        width: 100%;
     }
 }
 /* **************************************************************************************************************************** */

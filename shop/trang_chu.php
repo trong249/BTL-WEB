@@ -55,8 +55,21 @@
                     <li><a href="./tin_tuc.php">TIN TỨC</a></li>
                     <li><a href="./lien_he.php">LIÊN HỆ</a></li>
                 </ul>
-                <div class="login-register">
-                    <i class="fas fa-user"></i>
+                <div class="login-register" style="display: flex;align-items: center;height: 100px;">
+                    <?php 
+                        if (!$login) {
+                            echo "<i><a href=\"./dang_nhap_dang_ki.php?page=sign_in\" class=\"login\"><i class=\"bi bi-person-check-fill\"></i></a></i>
+                            <i><a href=\"./dang_nhap_dang_ki.php?page=sign_up\" class=\"register\"><i class=\"bi bi-person-plus-fill\"></i></a></i>";
+                        } else {
+                            if ($vaitro == 0) {
+                                echo "<i><a href=\"../user/trang_ca_nhan.php\" class=\"register\"><i class=\"bi bi-person-circle\"></i></a></i>
+                                <i><a href=\"./logout.php\" class=\"register\"><i class=\"bi bi-box-arrow-right\"></i></a></i>";
+                            } else {
+                                echo "<i><a href=\"../admin/index.php\" class=\"register\"><i class=\"bi bi-speedometer2\"></i></a></i>
+                                <i><a href=\"./logout.php\" class=\"register\"><i class=\"bi bi-box-arrow-right\"></i></a></i>";
+                            }
+                        }
+                        ?>
                     <div>
                         <?php 
                         if (!$login) {
