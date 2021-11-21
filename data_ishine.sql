@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2021 at 02:23 PM
+-- Generation Time: Nov 21, 2021 at 02:17 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -44,7 +44,8 @@ INSERT INTO `binh_luan` (`rand`, `id`, `user`, `date`, `noi_dung`) VALUES
 (412, 417, 'trong', '10-1-2021', 'Giày ngon rẻ!'),
 (804, 417, 'admin', '17-10-2021', 'hảo hảo'),
 (416, 153, 'admin', '17-11-2021', 'tuyệt vời quá'),
-(643, 153, 'admin', '17-11-2021', 'đã cmt xong :D');
+(643, 153, 'admin', '17-11-2021', 'đã cmt xong :D'),
+(873, 628, 'trong249', '20-11-2021', 'au de');
 
 -- --------------------------------------------------------
 
@@ -94,6 +95,29 @@ CREATE TABLE `don_hang` (
 
 INSERT INTO `don_hang` (`ma_don`, `user`, `date`, `tinh_trang`, `ho_va_ten`, `So_dien_thoai`, `email`, `Dia_chi`) VALUES
 (123, 'trong24', '2021-11-11', 2, 'Nguyen Van Trong', '0123456789', 'trong@gmail.com', 'KTX khu A, Linh Trung, Thủ Đức');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gio_hang`
+--
+
+CREATE TABLE `gio_hang` (
+  `rand` int(50) NOT NULL,
+  `user` varchar(50) NOT NULL,
+  `id_sp` int(50) NOT NULL,
+  `size` int(50) NOT NULL,
+  `so_luong` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `gio_hang`
+--
+
+INSERT INTO `gio_hang` (`rand`, `user`, `id_sp`, `size`, `so_luong`) VALUES
+(1750, 'trong24', 153, 40, 1),
+(4663, 'trong249', 274, 37, 1),
+(9195, 'trong249', 811, 38, 2);
 
 -- --------------------------------------------------------
 
@@ -193,7 +217,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userID`, `username`, `email`, `mat_khau`, `dia_chi`, `vai_tro`, `reset_code`) VALUES
-(1, 'admin', 'admin@gmail.com', '$2y$10$Ik0OzlHbEUXh1MnUlRn6guNZburSba.TMjrAaqnWccUeqIOt1tbNa', 'Hồ Chí Minh', 1, 0),
+(1, 'admin', 'admin@gmail.com', '$2y$10$6apH74nHMZnlDgig0IUUue3NUAKUWfT0OQ5xXCCA.ZTL/qZlVg.xq', 'Hồ Chí Minh', 1, 0),
 (2, 'trong24', 'trong24@gmail.com', '$2y$10$ALQhK28DUJNFcN7ZxvdvcuLt3uUDe.rwRbPEBK5m7dRBcmnBWhmza', 'Hồ Chí Minh', 0, 0),
 (3, 'superIdol', 'cat.tran03@hcmut.edu.vn', '$2y$10$oZ5nCDx6d.VNjvuxhA2x3.iDuGvPastW/Rnyhe9KXLMFng5nCeIyO', 'Sao kim', 0, 0),
 (0, 'trong249', 'trong249@gmail.com', '$2y$10$eGJfqjpmr9Al29UelhmKeOAzkFgE3aE5lrLmAf8IHL9SFb3VQQ01y', 'Hồ Chí Minh', 0, 0);

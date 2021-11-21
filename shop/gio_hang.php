@@ -171,6 +171,7 @@
         function deleteItem(rand){
             if(confirm("Xóa sản phẩm này khỏi giỏ hàng ?")){
                 fetch(`gio_hang.php?delete=1&rand=${rand}`);
+                document.getElementById(`id${rand}`).remove();
                 document.location.reload(true)
             }
         }
@@ -272,11 +273,17 @@
             }
             document.querySelector(".order table").innerHTML=html;
             
+            return price;
+            
         }
 
 
         render1();
-        render2();
+        let a=render2();
+        if(a==0){
+                document.querySelector(".go-to-order").style.opacity="0.5";
+                document.querySelector(".go-to-order").style.pointerEvents ="none";
+            }
 </script>   
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
 </body>

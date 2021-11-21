@@ -1,9 +1,5 @@
 <?php
     $sql=mysqli_connect("localhost","root","","data_ishine");
-
-    if(isset($_REQUEST['username'])){
-        $username=$_REQUEST['username'];
-    }
     
 /****************************************************************************************/ 
     // danh sach thông tin sản phẩm
@@ -72,18 +68,23 @@
                         <a href="" style="color: black;">THANH TOÁN</a>
                     </div>
                 </div>
-                <form action="" method="post" class="container row">
+                <form action="xu_ly_dat_hang.php" method="post" class="container row">
                     <div id="thong-tin-thanh-toan" class="d-flex col col-12 col-lg-6 flex-column">
                         <div class="container fancy-box">
                             <h4 class="text-uppercase my-3">Thông tin thanh toán</h4>
+
                             <label for="name" class="form-label">Họ và tên</label>
                             <input type="text" class="form-control" name="name" id="name" required>
+
                             <label for="email" class="form-label">Email</label>
                             <input type="text" class="form-control" name="email" id="email" required>
+
                             <label for="address" class="form-label">Số điên thoại</label>
                             <input type="text" class="form-control" name="phone" id="phone" required>
+
                             <label for="address" class="form-label">Địa chỉ</label>
                             <input type="text" class="form-control" name="address" id="address" required>
+                            
                             <label for="note" class="form-label">Ghi chú</label>
                             <textarea name="note" id="note" class="form-control" rows="5"></textarea>
                         </div>
@@ -141,6 +142,17 @@
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <!-- IMPORT FOOTER -->
     <?php require('footer.php') ?>  
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <?php
+        require_once "./check_rememberme.php";
+        $username;
+        if(isset($_SESSION['username'])){
+            $username=$_SESSION['username'];
+        }
+        else{
+            $username=-1;
+        }
+    ?>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <script>
         let san_pham=JSON.parse(JSON.stringify(<?php echo $san_pham ?>))
@@ -218,6 +230,8 @@
                                 <div class="text-italic thanks" style="border-bottom:1px solid grey;">
                                     Quý khách vui lòng kiểm tra lại thông tin giao hàng và thông tin đơn hàng để tiến hành đặt hàng. Cảm ơn quý khách đã ủng hộ Ishin shop. Chúc quý khách ngày mới tốt lành!
                                 </div>
+
+                                <input type="text" class="form-control" name="username"  value="<?php echo $username ?>" hidden>
                                 <button type="submit" class="btn btn-primary" aria-label="Đặt hàng">Đặt hàng</button>
                             </div>`;
             document.querySelector(".wrap").innerHTML=html;
