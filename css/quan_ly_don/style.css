@@ -247,3 +247,32 @@ a{
 .footer input, .footer button {
     font-size: 13.3333px;
 }
+
+
+
+
+
+
+
+
+
+#status_1{
+    background-color: #EC971F;
+    color: #fff;
+}
+#status_2{
+    background-color: #8845e0;
+    color: #fff;
+}
+#status_3{
+    background-color: #337AB7;
+    color: #fff;
+}
+#status_4{
+    background-color: #449D44;
+    color: #fff;
+}
+#status_0{
+    background-color: #D9534F;
+    color: #fff;
+}

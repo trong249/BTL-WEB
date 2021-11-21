@@ -65,6 +65,16 @@
     <script>
         document.querySelector('.top-menu ul li:nth-child(6) a').classList.add('active')
     </script>
+    <?php
+        require_once "./check_rememberme.php";
+        $username;
+        if(isset($_SESSION['username'])){
+            $username=$_SESSION['username'];
+        }
+        else{
+            $username=-1;
+        }
+    ?>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     
     <section class="link container">
@@ -76,7 +86,7 @@
             <a href="gio_hang.php">GIỎ HÀNG</a>
         </div>
         <div style="text-decoration: underline;">
-            <a href="quan_ly_don.php">Lịch sử mua hàng</a>
+            <a href="quan_ly_don.php?user=<?php echo $username?>">Lịch sử mua hàng</a>
         </div>
     </section>
 
@@ -147,16 +157,7 @@
     <!-- IMPORT FOOTER -->
     <?php require('footer.php') ?>  
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------- -->
-<?php
-        require_once "./check_rememberme.php";
-        $username;
-        if(isset($_SESSION['username'])){
-            $username=$_SESSION['username'];
-        }
-        else{
-            $username=-1;
-        }
-?>
+
 <script>
         let san_pham=JSON.parse(JSON.stringify(<?php echo $san_pham ?>))
         let gio_hang=JSON.parse(JSON.stringify(<?php echo $gio_hang ?>));

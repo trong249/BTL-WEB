@@ -1,6 +1,69 @@
 <?php
-    $link = new mysqli('localhost','root','','data_ishine');
-?>
+    $sql=mysqli_connect("localhost","root","","data_ishine");
+
+    $ma_don;
+    if(isset($_REQUEST['ma_don'])){
+        $ma_don=$_REQUEST['ma_don'];
+    }
+/****************************************************************************************/  
+      //  lấy  bảng  sản phẩm
+    $selectData = "SELECT * FROM hang_hoa";
+    $row=$sql->query($selectData);
+    $arr_san_pham=array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr_san_pham,$res);
+    }
+    //  lấy  bảng  đơn hàng 
+    $selectData = "SELECT * FROM don_hang";
+    $row=$sql->query($selectData);
+    $arr_don_hang=array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr_don_hang,$res);
+    }
+    // lấy bản hoa don chi tiet
+    $selectData = "SELECT * FROM hoa_don_chi_tiet";
+    $row=$sql->query($selectData);
+    $arr=array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr,$res);
+    }
+    $arr_chi_tiet= array_filter($arr, "getSpArr");
+/****************************************************************************************/ 
+    function getSpArr($dh){
+        return $dh['ma_don']==$GLOBALS['ma_don'];
+    }
+    
+
+    function getNameSp($arr,$id){
+        foreach($arr as $i=>$sp){
+            if($sp['id']==$id){
+                return $sp['ten_hh'];
+                break;
+            }
+        }
+    }
+    function getPrice1Sp($arr,$id){
+        foreach($arr as $i=>$sp){
+            if($sp['id']==$id){
+                return $sp['don_gia'];
+            }
+        }
+    }
+    function getDiscount($arr,$id){
+        foreach($arr as $i=>$sp){
+            if($sp['id']==$id){
+                return $sp['giam_gia'];
+            }
+        }
+    }
+/****************************************************************************************/ 
+    $sql->close();
+?> 
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -37,27 +100,8 @@
 		  <div class="header"> 
                 <!-- /. XỬ LÝ CODE PHP  -->
             <div class="page-header">
-
-                <?php
-                    if (isset($_GET['id'])){
-                        $id = $_GET['id'];
-                        $query1 = "SELECT user FROM don_hang WHERE ma_don='$id'";
-                        $result1 = mysqli_query($link, $query1);
-                        if (mysqli_num_rows($result1) > 0) {
-                        $row = mysqli_fetch_assoc($result1);
-                        $user = $row['user'];
-                        echo "<h1>CHI TIẾT ĐƠN HÀNG SỐ $id</h1>";
-                        echo "<h3>MÃ KHÁCH HÀNG: $user</h3>";
-                        echo "<p>Danh sách sản phẩm: </p>";
-                        }
-                    }
-                    else {
-                        echo "<h1>CHI TIẾT ĐƠN HÀNG SỐ -</h1>";
-                        echo "<h3>MÃ KHÁCH HÀNG: -</h3>";
-                        echo "<p>Danh sách sản phẩm: </p>";
-                    }
-                ?>
-
+                <?php echo "<h1>CHI TIẾT ĐƠN HÀNG:$ma_don</h1><br>";  ?>
+                <p>Danh sách sản phẩm: </p>
 
                 <!-- /. CONTENT  -->
                 <table class="table table-hover">
@@ -65,80 +109,47 @@
                         <tr>
                             <th>TÊN HÀNG HÓA</th>
                             <th>SỐ LƯỢNG</th>
+                            <th>SIZE</th>
                             <th>ĐƠN GIÁ/SP</th>
+                            <th>GIẢM GIÁ</th>
                             <th>THÀNH TIỀN</th>
                         </tr>
                     </thead>
                     <tbody>
-
                         <?php
-                        if (isset($_GET['id'])){
-                            $id = $_GET['id'];
-                            $query = "SELECT ten_hang_hoa, so_luong, don_gia, giam_gia FROM hoa_don_chi_tiet WHERE ma_don='$id'";
-                            $result = mysqli_query($link, $query);
-                            $tong = 0;
-                            if (mysqli_num_rows($result) > 0) {
-                                while ($row = mysqli_fetch_assoc($result)){
-                                    $ten_hang_hoa = $row['ten_hang_hoa'];
-                                    $so_luong = $row['so_luong'];
-                                    $don_gia = $row['don_gia'];
-                                    $giam_gia = $row['giam_gia'];
-                                    $thanh_tien = (intval($don_gia) - intval($don_gia) * intval($giam_gia) / 100) * intval($so_luong);
-                                    $tong = $tong + $thanh_tien;
-                                    echo "<tr>";
-                                    echo "<td>$ten_hang_hoa</td>"; 
-                                    echo "<td>$so_luong</td>";
-                                    echo "<td>$don_gia</td>";
-                                    echo "<td>$thanh_tien</td>";
-                                    echo "</tr>";
-                                }
-                                echo "<tr>";
-                                echo "<td colspan=\"3\" style = \"text-align:center;\"><b>TỔNG TIỀN</b></td>";
-                                echo "<td>$tong</td>";
-                                echo "</tr>";
-                            }
-                        }
-                        else {
-                            echo "<tr>";
-                            echo "<td>-</td>"; 
-                            echo "<td>-</td>";
-                            echo "<td>-</td>";
-                            echo "<td>-</td>";
-                            echo "</tr>";
+                        $sum=0;
+                            foreach($arr_chi_tiet as $i => $sp){
+                                $name=getNameSp($arr_san_pham,$sp['ID_san_pham']);
+                                $qty=$sp['so_luong'];
+                                $size=$sp['size'];
+                                $don_gia=getPrice1Sp($arr_san_pham,$sp['ID_san_pham']);
+                                $giam_gia=getDiscount($arr_san_pham,$sp['ID_san_pham']);
+                                $price=($don_gia-$giam_gia*$don_gia/100)*$qty;
+                                $sum+=$price;
 
-                            echo "<tr>";
-                            echo "<td colspan=\"3\" style = \"text-align:center;\"><b>TỔNG TIỀN</b></td>";
-                            echo "<td>-</td>";
-                            echo "</tr>";
-                        }
-                            
+                                $dg=number_format($don_gia);
+                                $pri=number_format($price);
+                                echo "<tr>
+                                        <td> $name </td>
+                                        <td> $qty </td>
+                                        <td> $size </td>
+                                        <td> $dg VNĐ</td>     
+                                        <td>$giam_gia%</td>
+                                        <td> $pri VNĐ</td>                               
+                                    </tr>";
+                            } 
                         ?>
-                <!-- <h1>CHI TIẾT ĐƠN HÀNG SỐ x</h1><br>
-                <h3>MÃ KHÁCH HÀNG: 123</h3>
-                <p>Danh sách sản phẩm: </p> -->
-
-                <!-- /. CONTENT  -->
-                <!-- <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>TÊN HÀNG HÓA</th>
-                            <th>SỐ LƯỢNG</th>
-                            <th>ĐƠN GIÁ/SP</th>
-                            <th>THÀNH TIỀN</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                        <tr>
+                        <!-- <tr>
                             <td> Adidas UltraBoost DNA City </td>
                             <td> 1 </td>
                             <td> 2.100.000 VNĐ</td>     
+                            <td>0%</td>
                             <td> 2.100.000 VNĐ</td>                               
-                        </tr>
-                        <tr>
-                            <td colspan="3" style = "text-align:center;"><b>TỔNG TIỀN</b></td>
-                            <td> 2.100.000 VNĐ</b></td>
                         </tr> -->
+                        <tr>
+                            <td colspan="5" style = "text-align:center;"><b>TỔNG TIỀN</b></td>
+                            <td > <?php echo number_format($sum) ?> VNĐ</b></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

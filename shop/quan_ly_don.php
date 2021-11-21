@@ -1,6 +1,60 @@
 <?php
-    $link = new mysqli('localhost','root','','data_ishine');
-?>
+    $sql=mysqli_connect("localhost","root","","data_ishine");
+    $user;
+    if(isset($_REQUEST['user'])){
+        $user=$_REQUEST['user'];
+    }
+/****************************************************************************************/  
+      //  lấy  bảng  đơn hàng
+    $selectData = "SELECT * FROM don_hang";
+    $row=$sql->query($selectData);
+    $arr=array();
+    while($res=$row->fetch_assoc()){
+        array_push($arr,$res);
+    }
+    $arr_don_hang=array_filter($arr,"getDon");
+    
+/****************************************************************************************/ 
+    function getDon($don){
+        return $don['user']==$GLOBALS['user'];
+    }
+    function getStatusId($i){
+        if($i==0){
+            return "status_0";
+        }
+        if($i==1){
+            return "status_1";
+        }
+        if($i==2){
+            return "status_2";
+        }
+        if($i==3){
+            return "status_3";
+        }
+        if($i==4){
+            return "status_4";
+        }
+    }
+    function getStatusText($i){
+        if($i==0){
+            return "Đã hủy đơn";
+        }
+        if($i==1){
+            return "Chưa xác nhận";
+        }
+        if($i==2){
+            return "Đã xác nhận";
+        }
+        if($i==3){
+            return "Đang giao hàng";
+        }
+        if($i==4){
+            return "Hoàn thành";
+        }
+    }
+/****************************************************************************************/ 
+    $sql->close();
+?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,6 +101,7 @@
         <div class="manage-table">
             <table class="table table-hover">
                 <thead class="thead-dark">
+                    
                    <tr>
                       <th style="width: 20%">Mã Đơn Hàng</th>
                       <th style="width: 20%">Ngày mua</th>
@@ -56,31 +111,36 @@
                    </tr>
                 </thead>
                 <tbody>
-                  <?php
-                    $query = "SELECT ma_don,date,tinh_trang  FROM don_hang";
-                    $result = mysqli_query($link, $query);
-                    if (mysqli_num_rows($result) > 0){
-                        while ($row = mysqli_fetch_assoc($result)){
-                            $id = $row['ma_don'];
-                            $date = $row['date'];
-                            $tinh_trang = $row['tinh_trang'];
-                            echo "<tr>";
-                            echo "<td>$id</td>";
-                            echo "<td>$date</td>";
-                            echo "<td><button type=\"button\" class=\"btn btn-warning btn-sm\">$tinh_trang</button></td>";
-                            echo "<td><a href=\"chi_tiet_don_hang.php?id=$id\" class=\"btn btn-outline-info btn-sm\" role=\"button\">Chi tiết</a></td>";
-                            echo "<td>-</td>";
-                            echo "</tr>";
-                        }
+                <?php 
+                    foreach($arr_don_hang as $i => $don_hang){
+                        $ma_don=$don_hang['ma_don'];
+                        $date=$don_hang['date'];
+                        $status=getStatusText($don_hang['tinh_trang']);
+                        $statusId=getStatusId($don_hang['tinh_trang']);
+                        echo " <tr>
+                                    <td>$ma_don</td>
+                                    <td>$date</td>
+                                    <td><button type=\"button\" class=\"btn btn-warning btn-sm\" id=\"$statusId\">$status</button></td>
+                                    <td><a href=\"chi_tiet_don_hang.php?ma_don=$ma_don\" class=\"btn btn-outline-info btn-sm\" role=\"button\">Chi tiết</a></td>
+                                    <td>-</td>
+                                </tr>";
                     }
-                  ?>
+                ?>
                    
                 </tbody>
              </table>
         </div>
         
 
-
+                    <!--
+                            <tr>
+                                <td>$id</td>
+                                <td>$date</td>
+                                <td><button type=\"button\" class=\"btn btn-warning btn-sm\">$tinh_trang</button></td>
+                                <td><a href=\"chi_tiet_don_hang.php?id=$id\" class=\"btn btn-outline-info btn-sm\" role=\"button\">Chi tiết</a></td>
+                                <td>-</td>
+                            </tr>
+                     -->
     </section>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
     <!-- IMPORT FOOTER -->
