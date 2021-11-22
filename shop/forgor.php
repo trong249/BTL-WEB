@@ -39,7 +39,25 @@
             echo "Cannot connect to database " . mysqli_connect_error();
         }
 
-        
+            $array_user = array();
+            $get_command = "SELECT * FROM users";
+            $re = mysqli_query($conn, $get_command);
+            while ($row = mysqli_fetch_assoc($re)) {
+                array_push($array_user, $row);
+            }
+
+            function create_rand_reset_code() {
+                $reset_code_array = array();
+                $i = 0;
+                for($i = 0; $i < count($reset_code_array); $i++) {
+                    array_push($reset_code_array, $reset_code_array[$i]["reset_code"]);
+                }
+                $reset_code = rand(100000,999999);
+                while (in_array($reset_code,$reset_code_array)) {
+                    $reset_code = rand(100000,999999);
+                }
+                return $reset_code;
+            }
             
             
             $user_email = clean_input($_POST["forgor_email"]);
@@ -78,7 +96,7 @@
                 //tao 1 reset_code moi
                 //tra lai ket qua cho nguoi dung
                 //gui mail reset cho nguoi dung
-                $reset_code = rand(100000,999999);
+                $reset_code = create_rand_reset_code();
                 //----------------tao reset_code moi---------------------------
                 //LUU Y: PHAI CO DAU ' ' XUNG QUANH DU LIEU DANG STRING KHI SU DUNG MYSQLI_QUERY 
                 //BOI THE, MYSQLI_PREPARE AN TOAN HON, DO MINH CHI RO KIEU DU LIEU TRONG BIND()
