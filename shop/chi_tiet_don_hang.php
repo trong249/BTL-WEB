@@ -81,7 +81,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
         <!-- favicon -->
-        
+        <link rel="icon" href="../img/gioi_thieu/tachnen.png" type="image/x-icon">
         <!-- CSS -->
         <link rel="stylesheet" href="../css/chi_tiet_don_hang/style1.css">
 

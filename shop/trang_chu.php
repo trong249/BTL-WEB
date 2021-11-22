@@ -38,7 +38,7 @@
     <script src="https://kit.fontawesome.com/8f65ebef09.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
-
+    <link rel="icon" href="../img/gioi_thieu/tachnen.png" type="image/x-icon">
     <title>Trang chủ</title>
 </head>
 <body>
