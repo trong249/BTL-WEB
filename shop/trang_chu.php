@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
 
-    <title>Document</title>
+    <title>Trang chủ</title>
 </head>
 <body>
     <section class="top-menu">

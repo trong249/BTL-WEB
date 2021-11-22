@@ -56,7 +56,7 @@
     <script src="https://kit.fontawesome.com/8f65ebef09.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
 
-    <title>Document</title>
+    <title>Giỏ hàng</title>
 </head>
 <body>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
