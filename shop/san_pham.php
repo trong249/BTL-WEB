@@ -35,6 +35,7 @@
     <link rel="icon" href="../img/gioi_thieu/tachnen.png" type="image/x-icon">
     <title>Ishin Shop - Sản phẩm</title>
     <meta name="description" content="Chọn mua những sneaker hoàn hảo từ Ishin shop!">
+    <meta name="robots" content="index, follow">
 </head>
 <body>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->
