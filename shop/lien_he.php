@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <link rel="icon" href="../img/gioi_thieu/tachnen.png" type="image/x-icon">
-    <title>Liên hệ</title>
+    <title>Ishin Shop - Liên hệ</title>
+    <meta name="description" content="Liên hệ với Ishin Shop!">
+    <meta name="robots" content="index, follow">
 </head>
 <body>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->

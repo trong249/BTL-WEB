@@ -31,7 +31,10 @@
     <link rel="stylesheet" href="../css/gioi_thieu/responsive.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
 
-    <title>Giới Thiệu</title>
+    <title>Ishin Shop - Giới Thiệu</title>
+    <meta name="description" content="Với câu slogan 'Get every step with ISHIN', chúng tôi hi vọng có thể được đồng hành
+                    cùng khách hàng trên mỗi chuyến đi, dõi theo từng cung bậc cảm xúc trên từng nẻo đường.">
+    <meta name="robots" content="index, follow">
 </head>
 <body>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->

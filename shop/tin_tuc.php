@@ -4,9 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/8f65ebef09.js" crossorigin="anonymous"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +14,9 @@
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
         <link rel="icon" href="../img/gioi_thieu/tachnen.png" type="image/x-icon">
-        <title>Tin tức về giày</title>
+        <title>Ishin Shop - Tin tức</title>
+        <meta name="description" content="Tin tức về giày trong và ngoài nước - Xem tại Isshin shop!">
+        <meta name="robots" content="index, follow">
 </head>
 <body>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->

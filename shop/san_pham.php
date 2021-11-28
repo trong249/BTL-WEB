@@ -33,7 +33,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <link rel="icon" href="../img/gioi_thieu/tachnen.png" type="image/x-icon">
-    <title>Sản phẩm</title>
+    <title>Ishin Shop - Sản phẩm</title>
+    <meta name="description" content="Chọn mua những sneaker hoàn hảo từ Ishin shop!">
 </head>
 <body>
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------- -->

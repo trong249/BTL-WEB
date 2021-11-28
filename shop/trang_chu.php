@@ -39,7 +39,11 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
     <link rel="icon" href="../img/gioi_thieu/tachnen.png" type="image/x-icon">
-    <title>Trang chủ</title>
+    <title>Ishin Shop</title>
+    <meta name="description" content="Với ISHIN, tạo sự tin tưởng, tin dùng với khách
+                    hàng là điều vô cùng quan trọng. ISHIN luôn mong muốn có thể là một trong
+                    những sự lựa chọn hàng đầu khi khách hàng có nhu cầu về sneaker.">
+    <meta name="robots" content="index, follow">
 </head>
 <body>
     <section class="top-menu">
