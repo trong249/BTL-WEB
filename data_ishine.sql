@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2021 at 01:17 PM
+-- Generation Time: Nov 22, 2021 at 02:40 AM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- PHP Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -225,10 +225,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userID`, `username`, `email`, `mat_khau`, `dia_chi`, `vai_tro`, `reset_code`) VALUES
-(1, 'admin', 'admin@gmail.com', '$2y$10$6apH74nHMZnlDgig0IUUue3NUAKUWfT0OQ5xXCCA.ZTL/qZlVg.xq', 'Hồ Chí Minh', 1, 0),
+(1, 'admin', 'admin@gmail.com', '$2y$10$Ik0OzlHbEUXh1MnUlRn6guNZburSba.TMjrAaqnWccUeqIOt1tbNa', 'Hồ Chí Minh', 1, 0),
 (2, 'trong24', 'trong24@gmail.com', '$2y$10$ALQhK28DUJNFcN7ZxvdvcuLt3uUDe.rwRbPEBK5m7dRBcmnBWhmza', 'Hồ Chí Minh', 0, 0),
 (3, 'superIdol', 'cat.tran03@hcmut.edu.vn', '$2y$10$oZ5nCDx6d.VNjvuxhA2x3.iDuGvPastW/Rnyhe9KXLMFng5nCeIyO', 'Sao kim', 0, 0),
-(0, 'trong249', 'trong249@gmail.com', '$2y$10$eGJfqjpmr9Al29UelhmKeOAzkFgE3aE5lrLmAf8IHL9SFb3VQQ01y', 'Hồ Chí Minh', 0, 0);
+(4, 'tranngoccat', 'ngoccatt@gmail.com', '$2y$10$WPs.y.6PmXS2lspIClyQp.jsuNBc4JjLQgPWlxUZaZg3TfHmsh/g2', 'Hồ Chí Minh', 0, 0),
+(5, 'diepnam', 'diepnam@hcmut.edu.vn', '$2y$10$4fYmXAZE1Lq/zQ0o2cyfs.n8e5lSApm0dbXypvc0799DB4UaL2.hC', 'Hồ Chí Minh', 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -241,6 +242,12 @@ ALTER TABLE `brand`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`userID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -249,6 +256,12 @@ ALTER TABLE `brand`
 --
 ALTER TABLE `brand`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

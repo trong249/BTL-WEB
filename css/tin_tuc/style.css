@@ -58,13 +58,17 @@ ol, ul {
 
 .icon-image {
     object-fit: cover;
-    padding:0;
+    padding: 0;
+    height: inherit;
+    height:-webkit-fill-available;
 }
 
 .small-news {
     padding: 5px 0;
-    border-bottom: 4px solid ;
+    border-bottom: 4px solid;
     font-size: large;
+    max-height: 95px;
+    overflow: hidden;
 }
 
 #main-content {
