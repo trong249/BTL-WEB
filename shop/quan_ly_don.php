@@ -121,7 +121,7 @@
                                     <td>$ma_don</td>
                                     <td>$date</td>
                                     <td><button type=\"button\" class=\"btn btn-warning btn-sm\" id=\"$statusId\">$status</button></td>
-                                    <td><a href=\"chi_tiet_don_hang.php?ma_don=$ma_don\" class=\"btn btn-outline-info btn-sm\" role=\"button\">Chi tiết</a></td>
+                                    <td><a href=\"chi_tiet_don_hang.php?ma_don=$ma_don&user=$user\" class=\"btn btn-outline-info btn-sm\" role=\"button\">Chi tiết</a></td>
                                     <td>-</td>
                                 </tr>";
                     }

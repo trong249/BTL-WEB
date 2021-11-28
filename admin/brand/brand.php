@@ -170,6 +170,7 @@
         
         document.querySelector("#name").value='';
         document.querySelector('#random').value= randomID();
+        window.location.reload();
     }
 
 

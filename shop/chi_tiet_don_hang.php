@@ -5,6 +5,10 @@
     if(isset($_REQUEST['ma_don'])){
         $ma_don=$_REQUEST['ma_don'];
     }
+    $user;
+    if(isset($_REQUEST['user'])){
+        $user=$_REQUEST['user'];
+    }
 /****************************************************************************************/  
       //  lấy  bảng  sản phẩm
     $selectData = "SELECT * FROM hang_hoa";
@@ -153,7 +157,7 @@
                     </tbody>
                 </table>
             </div>
-            <a href="quan_ly_don.php"><button class="btn btn-danger">Danh sách đơn hàng</button></a>
+            <a href="quan_ly_don.php?user=<?php echo $user ?>"><button class="btn btn-danger">Danh sách đơn hàng</button></a>
 		</div>
             </div>
          <!-- /. PAGE WRAPPER  -->
