@@ -584,6 +584,15 @@ function consolelog($message) {
                     reportErrorEmail(id, invalid_location);
                 })
 
+                function isValidJSONString(str) {
+                    try {
+                        JSON.parse(str);
+                    } catch (e) {
+                        return false;
+                    }
+                    return true;
+                }
+
                 $("form").eq(2).submit(function(e) {
                     console.log("Prevent form submit success!");
                     e.preventDefault();
@@ -597,6 +606,13 @@ function consolelog($message) {
                         },
                         function(returnData, status) {
                             console.log(returnData);
+                            if (!isValidJSONString(returnData)) {
+                                var alertbox = $("<div></div>").text("Có lỗi xảy ra! Chúng tôi không thể gửi email tới bạn. Vui lòng thử lại sau").addClass("alert alert-danger");
+                                console.log(alertbox);
+                                console.log($(".container-fluid").eq(2));
+                                $(".container-fluid").eq(2).append(alertbox).find("form").remove();
+                                return;
+                            }
                             result = JSON.parse(returnData)
                             console.log(result);
                             if (result["error_email"] != "") {

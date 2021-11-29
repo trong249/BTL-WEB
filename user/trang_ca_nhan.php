@@ -84,6 +84,9 @@ $error_address = array("",
                       <a class="nav-link" aria-current="page" href="../shop/trang_chu.php">Trang chủ</a>
                     </li>
                     <li class="nav-item">
+                      <a class="nav-link" href="../shop/gio_hang.php">Giỏ hàng</a>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link active" href="#">Trang cá nhân</a>
                     </li>
                     <li class="nav-item">
