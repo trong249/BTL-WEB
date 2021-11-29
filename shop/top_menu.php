@@ -16,7 +16,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     <style>
         .top-menu{
             width: 100%;
-            line-height: 60px;
+            line-height: 50px;
             background-color: #363636;
         }
         .top-menu .container a{
@@ -38,7 +38,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         .top-menu .container{
             display: flex;
             justify-content: space-between;
-            max-height: 60.8px;
+            max-height: 50px;
         }
         .top-menu .container .menu{
             width: 80%;
@@ -59,7 +59,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         .top-menu .container .menu-bar{
             display: none;
             color: #fff;
-            line-height: 60px;
+            line-height: 50px;
             font-size: 30px;
         }
 

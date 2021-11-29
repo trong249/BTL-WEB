@@ -43,7 +43,7 @@ a{
 .top-menu .container{
     display: flex;
     justify-content: space-between;
-    height: 60px;
+    height: 50px;
 }
 .top-menu .container .menu{
     width: 60%;
@@ -64,7 +64,7 @@ a{
 .top-menu .container .menu-bar{
     display: none;
     color: #fff;
-    line-height: 60px;
+    line-height: 50px;
     font-size: 30px;
 }
 @media only screen and (max-width: 770px) {
@@ -101,7 +101,7 @@ a{
 
 /************************************************************************************/
 .slider {
-    margin-top: 60px; 
+    margin-top: 50px; 
     padding-top: 50%;
     /* background-image: url("/img/gioi_thieu/slider6.png");
     background-position: top center;
