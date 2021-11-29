@@ -49,10 +49,10 @@
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="../img/gioi_thieu/slider4.png" class="d-block w-100" alt="sliderpic">
+                    <img src="../img/gioi_thieu/slider4.jpg" class="d-block w-100" alt="sliderpic">
                   </div>
                   <div class="carousel-item">
-                    <img src="../img/gioi_thieu/slider5.png" class="d-block w-100" alt="sliderpic">
+                    <img src="../img/gioi_thieu/slider5.jpg" class="d-block w-100" alt="sliderpic">
                   </div>
                   <div class="carousel-item">
                     <img src="../img/gioi_thieu/slider6.png" class="d-block w-100" alt="sliderpic">
@@ -78,19 +78,19 @@
                     cùng khách hàng trên mỗi chuyến đi, dõi theo từng cung bậc cảm xúc trên từng nẻo đường. Cung cấp cho bạn những mẫu giày phù hợp nhất.
                 </p>
             </div>
-            <!-- <div class="column pic">
-                <img src="../img/gioi_thieu/logo4.png" alt="logo">
-            </div> -->
-            <div class="rest">
-            <img src="../img/gioi_thieu/bg1.png" alt="background">
+            <div class="column pic">
+                <img src="../img/gioi_thieu/pic1.png" alt="logo">
             </div>
+            <!-- <div class="rest">
+            <img src="../img/gioi_thieu/bg1.png" alt="background">
+            </div> -->
         </div>
         
 
         <div class="content2">
-            <!-- <div class="column pic">
-                <img src="../img/gioi_thieu/pic2.png" alt="picture">
-            </div> -->
+            <div class="column pic">
+                <img src="../img/gioi_thieu/pic2.jpg" alt="picture">
+            </div>
     
             <div class="column text">
                 <h3>Về cửa hàng</h3>
@@ -108,9 +108,9 @@
                     thoải mái mà không cần phải lo nghĩ quá nhiều về giá cả.
                 </p>
             </div>
-            <div class="rest">
+            <!-- <div class="rest">
             <img src="../img/gioi_thieu/bg.png" alt="background">
-            </div>
+            </div> -->
         </div>
         
 
@@ -131,7 +131,7 @@
                 <img src="../img/gioi_thieu/logo3.png" alt="logo">
             </div>
             <div class="rest">
-                <img src="../img/gioi_thieu/end.png" alt="goodbye">
+                <img src="../img/gioi_thieu/end.jpg" alt="goodbye">
             </div>
         </div>
         
