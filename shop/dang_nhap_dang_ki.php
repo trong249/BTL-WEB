@@ -1,6 +1,18 @@
 
 <?php
 
+session_start();
+
+require_once "./check_rememberme.php";
+
+$login = false;
+$vaitro = 0;
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("Location: ./trang_chu.php");
+}
+
 function consolelog($message) {
     echo "<script> console.log(\"$message\"); </script>";
 }

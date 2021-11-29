@@ -16,9 +16,9 @@
         
     }
     else{
-        echo "Bạn không thể truy cập trang này! Quay lại trang chủ sau 10s";
-        sleep(10);
-        header("Location: logout.php");
+        echo "Bạn không thể truy cập trang này! Quay lại trang chủ sau 3s";
+        sleep(3);
+        header("refresh:3;url=./../../shop/logout.php");
         exit;
     }
 

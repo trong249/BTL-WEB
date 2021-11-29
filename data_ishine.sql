@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2021 at 03:30 AM
+-- Generation Time: Nov 29, 2021 at 03:52 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -224,7 +224,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`userID`, `username`, `email`, `mat_khau`, `dia_chi`, `vai_tro`, `reset_code`) VALUES
 (1, 'admin', 'admin@gmail.com', '$2y$10$6apH74nHMZnlDgig0IUUue3NUAKUWfT0OQ5xXCCA.ZTL/qZlVg.xq', 'Hồ Chí Minh', 1, 0),
-(2, 'superIdol', 'cat.tran03@hcmut.edu.vn', '$2y$10$oZ5nCDx6d.VNjvuxhA2x3.iDuGvPastW/Rnyhe9KXLMFng5nCeIyO', 'Sao kim', 0, 0);
+(2, 'superIdol', 'cat.tran03@hcmut.edu.vn', '$2y$10$oZ5nCDx6d.VNjvuxhA2x3.iDuGvPastW/Rnyhe9KXLMFng5nCeIyO', 'Sao kim', 0, 0),
+(7, 'user6', 'abc@x.com', '$2y$10$NnaSthkv/YCsJlNf795/neCFnzV9j7Jc3eUKB80CiGSYowHMshpuW', 'Hồ Chí Minh', 0, 0),
+(8, 'user9', 'abc@xc.com', '$2y$10$aoC/o/S1B6mjXP6bqjKi/uOazkT1IFMj/rQOfizF0sFCU2uRd7qfy', 'Hồ Chí Minh', 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -256,7 +258,7 @@ ALTER TABLE `brand`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
