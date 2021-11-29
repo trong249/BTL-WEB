@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 29, 2021 lúc 03:09 AM
--- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 8.0.12
+-- Host: 127.0.0.1
+-- Generation Time: Nov 29, 2021 at 03:52 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `data_ishine`
+-- Database: `data_ishine`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `binh_luan`
+-- Table structure for table `binh_luan`
 --
 
 CREATE TABLE `binh_luan` (
@@ -36,7 +36,7 @@ CREATE TABLE `binh_luan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `binh_luan`
+-- Dumping data for table `binh_luan`
 --
 
 INSERT INTO `binh_luan` (`rand`, `id`, `user`, `date`, `noi_dung`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `binh_luan` (`rand`, `id`, `user`, `date`, `noi_dung`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `brand`
+-- Table structure for table `brand`
 --
 
 CREATE TABLE `brand` (
@@ -57,7 +57,7 @@ CREATE TABLE `brand` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `brand`
+-- Dumping data for table `brand`
 --
 
 INSERT INTO `brand` (`ID`, `ten_loai`) VALUES
@@ -73,7 +73,7 @@ INSERT INTO `brand` (`ID`, `ten_loai`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `don_hang`
+-- Table structure for table `don_hang`
 --
 
 CREATE TABLE `don_hang` (
@@ -89,7 +89,7 @@ CREATE TABLE `don_hang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `don_hang`
+-- Dumping data for table `don_hang`
 --
 
 INSERT INTO `don_hang` (`ma_don`, `user`, `date`, `tinh_trang`, `ho_va_ten`, `So_dien_thoai`, `email`, `Dia_chi`, `note`) VALUES
@@ -100,7 +100,7 @@ INSERT INTO `don_hang` (`ma_don`, `user`, `date`, `tinh_trang`, `ho_va_ten`, `So
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `gio_hang`
+-- Table structure for table `gio_hang`
 --
 
 CREATE TABLE `gio_hang` (
@@ -112,7 +112,7 @@ CREATE TABLE `gio_hang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `gio_hang`
+-- Dumping data for table `gio_hang`
 --
 
 INSERT INTO `gio_hang` (`rand`, `user`, `id_sp`, `size`, `so_luong`) VALUES
@@ -121,7 +121,7 @@ INSERT INTO `gio_hang` (`rand`, `user`, `id_sp`, `size`, `so_luong`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hang_hoa`
+-- Table structure for table `hang_hoa`
 --
 
 CREATE TABLE `hang_hoa` (
@@ -135,7 +135,7 @@ CREATE TABLE `hang_hoa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `hang_hoa`
+-- Dumping data for table `hang_hoa`
 --
 
 INSERT INTO `hang_hoa` (`id`, `brand`, `ten_hh`, `hinh`, `don_gia`, `giam_gia`, `mo_ta`) VALUES
@@ -176,7 +176,7 @@ INSERT INTO `hang_hoa` (`id`, `brand`, `ten_hh`, `hinh`, `don_gia`, `giam_gia`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hoa_don_chi_tiet`
+-- Table structure for table `hoa_don_chi_tiet`
 --
 
 CREATE TABLE `hoa_don_chi_tiet` (
@@ -187,7 +187,7 @@ CREATE TABLE `hoa_don_chi_tiet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Đang đổ dữ liệu cho bảng `hoa_don_chi_tiet`
+-- Dumping data for table `hoa_don_chi_tiet`
 --
 
 INSERT INTO `hoa_don_chi_tiet` (`ma_don`, `ID_san_pham`, `size`, `so_luong`) VALUES
@@ -205,7 +205,7 @@ INSERT INTO `hoa_don_chi_tiet` (`ma_don`, `ID_san_pham`, `size`, `so_luong`) VAL
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -219,32 +219,46 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`userID`, `username`, `email`, `mat_khau`, `dia_chi`, `vai_tro`, `reset_code`) VALUES
 (1, 'admin', 'admin@gmail.com', '$2y$10$6apH74nHMZnlDgig0IUUue3NUAKUWfT0OQ5xXCCA.ZTL/qZlVg.xq', 'Hồ Chí Minh', 1, 0),
-(3, 'superIdol', 'cat.tran03@hcmut.edu.vn', '$2y$10$oZ5nCDx6d.VNjvuxhA2x3.iDuGvPastW/Rnyhe9KXLMFng5nCeIyO', 'Sao kim', 0, 0);
+(2, 'superIdol', 'cat.tran03@hcmut.edu.vn', '$2y$10$oZ5nCDx6d.VNjvuxhA2x3.iDuGvPastW/Rnyhe9KXLMFng5nCeIyO', 'Sao kim', 0, 0),
+(7, 'user6', 'abc@x.com', '$2y$10$NnaSthkv/YCsJlNf795/neCFnzV9j7Jc3eUKB80CiGSYowHMshpuW', 'Hồ Chí Minh', 0, 0),
+(8, 'user9', 'abc@xc.com', '$2y$10$aoC/o/S1B6mjXP6bqjKi/uOazkT1IFMj/rQOfizF0sFCU2uRd7qfy', 'Hồ Chí Minh', 0, 0);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `brand`
+-- Indexes for table `brand`
 --
 ALTER TABLE `brand`
   ADD PRIMARY KEY (`ID`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`userID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `brand`
+-- AUTO_INCREMENT for table `brand`
 --
 ALTER TABLE `brand`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
