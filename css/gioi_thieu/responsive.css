@@ -7,9 +7,13 @@
     }
     .content1 .text {
         padding-top: 20px;
+        padding: 20px;
     }
     .content2 .text {
         padding-top: 30px;
+    }
+    .content2 .pic img{
+        width: 100%;
     }
     .content3 .text {
         padding-top: 70px;
