@@ -4,8 +4,7 @@
 
 <?php
 
-    $sql=mysqli_connect("mysql5037.site4now.net","a7cc8e_dapoet1","123456aA@","db_a7cc8e_dapoet1");
-    
+    $sql=mysqli_connect("localhost","root","","data_ishine");
 /****************************************************************************************/  
     $selectData = "SELECT * FROM binh_luan";
     $row=$sql->query($selectData);
