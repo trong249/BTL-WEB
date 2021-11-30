@@ -59,8 +59,8 @@ ol, ul {
 .icon-image {
     object-fit: cover;
     padding: 0;
-    height: inherit;
     height:-webkit-fill-available;
+    height: inherit;
 }
 
 .small-news {
