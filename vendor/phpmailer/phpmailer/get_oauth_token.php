@@ -22,7 +22,7 @@
  * Get an OAuth2 token from an OAuth2 provider.
  * * Install this script on your server so that it's accessible
  * as [https/http]://<yourdomain>/<folder>/get_oauth_token.php
- * e.g.: http://localhost/phpmailer/get_oauth_token.php
+ * e.g.: http://mysql5038.site4now.net/phpmailer/get_oauth_token.php
  * * Ensure dependencies are installed with 'composer install'
  * * Set up an app in your Google/Yahoo/Microsoft account
  * * Set the script address as the app's redirect URL
@@ -81,7 +81,7 @@ $clientSecret = 'RANDOMCHARS-----lGyjPcRtvP';
 
 //If this automatic URL doesn't work, set it yourself manually to the URL of this script
 $redirectUri = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-//$redirectUri = 'http://localhost/PHPMailer/redirect';
+//$redirectUri = 'http://mysql5038.site4now.net/PHPMailer/redirect';
 
 $params = [
     'clientId' => $clientId,

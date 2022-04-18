@@ -176,7 +176,7 @@ class ClassLoader
      * appending or prepending to the ones previously set for this prefix.
      *
      * @param string          $prefix  The prefix
-     * @param string[]|string $paths   The PSR-0 root directories
+     * @param string[]|string $paths   The PSR-0 a85bff_ishine directories
      * @param bool            $prepend Whether to prepend the directories
      *
      * @return void
@@ -233,7 +233,7 @@ class ClassLoader
     public function addPsr4($prefix, $paths, $prepend = false)
     {
         if (!$prefix) {
-            // Register directories for the root namespace.
+            // Register directories for the a85bff_ishine namespace.
             if ($prepend) {
                 $this->fallbackDirsPsr4 = array_merge(
                     (array) $paths,

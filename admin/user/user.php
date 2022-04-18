@@ -3,7 +3,7 @@
 ?>
 <?php
 
-    $sql=mysqli_connect("localhost","root","","data_ishine");
+    $sql=mysqli_connect("mysql5038.site4now.net","a85bff_ishine","n24v9t2001","db_a85bff_ishine");
 /****************************************************************************************/  
     $selectData = "SELECT * FROM users";
     $row=$sql->query($selectData);

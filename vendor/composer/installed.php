@@ -1,16 +1,16 @@
 <?php return array(
-    'root' => array(
+    'a85bff_ishine' => array(
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'reference' => 'e270e8497bd18e8b6e53a95adf69212abefc9dda',
-        'name' => '__root__',
+        'name' => '__a85bff_ishine__',
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
+        '__a85bff_ishine__' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
             'type' => 'library',

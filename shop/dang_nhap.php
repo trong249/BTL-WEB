@@ -24,10 +24,10 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //setup a connection
-        $hostname = "localhost";
-        $username = "root";
+        $hostname = "mysql5038.site4now.net";
+        $username = "a85bff_ishine";
         $password = "";
-        $database = "data_ishine";
+        $database = "db_a85bff_ishine";
 
         $conn = mysqli_connect($hostname, $username, $password, $database);
 
